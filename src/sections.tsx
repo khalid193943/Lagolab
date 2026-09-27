@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, Check, Plus, X } from 'lucide-react';
 import { LIBRARY, WORK, PILLARS, PROCESS, INSIDE, FAQ, SECTORS, CONTACT, IMG, Concept } from './data';
 import { Reveal, Img, Head } from './ui';
+import { ScrollText, spot } from './fx';
 
 /* ---------------- #FaitParDigilago : mur incliné de vraies pages ---------------- */
 type Tile = { key: string; img: string; name: string; meta: string; color: string };
@@ -29,8 +30,8 @@ export const FaitPar = ({ compact = false }: { compact?: boolean }) => {
   return (
     <section id="fait" className="dark relative overflow-hidden py-24 lg:py-32">
       <div className="wrap relative z-10">
-        <Reveal><h2 className="font-display font-bold text-[clamp(2.6rem,8.4vw,8rem)] leading-[0.9] tracking-[-0.055em] text-safran break-words">#FaitPar<wbr />Digilago</h2></Reveal>
-        <Reveal delay={0.1} className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-6 max-w-none"><p className="text-brume text-[17px] max-w-[52ch]">Trente pages, seize métiers, des vraies entreprises. Passez la souris pour découvrir chaque site, cliquez pour l’ouvrir en grand.</p>{!compact && <Link to="/realisations" className="btn btn-line shrink-0">Toutes les réalisations <ArrowUpRight size={16} /></Link>}</Reveal>
+        <ScrollText by="char" text="#FaitParDigilago" className="font-display !font-semibold text-[clamp(2.6rem,8.4vw,8rem)] leading-[0.9] !tracking-[-0.055em] text-safran break-all sm:break-normal" />
+        <Reveal delay={0.1} className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-6 max-w-none"><p className="text-brume text-[17px] max-w-[52ch]">Des établissements réels et des concepts pour seize métiers. Survolez pour découvrir chaque site, cliquez pour l’ouvrir en grand.</p>{!compact && <Link to="/realisations" className="btn btn-line shrink-0">Toutes les réalisations <ArrowUpRight size={16} /></Link>}</Reveal>
       </div>
       <div className="relative mt-10 h-[560px] md:h-[680px] overflow-hidden">
         <div className="absolute -inset-x-[25%] inset-y-0 flex flex-col justify-center gap-5" style={{ transform: 'perspective(1600px) rotateX(20deg) rotateZ(-7deg)' }}>
@@ -59,12 +60,12 @@ export const Pillars = () => (
   <div className="grid lg:grid-cols-3 gap-6">
     {PILLARS.map((p, i) => (
       <Reveal key={p.id} delay={i * 0.08} className="h-full">
-        <article className="h-full flex flex-col rounded-3xl bg-white ring-1 ring-encre/8 overflow-hidden">
-          <div className="relative aspect-[4/3] overflow-hidden"><Img src={p.img} alt={p.title} className="absolute inset-0 w-full h-full object-cover" /><span className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-nuit/85 text-white text-[13px] font-display backdrop-blur">{p.title}</span></div>
+        <article className="group h-full flex flex-col rounded-3xl bg-white ring-1 ring-encre/8 overflow-hidden transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-30px_rgba(10,20,40,.35)]">
+          <div className="relative aspect-[4/3] overflow-hidden"><Img src={p.img} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.05]" /><span className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-nuit/85 text-white text-[13px] font-display backdrop-blur">{p.title}</span></div>
           <div className="p-7 flex-1 flex flex-col">
             <h3 className="text-[24px] leading-tight">{p.lead}</h3>
             <ul className="mt-5 flex flex-wrap gap-2">{p.services.map((s) => <li key={s} className="px-3 py-1.5 rounded-full bg-porcelaine text-[14px]">{s}</li>)}</ul>
-            <div className="mt-auto pt-7"><p className="text-[14px] font-semibold text-ardoise">Vous recevez</p><ul className="mt-3 space-y-2.5">{p.deliver.map((d) => <li key={d} className="flex gap-3 text-[15px]"><Check size={18} className="text-[#0E8FA0] shrink-0 mt-0.5" />{d}</li>)}</ul></div>
+            <div className="mt-auto pt-7"><p className="text-[14px] font-medium text-ardoise">Livrables</p><ul className="mt-3 space-y-2.5">{p.deliver.map((d) => <li key={d} className="flex gap-3 text-[15px]"><Check size={18} className="text-[#0E8FA0] shrink-0 mt-0.5" />{d}</li>)}</ul></div>
           </div>
         </article>
       </Reveal>
@@ -76,7 +77,7 @@ export const Pillars = () => (
 export const Inside = () => (
   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-3xl overflow-hidden ring-1 ring-white/10">
     {INSIDE.map(([t, d], i) => (
-      <Reveal key={t} delay={(i % 4) * 0.05} className="bg-nuit p-7 h-full"><span className="block w-9 h-[3px] rounded bg-cyan" /><h3 className="mt-5 text-[20px]">{t}</h3><p className="mt-3 text-[15px] text-brume">{d}</p></Reveal>
+      <Reveal key={t} delay={(i % 4) * 0.05} className="h-full bg-nuit"><div onMouseMove={spot} className="spot h-full p-8"><span className="block w-9 h-px bg-cyan" /><h3 className="mt-5 text-[20px]">{t}</h3><p className="mt-3 text-[15px] text-brume">{d}</p></div></Reveal>
     ))}
   </div>
 );
@@ -114,7 +115,7 @@ export const FinalCTA = () => {
       <Img src={IMG.zellige} alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
       <div className="absolute inset-0 bg-gradient-to-r from-nuit via-nuit/85 to-nuit/30" />
       <div className="wrap relative grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-6"><Reveal><p className="kicker">Sans engagement</p><h2 className="mt-3 text-[clamp(2.4rem,5vw,4.4rem)]">Votre première version, dans 72 heures.</h2><p className="mt-5 text-[18px] text-brume max-w-[46ch]">Donnez-nous le nom de votre entreprise et votre ville. Vous voyez un vrai site avec vos informations, puis vous décidez. 0 dirham avant validation.</p></Reveal></div>
+        <div className="lg:col-span-6"><Reveal><p className="kicker">Sans engagement</p></Reveal><ScrollText text="Votre première version, en 72 heures." className="mt-4 text-[clamp(2.4rem,5vw,4.4rem)]" /><Reveal delay={0.1}><p className="mt-6 text-[18px] text-brume max-w-[46ch]">Indiquez le nom de votre entreprise et votre ville. Vous découvrez un site réel à votre image, puis vous décidez. Aucun paiement avant validation.</p></Reveal></div>
         <Reveal delay={0.1} className="lg:col-span-6">
           <form onSubmit={send} className="rounded-3xl bg-nuit-2/90 backdrop-blur ring-1 ring-white/10 p-6 md:p-8 grid sm:grid-cols-2 gap-4">
             {([['name', 'Entreprise', 'Nom de votre entreprise'], ['city', 'Ville', 'El Jadida, Casablanca…'], ['phone', 'Téléphone', '06 …']] as const).map(([k, l, p]) => (
@@ -122,7 +123,7 @@ export const FinalCTA = () => {
             ))}
             <label className="text-[14px] text-brume">Métier<select value={f.sector} onChange={(e) => setF({ ...f, sector: e.target.value })} className="mt-2 w-full h-12 rounded-xl bg-nuit border border-white/10 px-4 text-[16px] text-white focus:outline-none focus:border-cyan">{SECTORS.map((s) => <option key={s.id}>{s.short}</option>)}<option>Autre</option></select></label>
             <button className="btn btn-safran sm:col-span-2 mt-2">Recevoir ma première version</button>
-            <p className="sm:col-span-2 text-[13px] text-brume">Le message s’ouvre dans WhatsApp. Réponse le jour même, du lundi au samedi.</p>
+            <p className="sm:col-span-2 text-[13px] text-brume">Votre demande s’ouvre dans WhatsApp. Réponse le jour même, du lundi au samedi.</p>
           </form>
         </Reveal>
       </div>

@@ -1,6 +1,7 @@
 # Digilago — site de la société (v3, redesign tech premium)
 
-React 19 + Vite + Tailwind v4 + Motion. Pages : Accueil, Services, Réalisations (#FaitParDigilago), Société, Contact.
+React 19 + Vite + Tailwind v4 + Motion. Pages : Accueil (avec simulateur de visibilité et offres par métier), Services, Réalisations (#FaitParDigilago), Société, Contact.
+Images : `IMG` et `PACK_IMG` dans `src/data.ts` (20 visuels générés).
 Tout le contenu est dans `src/data.ts` (services, pôles, clients, bibliothèque, FAQ, contact, images).
 
 ## Mettre en ligne sans rien installer

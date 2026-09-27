@@ -18,9 +18,9 @@ const Nav = () => {
   useEffect(() => setOpen(false), [pathname]);
   return (
     <header style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }} className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${solid || open ? 'bg-nuit/92 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
-      <nav className="wrap h-[72px] flex items-center justify-between gap-6" aria-label="Navigation principale">
+      <nav className="wrap h-[76px] flex items-center justify-between gap-6" aria-label="Navigation principale">
         <Link to="/" aria-label="Digilago, accueil"><Logo /></Link>
-        <div className="hidden lg:flex items-center gap-9">{LINKS.map(([l, h]) => <NavLink key={h} to={h} className={({ isActive }) => `text-[15px] transition-colors ${isActive ? 'text-safran' : 'text-white/80 hover:text-white'}`}>{l}</NavLink>)}</div>
+        <div className="hidden lg:flex items-center h-11 px-1.5 rounded-full bg-white/[0.04] ring-1 ring-white/10 backdrop-blur-md">{LINKS.map(([l, h]) => <NavLink key={h} to={h} className={({ isActive }) => `navlink h-8 px-4 flex items-center rounded-full text-[14.5px] transition-colors ${isActive ? 'bg-white/10 text-white' : 'text-white/70 hover:text-white'}`}>{l}</NavLink>)}</div>
         <div className="flex items-center gap-3">
           <a href={`tel:${CONTACT.tel}`} className="hidden xl:inline text-[14px] text-brume hover:text-white">{CONTACT.phone}</a>
           <Link to="/contact" className="btn btn-safran !h-11 hidden sm:inline-flex">Première version gratuite</Link>

@@ -1,6 +1,7 @@
 /** Briques communes : apparition au défilement, image avec repli, en-tête de section, logo. */
 import { useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
+import { ScrollText } from './fx';
 
 export const Reveal = ({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) => {
   const reduce = useReducedMotion();
@@ -15,11 +16,11 @@ export const Img = ({ src, alt, className = '', eager = false, tone = '#1B2A4A' 
 };
 
 export const Head = ({ kicker, title, lead, className = '', center = false, sm = false }: { kicker?: string; title: React.ReactNode; lead?: React.ReactNode; className?: string; center?: boolean; sm?: boolean }) => (
-  <Reveal className={`${center ? 'text-center mx-auto' : ''} max-w-[46rem] ${className}`}>
-    {kicker && <p className="kicker">{kicker}</p>}
-    <h2 className={`mt-3 ${sm ? 'text-[clamp(1.9rem,3vw,2.6rem)]' : 'text-[clamp(2rem,4.2vw,3.6rem)]'}`}>{title}</h2>
-    {lead && <p className={`mt-5 text-[18px] opacity-75 max-w-[56ch] ${center ? 'mx-auto' : ''}`}>{lead}</p>}
-  </Reveal>
+  <div className={`${center ? 'text-center mx-auto' : ''} max-w-[46rem] ${className}`}>
+    {kicker && <Reveal><p className="kicker">{kicker}</p></Reveal>}
+    {typeof title === 'string' ? <ScrollText text={title} className={`mt-4 ${sm ? 'text-[clamp(1.9rem,3vw,2.6rem)]' : 'text-[clamp(2.1rem,4.2vw,3.7rem)]'}`} /> : <h2 className="mt-4">{title}</h2>}
+    {lead && <Reveal delay={0.1}><p className={`mt-6 text-[18px] opacity-70 max-w-[56ch] ${center ? 'mx-auto' : ''}`}>{lead}</p></Reveal>}
+  </div>
 );
 
 export const Logo = ({ light = false }: { light?: boolean }) => (

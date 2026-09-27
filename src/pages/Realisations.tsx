@@ -4,6 +4,7 @@ import { Check, X } from 'lucide-react';
 import { CASES, LIBRARY, GROUPS, Concept } from '../data';
 import { Reveal, Img, Head } from '../ui';
 import { FaitPar, FinalCTA, ConceptCard } from '../sections';
+import { ScrollText } from '../fx';
 import { CaseCard } from './Home';
 
 export default function Realisations() {
@@ -11,19 +12,28 @@ export default function Realisations() {
   const list = useMemo(() => (g === 'Tous' ? LIBRARY : LIBRARY.filter((c) => c.group === g)), [g]);
   return (
     <>
-      <section className="dark pt-36 pb-16 lg:pt-44"><div className="wrap">
-        <Reveal><p className="kicker">Réalisations</p><h1 className="mt-4 text-[clamp(2.6rem,6vw,5.4rem)] font-bold tracking-[-0.05em] leading-[0.98] max-w-[16ch]">Le travail parle mieux que nous.</h1><p className="mt-6 text-[19px] text-white/80 max-w-[52ch]">Des sites de clients en service, et une bibliothèque de concepts par métier pour imaginer le vôtre.</p></Reveal>
+      <section className="dark relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28"><div className="wrap grid lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-6"><Reveal><p className="kicker">Réalisations</p></Reveal><ScrollText auto as="h1" text="Nos réalisations parlent pour nous." className="mt-5 text-[clamp(2.6rem,5vw,4.6rem)] leading-[1]" /><Reveal delay={0.5}><p className="mt-7 text-[19px] text-white/75 max-w-[50ch]">Des établissements réels en service, et une bibliothèque de concepts pour imaginer le vôtre.</p></Reveal></div>
+        <div className="lg:col-span-6 relative h-[360px] sm:h-[440px]" aria-hidden>
+          {CASES.map((c, i) => (
+            <motion.div key={c.name} className="absolute w-[72%] aspect-[16/10] rounded-2xl overflow-hidden ring-1 ring-white/15 shadow-[0_40px_80px_-30px_rgba(0,0,0,.9)]"
+              style={{ left: `${[0, 14, 28][i]}%`, top: `${[2, 20, 38][i]}%`, zIndex: i + 1 }}
+              initial={{ opacity: 0, y: 40, rotate: 0 }} animate={{ opacity: 1, y: 0, rotate: [-4, -0.5, 3][i] }} transition={{ delay: 0.3 + i * 0.15, duration: 1, ease: [0.16, 1, 0.3, 1] }}>
+              <Img src={c.img as string} alt="" eager tone={c.color} className="w-full h-full object-cover object-top" />
+            </motion.div>
+          ))}
+        </div>
       </div></section>
 
       <section className="light py-24 lg:py-28"><div className="wrap">
-        <Head kicker="Études de cas" title="Nos clients." />
+        <Head kicker="Études de cas" title="Des projets livrés, des résultats visibles." lead="Pour chaque établissement : le besoin de départ et ce que nous avons mis en place." />
         <div className="mt-12 grid lg:grid-cols-3 gap-6">{CASES.map((c, i) => <Reveal key={c.name} delay={i * 0.06} className="h-full"><CaseCard c={c} big /></Reveal>)}</div>
       </div></section>
 
       <FaitPar compact />
 
       <section className="dark py-24 lg:py-28 border-t border-white/10"><div className="wrap">
-        <Head kicker="Bibliothèque" title="Un concept pour chaque métier." lead="Filtrez par secteur. Chaque concept montre la direction que pourrait prendre votre site." />
+        <Head kicker="Bibliothèque" title="Une direction pour chaque métier." lead="Filtrez par secteur et ouvrez un concept pour voir la direction que pourrait prendre votre site." />
         <div className="mt-10 flex flex-wrap gap-2">{GROUPS.map((x) => <button key={x} onClick={() => setG(x)} aria-pressed={g === x} className={`h-10 px-4 rounded-full text-[14px] transition-colors ${g === x ? 'bg-safran text-nuit font-semibold' : 'ring-1 ring-white/15 text-white/80 hover:text-white hover:ring-white/40'}`}>{x}</button>)}</div>
         <motion.div layout className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
           <AnimatePresence mode="popLayout">{list.map((c) => <motion.div key={c.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><ConceptCard c={c} onOpen={() => setOpen(c)} /></motion.div>)}</AnimatePresence>

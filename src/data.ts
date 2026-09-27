@@ -52,13 +52,13 @@ export const STEPS = [
 ];
 
 export const FAQ = [
-  { q: 'Combien coûte un site avec Digilago ?', a: 'Moins que vous ne le pensez pour une présence en ligne (site, fiche Google, référencement) : c’est volontairement accessible, parce qu’une entreprise sans présence perd des clients chaque jour. Le prix monte avec la complexité — réservation, application, boutique, plateforme — et il est annoncé avant de commencer. Dans tous les cas, vous voyez une première version gratuite et vous ne payez que si elle vous plaît.' },
-  { q: 'Que se passe-t-il après mon message ?', a: 'Nous vous rappelons le jour même pour comprendre votre activité en dix minutes. Sous 72 heures, vous recevez un lien vers votre première version. Vous nous dites ce que vous aimez et ce que vous voulez changer. Quand c’est validé, nous mettons en ligne, créons votre fiche Google et vous formons en trente minutes.' },
-  { q: 'Que veut dire « 0 dirham avant validation » ?', a: 'Nous construisons une première version de votre site en 72 heures, gratuitement. Vous ne payez que si elle vous convient. Sinon, vous ne nous devez rien.' },
-  { q: 'Qu’est-ce que le GEO ?', a: 'Le Generative Engine Optimization : faire en sorte que les assistants IA (ChatGPT, Gemini, Perplexity) connaissent votre entreprise et la recommandent quand on leur demande « un bon dentiste à Rabat » ou « un club de padel ouvert ce soir ».' },
-  { q: 'Travaillez-vous hors d’El Jadida ?', a: 'Oui. Digilago est née à El Jadida et travaille avec des entreprises partout au Maroc, et avec des clients à l’étranger.' },
-  { q: 'Le site sera-t-il en arabe ?', a: 'Oui, la version arabe est incluse dans la présence en ligne complète. L’anglais est possible pour le tourisme et l’international.' },
-  { q: 'Qui s’occupe du site après la mise en ligne ?', a: 'Nous. Hébergement, sécurité, sauvegardes et mises à jour sont pris en charge. Vous pouvez aussi modifier vous-même vos actualités ou vos tarifs depuis un espace simple.' },
+  { q: 'Combien coûte un projet avec Digilago ?', a: 'Le prix dépend de ce dont vous avez besoin : une présence en ligne complète (site, fiche Google, référencement) reste volontairement accessible, puis le budget évolue avec la complexité (réservation, boutique, application, plateforme). Il est toujours annoncé par écrit avant de commencer, et vous voyez une première version offerte avant de payer quoi que ce soit.' },
+  { q: 'Que se passe-t-il après mon premier message ?', a: 'Nous vous rappelons le jour même pour un échange de dix minutes. Sous 72 heures, vous recevez le lien de votre première version. Vous nous faites vos retours, nous ajustons, puis nous mettons en ligne, créons votre fiche Google et vous formons en trente minutes.' },
+  { q: 'Que signifie « 0 dirham avant validation » ?', a: 'Nous réalisons une première version de votre site, offerte. Si elle vous convainc, nous poursuivons ensemble. Sinon, vous ne nous devez rien.' },
+  { q: 'Qu’est-ce que la visibilité dans les IA (GEO) ?', a: 'Le Generative Engine Optimization consiste à faire connaître votre entreprise aux assistants comme ChatGPT, Gemini ou Perplexity, afin qu’ils la recommandent lorsqu’on leur demande « un bon dentiste à Rabat » ou « un club de padel ouvert ce soir ».' },
+  { q: 'Travaillez-vous en dehors d’El Jadida ?', a: 'Oui. Notre équipe est basée à El Jadida et accompagne des entreprises dans tout le Maroc, ainsi que des clients à l’étranger. Tout se fait à distance, avec des rendez-vous sur place quand c’est utile.' },
+  { q: 'Le site sera-t-il disponible en arabe ?', a: 'Oui. La version arabe est incluse dans la présence en ligne complète. L’anglais est proposé pour le tourisme et les clientèles internationales.' },
+  { q: 'Qui s’occupe du site après le lancement ?', a: 'Nous. Hébergement, sécurité, sauvegardes et mises à jour sont pris en charge. Vous gardez la main sur vos contenus depuis un espace simple, et notre équipe reste joignable sur WhatsApp.' },
 ];
 
 /* ------------------------------ Packs par métier (sans prix) ------------------------------ */
@@ -83,10 +83,10 @@ export const TECH = [
 ];
 
 export const AGENCY = {
-  mission: 'Que chaque entreprise marocaine — petite, moyenne ou grande — soit trouvable en ligne, avec une vraie présence, pas une page oubliée.',
-  vision: 'Quand on veut manger, voir un médecin, réserver un terrain ou trouver un fournisseur, on cherche sur Google ou on demande à une IA. Notre objectif : que la réponse soit vous, avec les bonnes informations, dans tous les métiers, dans toutes les villes du Maroc.',
-  story: 'Digilago est née à El Jadida avec une conviction : le talent des entreprises marocaines est immense, leur visibilité en ligne ne l’est pas encore. Nous avons commencé par des écoles, puis des commerces et des cabinets, en construisant chaque site à la main, avec les technologies de 2027 plutôt que celles de 2015.',
-  values: [['Code à la main', 'Aucun modèle générique. Chaque site est écrit pour son propriétaire.'], ['Résultat d’abord', 'Un site sert à être trouvé et contacté. Tout est conçu pour ça.'], ['Transparence', 'Première version gratuite, packs clairs, pas de surprise.'], ['Long terme', 'Nous restons après la mise en ligne : hébergement, sécurité, évolutions.']],
+  mission: 'Donner à chaque entreprise marocaine, de l’artisan au groupe, une présence en ligne à la hauteur de son savoir-faire.',
+  vision: 'Aujourd’hui, on choisit un restaurant, un médecin ou un fournisseur en quelques secondes, sur Google ou auprès d’une IA. Notre rôle : faire en sorte que la réponse soit vous, avec les bonnes informations, dans chaque métier et chaque ville du Maroc.',
+  story: 'Digilago est née à El Jadida d’un constat simple : le savoir-faire des entreprises marocaines est immense, leur visibilité en ligne ne l’est pas encore. Nous avons commencé avec des écoles, puis des commerces, des cliniques et des cabinets. Chaque projet est construit à la main, avec les technologies d’aujourd’hui et l’exigence d’un grand groupe.',
+  values: [['Exigence', 'Aucun modèle générique. Chaque ligne de code est écrite pour son propriétaire.'], ['Résultats', 'Un site existe pour être trouvé et générer des contacts. Tout est mesuré dans ce sens.'], ['Transparence', 'Première version offerte, prix annoncé avant de commencer, aucun frais caché.'], ['Durée', 'Nous restons après le lancement : hébergement, sécurité, évolutions.']],
   numbers: [['72 h', 'pour une première version'], ['0 MAD', 'avant validation'], ['16', 'métiers couverts'], ['100 %', 'code écrit à la main']],
 };
 
@@ -150,41 +150,56 @@ export const IMG = {
   team: HF + 'hf_20260927_002945_2d97885e-a42d-4a38-9027-7a5311031be1.png',
   client: HF + 'hf_20260927_002945_19d26d6d-69ac-449e-9e8f-bed99abcffba.png',
   zellige: HF + 'hf_20260927_002946_287c9f4b-2f65-422e-a68e-3307f3484d7e.png',
+  eljadida: HF + 'hf_20260927_010342_ebf90327-e558-4ea0-b331-b0207b5ec604.png',
+  workshop: HF + 'hf_20260927_010342_43856e2d-02bc-4b61-b7d3-1a98a696a532.png',
+  code: HF + 'hf_20260927_010342_10f973b2-cdb1-4a57-b9ea-b917f0b1d935.png',
+  whatsapp: HF + 'hf_20260927_010342_73251983-3ffe-46df-97e3-6abf01842755.png',
+  search: HF + 'hf_20260927_010342_cf619f05-06f5-41a3-8f11-2da4f31e1be2.png',
+};
+/* Une image par offre métier */
+export const PACK_IMG: Record<string, string> = {
+  sport: HF + 'hf_20260927_010342_b7ab0862-5b44-4cd9-bba5-d0b74aa18c4a.png',
+  sante: HF + 'hf_20260927_010342_d8fef008-dc47-49d1-88a7-0807e6988aaa.png',
+  education: HF + 'hf_20260927_010342_d7639fe4-5fe4-48cf-ac1f-a94ef8811c42.png',
+  hospitalite: HF + 'hf_20260927_010342_c334eb90-94ea-4df7-b42b-ba4fee192e42.png',
+  commerce: HF + 'hf_20260927_010342_742c0bca-3c34-4614-9ee6-f0ea59d45cc3.png',
+  services: HF + 'hf_20260927_010342_0c69eb1e-0a2b-4cab-b3f2-d8abd8a75a03.png',
+  saas: HF + 'hf_20260927_010342_fff1c6ba-ab0f-4624-8cc5-f1b643118ce0.png',
 };
 
 /* ------------------------------ Trois pôles de services ------------------------------ */
 export const PILLARS = [
-  { id: 'concevoir', title: 'Concevoir', lead: 'Sites, boutiques et applications écrits à la main pour votre métier.', img: IMG.design,
+  { id: 'concevoir', title: 'Concevoir', lead: 'Des sites et des applications dessinés pour votre métier, codés pour durer.', img: IMG.workshop,
     services: ['Sites web sur-mesure', 'Boutiques en ligne', 'Applications web et mobiles', 'Branding et logo'],
     deliver: ['Maquette validée avant le code', 'Version arabe, française et anglaise', 'Espace pour modifier vos contenus', 'Code source remis à votre nom'] },
-  { id: 'trouver', title: 'Faire trouver', lead: 'Votre nom en tête sur Google, Maps et dans les réponses des IA.', img: IMG.maps,
+  { id: 'trouver', title: 'Faire trouver', lead: 'Votre nom en tête sur Google, sur la carte et dans les réponses des IA.', img: IMG.search,
     services: ['Fiche Google Business', 'Référencement SEO local', 'Visibilité dans les IA (GEO)', 'Publicité Google et Meta'],
     deliver: ['Fiche Google complète et vérifiée', 'Balisage Schema.org et llms.txt', 'Suivi des positions par ville', 'Rapport mensuel lisible'] },
-  { id: 'operer', title: 'Faire tourner', lead: 'Hébergement, sécurité et logiciels métier, suivis par la même équipe.', img: IMG.servers,
+  { id: 'operer', title: 'Faire tourner', lead: 'Hébergement, sécurité et logiciels métier, surveillés jour et nuit.', img: IMG.servers,
     services: ['Hébergement et maintenance', 'Intégrations : paiement, WhatsApp, agenda', 'Logiciels métier et tableaux de bord', 'Support le jour même'] },
 ];
 PILLARS[2] = { ...PILLARS[2], deliver: ['Certificat SSL et CDN mondial', 'Sauvegardes quotidiennes', 'Mises à jour de sécurité', 'Un interlocuteur qui connaît votre projet'] } as any;
 
 /* Ce que contient chaque projet : ce qui donne sa valeur au travail */
 export const INSIDE = [
-  ['Un design unique', 'Aucun thème acheté. Chaque écran est dessiné pour votre métier et votre clientèle.'],
-  ['Du code, pas un constructeur', 'React et TypeScript, comme les grandes plateformes. Rapide, sûr, évolutif.'],
-  ['Chargement en moins d’une seconde', 'Images optimisées, servies près de vos clients. Google récompense la vitesse.'],
-  ['Pensé pour le téléphone', 'La plupart de vos clients arrivent depuis un téléphone. On commence par là.'],
-  ['Lisible par Google et les IA', 'Données structurées, textes clairs, fiche Google reliée au site.'],
-  ['Trois langues', 'Arabe, français, anglais : pour vos clients d’ici et ceux de passage.'],
-  ['Vous restez propriétaire', 'Nom de domaine, code et données à votre nom. Aucune dépendance piège.'],
-  ['Formation de trente minutes', 'Vous savez modifier vos horaires, vos prix et vos actualités seul.'],
+  ['Design sur-mesure', 'Aucun thème acheté. Chaque écran est dessiné pour votre métier et vos clients.'],
+  ['Code professionnel', 'React et TypeScript, les standards des grandes plateformes. Rapide, sûr, évolutif.'],
+  ['Moins d’une seconde', 'Images optimisées et servies au plus près de vos visiteurs. Google récompense la vitesse.'],
+  ['Mobile d’abord', 'La majorité de vos clients arrivent par téléphone. Tout est conçu pour eux en premier.'],
+  ['Lisible par Google et les IA', 'Données structurées, contenus clairs, fiche Google reliée au site.'],
+  ['Trois langues', 'Arabe, français et anglais, pour votre clientèle locale comme internationale.'],
+  ['Propriété totale', 'Domaine, code et données sont à votre nom. Aucune dépendance, aucun piège.'],
+  ['Autonomie', 'Trente minutes de formation pour modifier seul horaires, tarifs et actualités.'],
 ];
 
 /* Anatomie d’un projet : une vraie séquence */
 export const PROCESS = [
-  { t: 'Cadrage', d: 'Un appel de dix minutes pour comprendre votre activité, vos clients et votre ville.', out: 'Fiche projet' },
-  { t: 'Première version', d: 'En 72 heures, un vrai site avec vos informations. Gratuit, sans engagement.', out: 'Lien de démonstration' },
-  { t: 'Design et retouches', d: 'Vous validez, nous affinons. Trois séries de retouches incluses.', out: 'Maquettes validées' },
-  { t: 'Développement', d: 'Code écrit à la main, testé sur téléphone, tablette et ordinateur.', out: 'Site complet' },
-  { t: 'Mise en ligne', d: 'Domaine, SSL, fiche Google, référencement et balisage pour les IA.', out: 'Site public et indexé' },
-  { t: 'Suivi', d: 'Hébergement, sécurité, évolutions. Nous restons joignables sur WhatsApp.', out: 'Rapport mensuel' },
+  { t: 'Écoute', d: 'Un appel de dix minutes pour comprendre votre activité, vos clients et vos objectifs.', out: 'Fiche projet' },
+  { t: 'Première version', d: 'Sous 72 heures, un site réel avec vos informations. Offert, sans engagement.', out: 'Lien de démonstration' },
+  { t: 'Affinage', d: 'Vous commentez, nous ajustons. Trois cycles de retouches sont inclus.', out: 'Design validé' },
+  { t: 'Développement', d: 'Code écrit à la main, testé sur téléphone, tablette et ordinateur.', out: 'Site complet et testé' },
+  { t: 'Lancement', d: 'Domaine, sécurité, fiche Google, référencement et balisage pour les IA.', out: 'Site public et indexé' },
+  { t: 'Accompagnement', d: 'Hébergement, sauvegardes et évolutions. Une équipe joignable sur WhatsApp.', out: 'Rapport mensuel' },
 ];
 
 /* Études de cas des vrais clients */
