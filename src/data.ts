@@ -97,9 +97,9 @@ export const LABS = {
     { name: 'Réserve', kind: 'SaaS · sport', status: 'Prototype', text: 'Réservation de terrains de padel et de foot par créneau, paiement ou WhatsApp, planning en temps réel. Né des clubs qui nous demandaient la même chose.', color: '#2D5BFF' },
     { name: 'Pupitre', kind: 'SaaS · éducation', status: 'En développement', text: 'L’espace administration des écoles : actualités, pré-inscriptions, messages, agenda. Déjà en service dans nos sites d’écoles, en cours de transformation en produit.', color: '#7C3AED' },
     { name: 'Rendez', kind: 'SaaS · santé', status: 'Prototype', text: 'Prise de rendez-vous en ligne pour cabinets et cliniques, rappels WhatsApp, agenda partagé. Simple pour le patient, sûr pour le praticien.', color: '#0EA5E9' },
-    { name: 'Forge', kind: 'IA · web', status: 'Recherche', text: 'Notre chaîne interne : à partir d’un nom et d’un métier, générer le contenu, les visuels et une première version de site en 72 heures. Le moteur de Voilà.', color: '#F59E0B' },
+    { name: 'Forge', kind: 'IA · web', status: 'Recherche', text: 'Notre chaîne interne : à partir d’un nom et d’un métier, générer le contenu, les visuels et une première version de site en 72 heures. Le moteur de notre promesse des 72 heures.', color: '#F59E0B' },
   ],
-  how: [['01', 'Un besoin réel', 'Chaque produit part d’une demande répétée chez nos clients Voilà.'], ['02', 'Prototype en deux semaines', 'De vrais écrans, testés avec de vrais utilisateurs, avant d’investir.'], ['03', 'Version 1 utile', 'Peu de fonctions, mais fiables. En ligne, mesurées, améliorées chaque semaine.'], ['04', 'Produit ou service', 'Nous le proposons en abonnement, ou nous le construisons sur-mesure pour un client.']],
+  how: [['01', 'Un besoin réel', 'Chaque produit part d’une demande répétée chez nos clients.'], ['02', 'Prototype en deux semaines', 'De vrais écrans, testés avec de vrais utilisateurs, avant d’investir.'], ['03', 'Version 1 utile', 'Peu de fonctions, mais fiables. En ligne, mesurées, améliorées chaque semaine.'], ['04', 'Produit ou service', 'Nous le proposons en abonnement, ou nous le construisons sur-mesure pour un client.']],
   stack: ['React 19', 'Next.js 15', 'TypeScript', 'Supabase', 'PostgreSQL', 'Stripe · CMI', 'WhatsApp API', 'Claude', 'Gemini', 'Vercel', 'Cloudflare', 'Expo'],
 };
 
@@ -136,4 +136,60 @@ export const LIBRARY: Concept[] = [
   C(25, 'Auto-École Route', 'AE', 'Auto-école', 'Éducation', 'Casablanca', '#FACC15', 'hf_20260926_182415_cb6f0e0a-c4fc-48f7-b7ae-edf5d0bbc80d', 'S’inscrire', ['Formules et prix', 'Inscription en ligne', 'Planning des leçons']),
   C(26, 'Académie Pro', 'AP', 'Centre de formation', 'Éducation', 'Casablanca', '#4DA3FF', 'hf_20260926_182415_a369beef-3bdb-424e-bfcb-69c6d0ee9c50', 'S’inscrire', ['Catalogue de formations', 'Inscription en ligne', 'Certificats']),
   C(27, 'Compta Plus', 'CP', 'Cabinet comptable', 'Services', 'Casablanca', '#1D4ED8', 'hf_20260926_182415_9c07095f-c893-4b84-815c-2375f5960cd3', 'Prendre rendez-vous', ['Services et forfaits', 'Espace client', 'Prise de rendez-vous']),
+];
+
+
+/* ------------------------------ Visuels du site (générés, hébergés sur CDN) ------------------------------ */
+const HF = 'https://d8j0ntlcm91z4.cloudfront.net/user_3Im2HSx2UUwSDvPBnWXfWTAv6du/';
+export const IMG = {
+  hero: HF + 'hf_20260927_002945_00a7448e-b3d0-462f-8d3f-66480faa08dd.png',
+  design: HF + 'hf_20260927_002945_331f394b-d447-443a-bdc3-daf8a2ca6f5e.png',
+  maps: HF + 'hf_20260927_002945_ec3653cd-0bad-4ee6-a7fa-279594c3d0c6.png',
+  servers: HF + 'hf_20260927_002945_2976eb44-2f57-4d64-ae66-c4d61a3a5b96.png',
+  app: HF + 'hf_20260927_002945_36a7cd74-60ae-4927-8040-3067bce17b6f.png',
+  team: HF + 'hf_20260927_002945_2d97885e-a42d-4a38-9027-7a5311031be1.png',
+  client: HF + 'hf_20260927_002945_19d26d6d-69ac-449e-9e8f-bed99abcffba.png',
+  zellige: HF + 'hf_20260927_002946_287c9f4b-2f65-422e-a68e-3307f3484d7e.png',
+};
+
+/* ------------------------------ Trois pôles de services ------------------------------ */
+export const PILLARS = [
+  { id: 'concevoir', title: 'Concevoir', lead: 'Sites, boutiques et applications écrits à la main pour votre métier.', img: IMG.design,
+    services: ['Sites web sur-mesure', 'Boutiques en ligne', 'Applications web et mobiles', 'Branding et logo'],
+    deliver: ['Maquette validée avant le code', 'Version arabe, française et anglaise', 'Espace pour modifier vos contenus', 'Code source remis à votre nom'] },
+  { id: 'trouver', title: 'Faire trouver', lead: 'Votre nom en tête sur Google, Maps et dans les réponses des IA.', img: IMG.maps,
+    services: ['Fiche Google Business', 'Référencement SEO local', 'Visibilité dans les IA (GEO)', 'Publicité Google et Meta'],
+    deliver: ['Fiche Google complète et vérifiée', 'Balisage Schema.org et llms.txt', 'Suivi des positions par ville', 'Rapport mensuel lisible'] },
+  { id: 'operer', title: 'Faire tourner', lead: 'Hébergement, sécurité et logiciels métier, suivis par la même équipe.', img: IMG.servers,
+    services: ['Hébergement et maintenance', 'Intégrations : paiement, WhatsApp, agenda', 'Logiciels métier et tableaux de bord', 'Support le jour même'] },
+];
+PILLARS[2] = { ...PILLARS[2], deliver: ['Certificat SSL et CDN mondial', 'Sauvegardes quotidiennes', 'Mises à jour de sécurité', 'Un interlocuteur qui connaît votre projet'] } as any;
+
+/* Ce que contient chaque projet : ce qui donne sa valeur au travail */
+export const INSIDE = [
+  ['Un design unique', 'Aucun thème acheté. Chaque écran est dessiné pour votre métier et votre clientèle.'],
+  ['Du code, pas un constructeur', 'React et TypeScript, comme les grandes plateformes. Rapide, sûr, évolutif.'],
+  ['Chargement en moins d’une seconde', 'Images optimisées, servies près de vos clients. Google récompense la vitesse.'],
+  ['Pensé pour le téléphone', 'La plupart de vos clients arrivent depuis un téléphone. On commence par là.'],
+  ['Lisible par Google et les IA', 'Données structurées, textes clairs, fiche Google reliée au site.'],
+  ['Trois langues', 'Arabe, français, anglais : pour vos clients d’ici et ceux de passage.'],
+  ['Vous restez propriétaire', 'Nom de domaine, code et données à votre nom. Aucune dépendance piège.'],
+  ['Formation de trente minutes', 'Vous savez modifier vos horaires, vos prix et vos actualités seul.'],
+];
+
+/* Anatomie d’un projet : une vraie séquence */
+export const PROCESS = [
+  { t: 'Cadrage', d: 'Un appel de dix minutes pour comprendre votre activité, vos clients et votre ville.', out: 'Fiche projet' },
+  { t: 'Première version', d: 'En 72 heures, un vrai site avec vos informations. Gratuit, sans engagement.', out: 'Lien de démonstration' },
+  { t: 'Design et retouches', d: 'Vous validez, nous affinons. Trois séries de retouches incluses.', out: 'Maquettes validées' },
+  { t: 'Développement', d: 'Code écrit à la main, testé sur téléphone, tablette et ordinateur.', out: 'Site complet' },
+  { t: 'Mise en ligne', d: 'Domaine, SSL, fiche Google, référencement et balisage pour les IA.', out: 'Site public et indexé' },
+  { t: 'Suivi', d: 'Hébergement, sécurité, évolutions. Nous restons joignables sur WhatsApp.', out: 'Rapport mensuel' },
+];
+
+/* Études de cas des vrais clients */
+export const CASES = [
+  { ...WORK[0], brief: 'Présenter une école de la maternelle au baccalauréat et gérer les inscriptions de la rentrée.', done: ['Site bilingue français / anglais', 'Espace administration complet', 'Planning intégré et actualités'] },
+  { ...WORK[1], brief: 'Donner une identité forte à une école et recevoir les pré-inscriptions en ligne.', done: ['Identité « Donner des ailes »', 'Pré-inscriptions en ligne', 'Actualités et agenda'] },
+  { ...WORK[2], brief: 'Réunir deux campus, de la crèche au primaire, sur un seul site clair pour les parents.', done: ['Deux campus sur une seule page', 'Itinéraire en un geste', 'Espace administration'] },
 ];
