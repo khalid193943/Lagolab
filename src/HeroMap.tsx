@@ -130,11 +130,6 @@ export const HeroMap = ({ start = 2.2 }: { start?: number }) => {
         </motion.div>
       )}</AnimatePresence>
 
-      {/* Compteur */}
-      <div className="absolute right-0 bottom-[6%] rounded-2xl bg-nuit/80 backdrop-blur ring-1 ring-white/10 px-4 py-3">
-        <p className="font-display text-[28px] font-medium leading-none tabular-nums text-safran">{lit.length + 1}</p>
-        <p className="mt-1 text-[12px] text-brume">{t('entreprises allumées')}<br />{t('de Tanger à Dakhla')}</p>
-      </div>
     </div>
   );
 };

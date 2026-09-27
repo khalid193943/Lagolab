@@ -3,7 +3,7 @@ import agc from './assets/agc.jpg';
 import angebleu from './assets/angebleu.jpg';
 import marronniers from './assets/marronniers.jpg';
 
-export const CONTACT = { phone: '+212 6 49 95 38 13', tel: '+212649953813', email: 'contact@digilago.ma', whatsapp: 'https://wa.me/212649953813?text=Bonjour%20Digilago%2C%20je%20veux%20ma%20premi%C3%A8re%20version%20gratuite.' };
+export const CONTACT = { phone: '+212 6 49 95 38 13', tel: '+212649953813', email: 'contact@digilago.ma', whatsapp: 'https://wa.me/212649953813?text=Bonjour%20Digilago%2C%20je%20veux%20commencer%20ma%20pr%C3%A9sence%20en%20ligne.' };
 
 export type Sector = { id: string; name: string; short: string; Icon: any; color: string; query: string; you: string; pitch: string; features: string[]; cta: string };
 export const SECTORS: Sector[] = [
@@ -46,15 +46,15 @@ export const WORK = [
 
 export const STEPS = [
   { n: '01', title: 'Vous nous donnez un nom', text: 'Le nom de votre entreprise et votre ville. C’est tout ce qu’il faut pour commencer.' },
-  { n: '02', title: 'Première version en 72 h', text: 'Un vrai site, avec vos informations, vos couleurs et vos textes. Gratuit.' },
+  { n: '02', title: 'Première version en 72 h', text: 'Un vrai site, avec vos informations, vos couleurs et vos textes. Vous ne payez que s’il vous plaît.' },
   { n: '03', title: 'Vous validez, on affine', text: 'Vous ne payez que si elle vous plaît. Trois séries de retouches incluses.' },
   { n: '04', title: 'En ligne, et trouvé', text: 'Site, fiche Google, SEO et IA : vous apparaissez là où l’on vous cherche.' },
 ];
 
 export const FAQ = [
-  { q: 'Combien coûte un projet avec Digilago ?', a: 'Le prix dépend de ce dont vous avez besoin : une présence en ligne complète (site, fiche Google, référencement) reste volontairement accessible, puis le budget évolue avec la complexité (réservation, boutique, application, plateforme). Il est toujours annoncé par écrit avant de commencer, et vous voyez une première version offerte avant de payer quoi que ce soit.' },
+  { q: 'Combien coûte un projet avec Digilago ?', a: 'Le prix dépend de ce dont vous avez besoin : une présence en ligne complète (site, fiche Google, référencement) reste volontairement accessible, puis le budget évolue avec la complexité (réservation, boutique, application, plateforme). Il est toujours annoncé par écrit avant de commencer, et vous découvrez une première version de votre site avant tout engagement : si elle ne vous plaît pas, vous ne payez rien.' },
   { q: 'Que se passe-t-il après mon premier message ?', a: 'Nous vous rappelons le jour même pour un échange de dix minutes. Sous 72 heures, vous recevez le lien de votre première version. Vous nous faites vos retours, nous ajustons, puis nous mettons en ligne, créons votre fiche Google et vous formons en trente minutes.' },
-  { q: 'Que signifie « 0 dirham avant validation » ?', a: 'Nous réalisons une première version de votre site, offerte. Si elle vous convainc, nous poursuivons ensemble. Sinon, vous ne nous devez rien.' },
+  { q: 'Et si le résultat ne me plaît pas ?', a: 'Vous ne payez rien. Nous réalisons d’abord une première version de votre site, et vous ne vous engagez que si elle vous convainc. Nous travaillons ainsi parce que nous avons confiance dans notre design, notre référencement et nos textes.' },
   { q: 'Qu’est-ce que la visibilité dans les IA (GEO) ?', a: 'Le Generative Engine Optimization consiste à faire connaître votre entreprise aux assistants comme ChatGPT, Gemini ou Perplexity, afin qu’ils la recommandent lorsqu’on leur demande « un bon dentiste à Rabat » ou « un club de padel ouvert ce soir ».' },
   { q: 'Travaillez-vous en dehors d’El Jadida ?', a: 'Oui. Notre équipe est basée à El Jadida et accompagne des entreprises dans tout le Maroc, ainsi que des clients à l’étranger. Tout se fait à distance, avec des rendez-vous sur place quand c’est utile.' },
   { q: 'Le site sera-t-il disponible en arabe ?', a: 'Oui. La version arabe est incluse dans la présence en ligne complète. L’anglais est proposé pour le tourisme et les clientèles internationales.' },
@@ -86,8 +86,8 @@ export const AGENCY = {
   mission: 'Donner à chaque entreprise marocaine, de l’artisan au groupe, une présence en ligne à la hauteur de son savoir-faire.',
   vision: 'Aujourd’hui, on choisit un restaurant, un médecin ou un fournisseur en quelques secondes, sur Google ou auprès d’une IA. Notre rôle : faire en sorte que la réponse soit vous, avec les bonnes informations, dans chaque métier et chaque ville du Maroc.',
   story: 'Digilago est née à El Jadida d’un constat simple : le savoir-faire des entreprises marocaines est immense, leur visibilité en ligne ne l’est pas encore. Nous avons commencé avec des écoles, puis des commerces, des cliniques et des cabinets. Chaque projet est construit à la main, avec les technologies d’aujourd’hui et l’exigence d’un grand groupe.',
-  values: [['Exigence', 'Aucun modèle générique. Chaque ligne de code est écrite pour son propriétaire.'], ['Résultats', 'Un site existe pour être trouvé et générer des contacts. Tout est mesuré dans ce sens.'], ['Transparence', 'Première version offerte, prix annoncé avant de commencer, aucun frais caché.'], ['Durée', 'Nous restons après le lancement : hébergement, sécurité, évolutions.']],
-  numbers: [['72 h', 'pour une première version'], ['0 MAD', 'avant validation'], ['16', 'métiers couverts'], ['100 %', 'code écrit à la main']],
+  values: [['Exigence', 'Aucun modèle générique. Chaque ligne de code est écrite pour son propriétaire.'], ['Résultats', 'Un site existe pour être trouvé et générer des contacts. Tout est mesuré dans ce sens.'], ['Transparence', 'Vous ne payez que si le résultat vous plaît, prix annoncé avant de commencer, aucun frais caché.'], ['Durée', 'Nous restons après le lancement : hébergement, sécurité, évolutions.']],
+  numbers: [['72 h', 'pour une première version'], ['0 MAD', 'si le résultat ne vous plaît pas'], ['16', 'métiers couverts'], ['100 %', 'code écrit à la main']],
 };
 
 /* ------------------------------ Lago Labs ------------------------------ */
@@ -197,7 +197,7 @@ export const INSIDE = [
 /* Anatomie d’un projet : une vraie séquence */
 export const PROCESS = [
   { t: 'Écoute', d: 'Un appel de dix minutes pour comprendre votre activité, vos clients et vos objectifs.', out: 'Fiche projet' },
-  { t: 'Première version', d: 'Sous 72 heures, un site réel avec vos informations. Offert, sans engagement.', out: 'Lien de démonstration' },
+  { t: 'Première version', d: 'Sous 72 heures, un site réel avec vos informations. Sans engagement : vous ne payez que s’il vous plaît.', out: 'Lien de démonstration' },
   { t: 'Affinage', d: 'Vous commentez, nous ajustons. Trois cycles de retouches sont inclus.', out: 'Design validé' },
   { t: 'Développement', d: 'Code écrit à la main, testé sur téléphone, tablette et ordinateur.', out: 'Site complet et testé' },
   { t: 'Lancement', d: 'Domaine, sécurité, fiche Google, référencement et balisage pour les IA.', out: 'Site public et indexé' },

@@ -1,11 +1,11 @@
 /**
- * Trois langues : français (par défaut, à la racine), anglais (/en) et darija (/ar, de droite à gauche).
+ * Trois langues : français (par défaut, à la racine), anglais (/en) et arabe (/ar, de droite à gauche).
  * Le texte source est le français ; `t()` renvoie sa version dans la langue active (dictionnaire dans dict.ts).
  * La langue est lue dans l'adresse et fixée avant le rendu de la page.
  */
 import { D } from './dict';
 export type Lang = 'fr' | 'en' | 'ar';
-export const LANGS: { id: Lang; label: string; short: string }[] = [{ id: 'fr', label: 'Français', short: 'FR' }, { id: 'en', label: 'English', short: 'EN' }, { id: 'ar', label: 'الدارجة', short: 'دارجة' }];
+export const LANGS: { id: Lang; label: string; short: string }[] = [{ id: 'fr', label: 'Français', short: 'FR' }, { id: 'en', label: 'English', short: 'EN' }, { id: 'ar', label: 'العربية', short: 'عربي' }];
 let cur: Lang = 'fr';
 export const setLang = (l: Lang) => { cur = l; };
 export const lang = () => cur;

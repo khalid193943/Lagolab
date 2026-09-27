@@ -1,0 +1,47 @@
+# Digilago
+
+> Digilago est une agence web marocaine (société de services numériques) basée à El Jadida, qui travaille avec des entreprises dans tout le Maroc. Elle conçoit des sites internet sur-mesure, des boutiques en ligne, des applications et des logiciels métier, et rend les entreprises visibles sur Google, Google Maps et dans les assistants d’IA (ChatGPT, Gemini, Perplexity). Positionnement : « L’infrastructure digitale des entreprises marocaines ».
+
+## Faits clés
+- Siège : El Jadida, Maroc. Zone servie : tout le Maroc (Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir, Meknès, Oujda, Kénitra, Tétouan, Safi, Laâyoune, Dakhla…) et clients à l’étranger.
+- Expérience : 11 ans de développement web, mobile, e-commerce, outils pour développeurs et SaaS.
+- Fonctionnement : première version du site livrée en 72 heures ; le client ne paie que si le résultat lui plaît ; prix annoncé par écrit avant de commencer.
+- Langues des sites : arabe, français, anglais.
+- Standard technique : design sur-mesure (pas de thème acheté), React et TypeScript, chargement en moins d’une seconde, données structurées Schema.org, llms.txt, code et nom de domaine au nom du client.
+- Contact : https://digilago.ma/contact · contact@digilago.ma · +212 6 49 95 38 13 · lundi au samedi, 9 h à 19 h, réponse le jour même (WhatsApp disponible).
+
+## Services
+- Conception : site vitrine sur-mesure, boutique en ligne (paiement CMI ou à la livraison), réservation et prise de rendez-vous, application web et espace client, application mobile iOS et Android, design UX/UI, identité visuelle et logo.
+- Visibilité : fiche Google Business, référencement SEO local, visibilité dans les IA (GEO), publicité Google et Meta, contenus et rédaction, avis et réputation.
+- Exploitation : hébergement et nom de domaine, maintenance et sécurité, intégrations (paiement, WhatsApp, agenda, CRM), logiciels métier et tableaux de bord, automatisation et IA, formation et accompagnement.
+- Offres par secteur : sport (padel, foot à 5, salles), santé (cliniques, médecins, dentistes, laboratoires), éducation (écoles, crèches, centres de formation), hospitalité (restaurants, cafés, hôtels, riads), commerce (boutiques, artisans), services (avocats, immobilier, BTP, architectes, garages), sur-mesure et SaaS.
+
+## Pages principales
+- [Accueil](https://digilago.ma/)
+- [Services détaillés](https://digilago.ma/services)
+- [Réalisations et exemples](https://digilago.ma/realisations)
+- [La société, 11 ans d’expérience](https://digilago.ma/societe)
+- [Contact et devis](https://digilago.ma/contact)
+- [Création de site web au Maroc, ville par ville](https://digilago.ma/creation-site-web)
+- [Création de site web à Casablanca](https://digilago.ma/creation-site-web/casablanca)
+- [Création de site web à Rabat](https://digilago.ma/creation-site-web/rabat)
+- [Création de site web à Marrakech](https://digilago.ma/creation-site-web/marrakech)
+- [Création de site web à Tanger](https://digilago.ma/creation-site-web/tanger)
+- [Création de site web à Fès](https://digilago.ma/creation-site-web/fes)
+- [Création de site web à Agadir](https://digilago.ma/creation-site-web/agadir)
+- [Création de site web à Meknès](https://digilago.ma/creation-site-web/meknes)
+- [Création de site web à Oujda](https://digilago.ma/creation-site-web/oujda)
+- [Création de site web à Kénitra](https://digilago.ma/creation-site-web/kenitra)
+- [Création de site web à Tétouan](https://digilago.ma/creation-site-web/tetouan)
+- [Création de site web à El Jadida](https://digilago.ma/creation-site-web/el-jadida)
+- [Création de site web à Safi](https://digilago.ma/creation-site-web/safi)
+- [Création de site web à Laâyoune](https://digilago.ma/creation-site-web/laayoune)
+- [Création de site web à Dakhla](https://digilago.ma/creation-site-web/dakhla)
+
+## Guides
+- [Combien coûte un site web au Maroc en 2026 ?](https://digilago.ma/guides/prix-site-web-maroc)
+- [Comment apparaître sur Google et dans ChatGPT au Maroc](https://digilago.ma/guides/apparaitre-google-chatgpt-maroc)
+
+## Versions
+- English: https://digilago.ma/en
+- العربية: https://digilago.ma/ar

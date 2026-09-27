@@ -33,8 +33,8 @@ export const Simulator = () => {
   const [name, setName] = useState('Dar Tajine'); const [ti, setT] = useState(0); const [city, setCity] = useState('El Jadida');
   const [trade, what, cta] = TRADES[ti]; const n = name.trim() || t('Votre entreprise'); const c = city.trim() || t('votre ville'); const W = t(what), C = t(cta), TR = t(trade);
   const domain = `${slug(n)}.ma`;
-  const answer = useMemo(() => tv({ fr: `Pour un ${what} à ${c}, je vous recommande ${n}. L’établissement est très bien noté (4,9 sur 5, plus de 200 avis), ses horaires et ses tarifs sont clairs, et vous pouvez ${cta.toLowerCase()} directement sur ${domain}.`, en: `For a ${W} in ${c}, I’d recommend ${n}. It’s very well rated (4.9 out of 5, over 200 reviews), prices and opening hours are clear, and you can ${C.toLowerCase()} directly on ${domain}.`, ar: `إلا كنتي كتقلّب على ${W} فـ${c}، كننصحك بـ${n}. عندهم تقييم مزيان بزاف (4,9 على 5، كثر من 200 رأي)، الأسعار والأوقات واضحين، وتقدر ${C} نيشان من ${domain}.` }), [n, c, what, cta, domain, W, C]);
-  const wa = `https://wa.me/${CONTACT.tel.replace('+', '')}?text=${encodeURIComponent(tv({ fr: `Bonjour Digilago, je veux être trouvé comme dans votre démonstration.\nEntreprise : ${n}\nMétier : ${trade}\nVille : ${c}`, en: `Hello Digilago, I want to be found like in your demo.\nBusiness: ${n}\nTrade: ${TR}\nCity: ${c}`, ar: `السلام ديجيلاغو، بغيت نبان بحال الديمو ديالكم.\nالشركة: ${n}\nالحرفة: ${TR}\nالمدينة: ${c}` }))}`;
+  const answer = useMemo(() => tv({ fr: `Pour un ${what} à ${c}, je vous recommande ${n}. L’établissement est très bien noté (4,9 sur 5, plus de 200 avis), ses horaires et ses tarifs sont clairs, et vous pouvez ${cta.toLowerCase()} directement sur ${domain}.`, en: `For a ${W} in ${c}, I’d recommend ${n}. It’s very well rated (4.9 out of 5, over 200 reviews), prices and opening hours are clear, and you can ${C.toLowerCase()} directly on ${domain}.`, ar: `إذا كنت تبحث عن ${W} في ${c}، فأنصحك بـ${n}. يحظى بتقييم ممتاز (4,9 من 5، أكثر من 200 تقييم)، وأسعاره ومواعيده واضحة، ويمكنك ${C} مباشرة عبر ${domain}.` }), [n, c, what, cta, domain, W, C]);
+  const wa = `https://wa.me/${CONTACT.tel.replace('+', '')}?text=${encodeURIComponent(tv({ fr: `Bonjour Digilago, je veux être trouvé comme dans votre démonstration.\nEntreprise : ${n}\nMétier : ${trade}\nVille : ${c}`, en: `Hello Digilago, I want to be found like in your demo.\nBusiness: ${n}\nTrade: ${TR}\nCity: ${c}`, ar: `مرحبًا ديجيلاغو، أريد أن أظهر مثل العرض التوضيحي.\nالشركة: ${n}\nالنشاط: ${TR}\nالمدينة: ${c}` }))}`;
   const [tab, setTab] = useState(0);
   const field = 'mt-2 w-full h-12 rounded-xl bg-nuit border border-white/12 px-4 text-[16px] text-white placeholder:text-white/30 focus:outline-none focus:border-cyan';
   return (
@@ -56,9 +56,9 @@ export const Simulator = () => {
           <div className="flex items-center gap-2 h-11 px-4 rounded-full ring-1 ring-black/10 text-[14px]"><Search size={16} className="text-black/50" /><span className="truncate">{W} {c}</span></div>
           <AnimatePresence mode="wait"><motion.div key={n + ti + c} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }} className="mt-5">
             <p className="flex items-center gap-2 text-[13px]"><span className="w-7 h-7 rounded-full bg-nuit text-safran flex items-center justify-center text-[11px] font-semibold">{n.slice(0, 2).toUpperCase()}</span><span><span className="block leading-tight">{n}</span><span className="block text-black/55 leading-tight">https://{domain}</span></span></p>
-            <p className="mt-2 text-[19px] leading-snug text-[#1a0dab]">{tv({ fr: `${n} : ${trade.toLowerCase()} à ${c}`, en: `${n} | ${TR} in ${c}`, ar: `${n} | ${TR} فـ${c}` })}</p>
-            <p className="mt-1.5 text-[14px] text-black/65 leading-relaxed">{tv({ fr: `${trade} à ${c}. Horaires, tarifs, photos et avis. ${cta} en ligne, réponse rapide sur WhatsApp.`, en: `${TR} in ${c}. Opening hours, prices, photos and reviews. ${C} online, quick replies on WhatsApp.`, ar: `${TR} فـ${c}. الأوقات، الأسعار، التصاور والآراء. ${C} أونلاين، والجواب زربة فالواتساب.` })}</p>
-            <p className="mt-2 flex items-center gap-2 text-[13px] text-black/60"><Stars /> {tv({ fr: '4,9 · 212 avis', en: '4.9 · 212 reviews', ar: '4,9 · 212 رأي' })}</p>
+            <p className="mt-2 text-[19px] leading-snug text-[#1a0dab]">{tv({ fr: `${n} : ${trade.toLowerCase()} à ${c}`, en: `${n} | ${TR} in ${c}`, ar: `${n} | ${TR} في ${c}` })}</p>
+            <p className="mt-1.5 text-[14px] text-black/65 leading-relaxed">{tv({ fr: `${trade} à ${c}. Horaires, tarifs, photos et avis. ${cta} en ligne, réponse rapide sur WhatsApp.`, en: `${TR} in ${c}. Opening hours, prices, photos and reviews. ${C} online, quick replies on WhatsApp.`, ar: `${TR} في ${c}. الأوقات والأسعار والصور والتقييمات. ${C} عبر الإنترنت، مع رد سريع على واتساب.` })}</p>
+            <p className="mt-2 flex items-center gap-2 text-[13px] text-black/60"><Stars /> {tv({ fr: '4,9 · 212 avis', en: '4.9 · 212 reviews', ar: '4,9 · 212 تقييمًا' })}</p>
             <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-[14px] text-[#1a0dab]">{[cta, 'Horaires et accès', 'Nos services', 'Contact'].map((x) => <span key={x}>{t(x)}</span>)}</div>
           </motion.div></AnimatePresence>
         </div>
@@ -72,14 +72,14 @@ export const Simulator = () => {
           <div className="p-5 flex-1 flex flex-col">
             <p className="text-[19px] font-medium">{n}</p>
             <p className="mt-1 flex items-center gap-2 text-[13px] text-black/60">4,9 <Stars /> (212) · {TR}</p>
-            <p className="mt-1 text-[13px]"><span className="text-[#188038]">{t('Ouvert')}</span> <span className="text-black/60">· {tv({ fr: 'Ferme à 23:00', en: 'Closes 11 PM', ar: 'كيسدّ مع 23:00' })}</span></p>
+            <p className="mt-1 text-[13px]"><span className="text-[#188038]">{t('Ouvert')}</span> <span className="text-black/60">· {tv({ fr: 'Ferme à 23:00', en: 'Closes 11 PM', ar: 'يغلق على الساعة 23:00' })}</span></p>
             <div className="mt-auto pt-4 grid grid-cols-4 gap-2 text-[12px] text-[#1a73e8]">{[[Navigation, 'Itinéraire'], [Phone, 'Appeler'], [Globe, 'Site web'], [Check, 'Réserver']].map(([I, l]: any) => <span key={l} className="flex flex-col items-center gap-1.5"><span className="w-9 h-9 rounded-full ring-1 ring-black/10 flex items-center justify-center"><I size={16} /></span>{t(l)}</span>)}</div>
           </div>
         </div>
 
         {/* Réponse d'un assistant IA */}
         <div className={`${tab === 2 ? 'flex' : 'hidden'} lg:flex rounded-2xl bg-[#0E1830] ring-1 ring-white/10 p-5 min-h-[300px] flex-col gap-3 text-[14.5px]`}>
-          <p className="self-end max-w-[85%] rounded-2xl rounded-ee-md bg-white/10 px-4 py-2.5">{tv({ fr: `Tu me conseilles un ${what} à ${c} ?`, en: `Can you recommend a ${W} in ${c}?`, ar: `شنو تنصحني فشي ${W} فـ${c}؟` })}</p>
+          <p className="self-end max-w-[85%] rounded-2xl rounded-ee-md bg-white/10 px-4 py-2.5">{tv({ fr: `Tu me conseilles un ${what} à ${c} ?`, en: `Can you recommend a ${W} in ${c}?`, ar: `بماذا تنصحني من ${W} في ${c}؟` })}</p>
           <div className="flex gap-3"><span className="w-8 h-8 shrink-0 rounded-full bg-cyan/15 text-cyan flex items-center justify-center"><Sparkles size={15} /></span><p className="leading-relaxed text-white/90"><Typed text={answer} /></p></div>
         </div>
       </div>
@@ -120,7 +120,7 @@ export const Sectors = ({ images }: { images: Record<string, string> }) => {
             <span className={`lg:hidden absolute start-6 top-1/2 -translate-y-1/2 font-display text-[19px] transition-opacity ${on ? 'opacity-0' : ''}`}>{t(p.name.replace('Pack ', ''))}</span>
             <span className={`absolute inset-x-0 bottom-0 p-6 md:p-8 transition-all duration-500 ${on ? 'opacity-100 translate-y-0 delay-200' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
               <span className="kicker">{t(p.for)}</span>
-              <span className="block mt-2 font-display text-[clamp(1.8rem,2.6vw,2.4rem)] leading-tight">{t(p.name.replace('Pack ', ''))}</span>
+              <span className="block mt-2 font-display text-[clamp(1.62rem,2.34vw,2.16rem)] leading-tight">{t(p.name.replace('Pack ', ''))}</span>
               <span className="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2 max-w-[40rem]">{p.items.slice(0, 4).map((x) => <span key={x} className="flex gap-2 text-[14.5px] text-white/85"><Check size={16} className="text-cyan shrink-0 mt-0.5" />{t(x)}</span>)}</span>
               <span className="mt-5 inline-flex items-center gap-2 text-safran text-[15px] font-medium">{t('Voir l’offre')} <ArrowRight size={16} /></span>
             </span>

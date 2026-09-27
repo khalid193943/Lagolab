@@ -22,8 +22,8 @@ p { text-wrap: pretty; }
 ::selection { background: var(--color-safran); color: var(--color-nuit); }
 :focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 3px; border-radius: 4px; }
 @layer components {
-  .wrap { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 3rem); }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; height: 3.1rem; padding: 0 1.4rem; border-radius: 999px; font-weight: 600; font-size: 15px; transition: background .25s, color .25s, box-shadow .25s, transform .2s; white-space: nowrap; }
+  .wrap { width: 100%; max-width: 1520px; margin-inline: auto; padding-inline: clamp(1.25rem, 3.4vw, 3.5rem); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; height: 3.1rem; padding: 0 1.55rem 0 1.3rem; border-radius: 0 999px 999px 0; font-weight: 600; font-size: 15px; transition: background .25s, color .25s, box-shadow .25s, transform .2s; white-space: nowrap; }
   .btn:active { transform: scale(.97); }
   .btn-safran { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, #F7C25A, #F0AC2E); color: var(--color-nuit); box-shadow: 0 1px 0 rgba(255,255,255,.35) inset, 0 10px 30px -12px rgba(244,181,63,.6); }
   .btn-safran::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-120%); transition: transform .8s cubic-bezier(.16,1,.3,1); }
@@ -95,9 +95,13 @@ html[dir="rtl"] .origin-left { transform-origin: right; }
 @keyframes chat-pulse { 0% { box-shadow: 0 0 0 0 rgba(244,181,63,.45) } 70% { box-shadow: 0 0 0 14px rgba(244,181,63,0) } 100% { box-shadow: 0 0 0 0 rgba(244,181,63,0) } }
 .chat-pulse { animation: chat-pulse 2.6s ease-out infinite; }
 
+/* Toutes les formes de bouton suivent le D du logo */
+.d-shape { border-radius: 0 999px 999px 0 !important; }
+
 /* Bouton « D étiré » : bord gauche droit comme la barre du D, bord droit en demi-cercle */
 .btn-d { height: 3.6rem; border-radius: 0 999px 999px 0; padding-inline: 1.5rem 1.1rem; gap: 1rem; justify-content: space-between; font-size: 16px; }
-.btn-d::before { content: ''; position: absolute; inset-block: 0; left: 0; width: 5px; background: linear-gradient(180deg, #FFD37A, #E9A233); }
+.btn-safran::before { content: ''; position: absolute; inset-block: 0; left: 0; width: 4px; background: linear-gradient(180deg, #FFD37A, #E3981F); }
+.btn-d::before { width: 5px; }
 .btn-d .d-wave path { stroke-dasharray: 1; stroke-dashoffset: 0; }
 .btn-d .d-wave circle { transform-box: fill-box; transform-origin: center; animation: d-dot 2.8s ease-in-out infinite; }
 .btn-d:hover .d-wave path, .btn-d:focus-visible .d-wave path { animation: d-draw .9s cubic-bezier(.65,0,.35,1); }
@@ -105,3 +109,7 @@ html[dir="rtl"] .origin-left { transform-origin: right; }
 @keyframes d-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @keyframes d-pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
 @keyframes d-dot { 0%, 100% { filter: drop-shadow(0 0 0 rgba(45,212,230,0)); } 50% { filter: drop-shadow(0 0 4px rgba(45,212,230,.9)); } }
+
+/* Icônes au trait : couleur selon le fond */
+.ico { color: var(--color-encre); }
+.dark .ico { color: var(--color-safran); filter: drop-shadow(0 0 16px rgba(244,181,63,.28)); }

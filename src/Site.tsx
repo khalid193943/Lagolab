@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { t, tv, L, LANGS, Lang, setLang, langFromPath, stripLang } from './i18n';
 import { BrowserRouter, HashRouter, Routes, Route, Link, NavLink, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, useScroll, useSpring, useTransform, useReducedMotion, useInView } from 'motion/react';
@@ -7,13 +7,23 @@ import { Menu, X, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { CONTACT } from './data';
 import { Logo, Mark, MARK, Wordmark } from './ui';
 import { ScrollText } from './fx';
-import { SnakeButton } from './snake';
-import { ChatBot, Launcher, openChat } from './chat';
+import { ChatBot } from './chat';
+import { Newsletter } from './Newsletter';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import Realisations from './pages/Realisations';
-import Societe from './pages/Societe';
-import Contact from './pages/Contact';
+import { LegalLinks } from './pages/Legal';
+import { CITIES } from './cities';
+/* Les pages hors accueil sont chargées à la demande : le premier affichage est plus léger */
+const Services = lazy(() => import('./pages/Services'));
+const Realisations = lazy(() => import('./pages/Realisations'));
+const Societe = lazy(() => import('./pages/Societe'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const Mentions = lazy(() => import('./pages/Legal').then((m) => ({ default: m.Mentions })));
+const Privacy = lazy(() => import('./pages/Legal').then((m) => ({ default: m.Privacy })));
+const CityPage = lazy(() => import('./pages/City').then((m) => ({ default: m.CityPage })));
+const CitiesHub = lazy(() => import('./pages/City').then((m) => ({ default: m.CitiesHub })));
+const GuidesHub = lazy(() => import('./pages/Guides').then((m) => ({ default: m.GuidesHub })));
+const ArticlePage = lazy(() => import('./pages/Guides').then((m) => ({ default: m.ArticlePage })));
 
 const LINKS: [string, string][] = [['Services', '/services'], ['Réalisations', '/realisations'], ['Société', '/societe'], ['Contact', '/contact']];
 
@@ -24,13 +34,13 @@ const Nav = () => {
   useEffect(() => { document.documentElement.style.overflow = open ? 'hidden' : ''; return () => { document.documentElement.style.overflow = ''; }; }, [open]);
   return (
     <>
-    <header style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }} className={`fixed inset-x-0 top-0 z-[59] transition-colors duration-300 ${solid || open ? 'bg-nuit/92 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
+    <header style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }} className={`fixed inset-x-0 top-0 z-[59] transition-colors duration-300 ${solid || open || /\/realisations$/.test(pathname) ? 'bg-nuit/92 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
       <nav className="wrap h-[76px] flex items-center justify-between gap-6" aria-label={t('Navigation principale')}>
         <Link to={L('/')} aria-label={t('Digilago, accueil')}><Logo draw /></Link>
         <div className="hidden lg:flex items-center h-11 px-1.5 rounded-full bg-white/[0.04] ring-1 ring-white/10 backdrop-blur-md">{LINKS.map(([l, h]) => <NavLink key={h} to={L(h)} className={({ isActive }) => `navlink h-8 px-4 flex items-center rounded-full text-[14.5px] transition-colors ${isActive ? 'bg-white/10 text-white' : 'text-white/70 hover:text-white'}`}>{t(l)}</NavLink>)}</div>
         <div className="flex items-center gap-3">
           <LangSwitch className="hidden md:flex" />
-          <SnakeButton to={L('/contact')} className="hidden sm:inline-flex" linkClass="!h-11">{t('Première version gratuite')}</SnakeButton>
+          <Link to={L('/contact')} className="btn btn-safran !h-11 hidden sm:inline-flex">{t('Commencer ma présence en ligne')}</Link>
           <button onClick={() => setOpen(!open)} className="lg:hidden w-11 h-11 flex items-center justify-center rounded-full ring-1 ring-white/15" aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={open}>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
       </nav>
@@ -47,7 +57,7 @@ const Nav = () => {
             ))}
             <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}><LangSwitch className="w-fit" /></motion.div>
             <motion.div className="mt-auto pt-10 grid gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
-              <SnakeButton to={L('/contact')} className="flex">{t('Première version gratuite')}</SnakeButton>
+              <Link to={L('/contact')} className="btn btn-safran">{t('Commencer ma présence en ligne')}</Link>
               <div className="grid grid-cols-2 gap-3"><a href={`tel:${CONTACT.tel}`} className="btn btn-line"><Phone size={16} /> {t('Appeler')}</a><a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-line"><MessageCircle size={16} /> WhatsApp</a></div>
               <p className="mt-2 text-[13px] text-brume text-center">{t('El Jadida · Réponse le jour même')}</p>
             </motion.div>
@@ -114,7 +124,7 @@ const Footer = () => (
   <footer className="dark relative overflow-hidden border-t border-white/10">
     <div className="wrap pt-24">
       <div className="grid lg:grid-cols-12 gap-10 items-end">
-        <div className="lg:col-span-8"><p className="kicker">{t('Un projet en tête ?')}</p><ScrollText text={t('Parlons-en autour d’un premier aperçu.')} className="mt-4 text-[clamp(2.2rem,4.6vw,4.2rem)] max-w-[18ch]" /></div>
+        <div className="lg:col-span-8"><p className="kicker">{t('Un projet en tête ?')}</p><ScrollText text={t('Parlons-en autour d’un premier aperçu.')} className="mt-4 text-[clamp(1.98rem,4.14vw,3.78rem)] max-w-[18ch]" /></div>
         <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end"><Link to={L('/contact')} className="btn btn-safran">{t('Démarrer un projet')}</Link><a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-line">WhatsApp</a></div>
       </div>
       <div className="mt-16 pt-10 border-t border-white/10 grid gap-10 grid-cols-2 lg:grid-cols-4 text-[15px]">
@@ -124,24 +134,19 @@ const Footer = () => (
         <p className="text-brume">{t('Du lundi au samedi')}<br />{t('de 9 h à 19 h')}<br />{t('Réponse le jour même')}</p>
       </div>
     </div>
+    <div className="wrap mt-14"><Newsletter /></div>
+    <div className="wrap mt-14 pt-8 border-t border-white/10 grid gap-6 lg:grid-cols-12 text-[14px]">
+      <p className="lg:col-span-3 font-display text-[15px] text-white">{tv({ fr: 'Création de site web au Maroc', en: 'Website design in Morocco', ar: 'تصميم المواقع في المغرب' })}</p>
+      <ul className="lg:col-span-9 flex flex-wrap gap-x-5 gap-y-2 text-brume">
+        {CITIES.map((c) => <li key={c.slug}><Link to={L(`/creation-site-web/${c.slug}`)} className="hover:text-white transition-colors">{tv(c.name)}</Link></li>)}
+        <li><Link to={L('/guides')} className="text-safran hover:text-white transition-colors">{tv({ fr: 'Guides', en: 'Guides', ar: 'الأدلة' })}</Link></li>
+      </ul>
+    </div>
     <Signature />
-    <div className="wrap pb-28 lg:pb-8 flex flex-wrap justify-between gap-4 text-[13px] text-brume/70"><span>© {new Date().getFullYear()} Digilago. {t('Tous droits réservés.')}</span><span className="flex items-center gap-4"><LangSwitch />{t('Conçu et codé à El Jadida.')}</span></div>
+    <div className="wrap pb-24 lg:pb-8 flex flex-wrap justify-between gap-4 text-[13px] text-brume/70"><span className="flex flex-wrap items-center gap-x-5 gap-y-2"><span>© {new Date().getFullYear()} Digilago. {t('Tous droits réservés.')}</span><LegalLinks /></span><span className="flex items-center gap-4"><LangSwitch />{t('Conçu et codé à El Jadida.')}</span></div>
   </footer>
 );
 
-/* Barre d'actions mobile, façon application : se cache quand on descend, revient quand on remonte */
-const Dock = () => {
-  const [hide, setHide] = useState(false);
-  useEffect(() => { let last = window.scrollY; const f = () => { const y = window.scrollY; if (Math.abs(y - last) > 8) { setHide(y > last && y > 400); last = y; } }; window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f); }, []);
-  return (
-    <div className={`lg:hidden fixed inset-x-3 z-[55] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${hide ? 'translate-y-[140%]' : 'translate-y-0'}`} style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}>
-      <div className="flex items-center gap-2 p-1.5 rounded-full bg-nuit-2/90 backdrop-blur-xl ring-1 ring-white/12 shadow-[0_20px_50px_-20px_rgba(0,0,0,.9)]">
-        <Launcher small onClick={openChat} label={tv({ fr: 'Ouvrir le chat', en: 'Open chat', ar: 'حلّ الشات' })} />
-        <SnakeButton to={L('/contact')} className="flex flex-1" linkClass="!h-12 !text-[14.5px]" gap={3.5} amp={1.6} thick={4.4} lap={3.2}>{t('Première version gratuite')}</SnakeButton>
-      </div>
-    </div>
-  );
-};
 
 /* Sélecteur de langue : même page, autre langue */
 const LangSwitch = ({ className = '' }: { className?: string }) => {
@@ -154,17 +159,16 @@ const LangSwitch = ({ className = '' }: { className?: string }) => {
 };
 
 const META: Record<Lang, [string, string]> = {
-  fr: ['Digilago — Le numérique qui fait venir vos clients', 'Digilago conçoit, référence et opère les sites, applications et logiciels des entreprises marocaines. Première version offerte en 72 h.'],
-  en: ['Digilago — Digital that brings you customers', 'Digilago designs, ranks and runs websites, apps and software for Moroccan businesses. Your first version free in 72 hours.'],
-  ar: ['ديجيلاغو — الديجيتال اللي كيجيب ليك الكليان', 'ديجيلاغو كتصمّم، كتبرّز وكتسيّر المواقع والتطبيقات والبرامج ديال الشركات المغربية. النسخة الأولى فابور فـ 72 ساعة.'],
+  fr: ['Digilago — L’infrastructure digitale des entreprises marocaines', 'Digilago conçoit, référence et opère les sites, applications et logiciels des entreprises marocaines. Première version en 72 h : vous ne payez que si elle vous plaît.'],
+  en: ['Digilago — The digital infrastructure for Moroccan businesses', 'Digilago designs, ranks and runs websites, apps and software for Moroccan businesses. First version in 72 hours: you only pay if you love it.'],
+  ar: ['ديجيلاغو — البنية التحتية الرقمية للشركات المغربية', 'تصمّم ديجيلاغو المواقع والتطبيقات والبرمجيات للشركات المغربية وتحسّن ظهورها وتتولى تشغيلها. النسخة الأولى خلال 72 ساعة، ولا تدفع إلا إذا نالت إعجابك.'],
 };
 
 const Shell = () => {
   const { pathname, hash } = useLocation();
   const lng = langFromPath(pathname); setLang(lng); const base = lng === 'fr' ? '' : '/' + lng;
   useEffect(() => {
-    const h = document.documentElement; h.lang = lng === 'ar' ? 'ar-MA' : lng; h.dir = lng === 'ar' ? 'rtl' : 'ltr';
-    document.title = META[lng][0]; document.querySelector('meta[name="description"]')?.setAttribute('content', META[lng][1]);
+    const h = document.documentElement; h.lang = lng; h.dir = lng === 'ar' ? 'rtl' : 'ltr';
   }, [lng]);
   useEffect(() => { if (hash) { const el = document.getElementById(hash.slice(1)); if (el) { setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 80); return; } } window.scrollTo(0, 0); }, [pathname, hash]);
   return (
@@ -175,12 +179,19 @@ const Shell = () => {
       <Nav key={'n' + lng} />
       <main id="contenu">
         <motion.div key={pathname + lng} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45 }}>
+        <Suspense fallback={<div className="min-h-[100svh]" />}>
         <Routes>
           <Route path={base || '/'} element={<Home />} />
           <Route path={base + '/services'} element={<Services />} />
           <Route path={base + '/realisations'} element={<Realisations />} />
           <Route path={base + '/societe'} element={<Societe />} />
           <Route path={base + '/contact'} element={<Contact />} />
+          <Route path={base + '/mentions-legales'} element={<Mentions />} />
+          <Route path={base + '/confidentialite'} element={<Privacy />} />
+          <Route path={base + '/creation-site-web'} element={<CitiesHub />} />
+          <Route path={base + '/creation-site-web/:ville'} element={<CityPage />} />
+          <Route path={base + '/guides'} element={<GuidesHub />} />
+          <Route path={base + '/guides/:slug'} element={<ArticlePage />} />
           {/* Anciennes adresses du site précédent */}
           <Route path="/web" element={<Navigate to="/" replace />} />
           <Route path="/web/services" element={<Navigate to="/services" replace />} />
@@ -189,16 +200,27 @@ const Shell = () => {
           <Route path="/web/realisations" element={<Navigate to="/realisations" replace />} />
           <Route path="/web/entreprises" element={<Navigate to="/societe" replace />} />
           <Route path="/web/contact" element={<Navigate to="/contact" replace />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
         </motion.div>
       </main>
       <Footer key={'f' + lng} />
       <ChatBot key={'c' + lng} />
-      <Dock key={'d' + lng} />
     </>
   );
 };
 
 const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter;
-export default function Site() { return <Router><Shell /></Router>; }
+const AdminApp = lazy(() => import('./admin/AdminApp'));
+/* /admin : espace privé, sans l'habillage du site public */
+export default function Site() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/admin/*" element={<Suspense fallback={<div className="min-h-[100svh] bg-[#081122]" />}><AdminApp /></Suspense>} />
+        <Route path="*" element={<Shell />} />
+      </Routes>
+    </Router>
+  );
+}

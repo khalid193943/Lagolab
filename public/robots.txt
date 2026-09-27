@@ -1,3 +1,26 @@
+# Digilago : toutes les pages publiques sont ouvertes aux moteurs de recherche et aux IA.
 User-agent: *
 Allow: /
+Disallow: /admin
+
+# Moteurs d'IA et assistants (GEO) : bienvenue.
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://digilago.ma/sitemap.xml

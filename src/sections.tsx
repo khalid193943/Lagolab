@@ -8,6 +8,7 @@ import { LIBRARY, WORK, PILLARS, PROCESS, INSIDE, FAQ, SECTORS, CONTACT, IMG, Co
 import { Reveal, Img, Head, Swipe, MARK } from './ui';
 import { ScrollText, spot } from './fx';
 import { Icon3D } from './icons';
+import { submitLead, waLink, Lead } from './form';
 import { Gem, Code2, Zap, Smartphone, ScanEye, Languages, KeyRound, SlidersHorizontal } from 'lucide-react';
 const INSIDE_ICONS = [Gem, Code2, Zap, Smartphone, ScanEye, Languages, KeyRound, SlidersHorizontal];
 
@@ -32,9 +33,9 @@ const TileCard = ({ t, onOpen }: { t: Tile; onOpen: (t: Tile) => void }) => (
 export const FaitPar = ({ compact = false }: { compact?: boolean }) => {
   const [open, setOpen] = useState<Tile | null>(null); const rows = rowsOf();
   return (
-    <section id="fait" className="dark relative overflow-hidden py-20 md:py-24 lg:py-32">
+    <section id="fait" className="dark relative overflow-hidden py-32 md:py-40 lg:py-52">
       <div className="wrap relative z-10">
-        <ScrollText by="char" text="#FaitParDigilago" className="font-display !font-semibold text-[clamp(2.6rem,8.4vw,8rem)] leading-[0.9] !tracking-[-0.055em] text-safran break-all sm:break-normal" />
+        <ScrollText by="char" text="#FaitParDigilago" className="font-display !font-semibold text-[clamp(2.34rem,7.56vw,7.2rem)] leading-[0.9] !tracking-[-0.055em] text-safran break-all sm:break-normal" />
         <Reveal delay={0.1} className="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-6 max-w-none"><p className="text-brume text-[17px] max-w-[52ch]">{t('Des établissements réels et des concepts pour seize métiers. Survolez pour découvrir chaque site, cliquez pour l’ouvrir en grand.')}</p>{!compact && <Link to={L('/realisations')} className="btn btn-line shrink-0">{t('Toutes les réalisations')} <ArrowUpRight size={16} /></Link>}</Reveal>
       </div>
       <div className="relative mt-10 h-[430px] md:h-[680px] overflow-hidden">
@@ -81,7 +82,7 @@ export const Pillars = () => (
 export const Inside = () => (
   <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-3xl overflow-hidden ring-1 ring-white/10">
     {INSIDE.map(([tt, d], i) => (
-      <Reveal key={tt} delay={(i % 4) * 0.05} className="h-full bg-nuit"><div onMouseMove={spot} className="spot h-full p-5 sm:p-8"><Icon3D Icon={INSIDE_ICONS[i]} className="w-14 h-14 sm:w-[72px] sm:h-[72px]" /><h3 className="mt-5 sm:mt-6 text-[16.5px] sm:text-[20px] leading-snug">{t(tt)}</h3><p className="mt-2 sm:mt-3 text-[13.5px] sm:text-[15px] leading-relaxed text-brume">{t(d)}</p></div></Reveal>
+      <Reveal key={tt} delay={(i % 4) * 0.05} className="h-full bg-nuit"><div onMouseMove={spot} className="spot h-full p-5 sm:p-8"><Icon3D Icon={INSIDE_ICONS[i]} className="w-12 h-12 sm:w-14 sm:h-14" stroke={1.35} /><h3 className="mt-5 sm:mt-6 text-[16.5px] sm:text-[20px] leading-snug">{t(tt)}</h3><p className="mt-2 sm:mt-3 text-[13.5px] sm:text-[15px] leading-relaxed text-brume">{t(d)}</p></div></Reveal>
     ))}
   </div>
 );
@@ -113,30 +114,52 @@ export const Faq = () => {
 
 /* ---------------- Grand appel final + formulaire WhatsApp ---------------- */
 export const FinalCTA = () => {
-  const [f, setF] = useState({ name: '', city: '', phone: '', sector: 'Restaurants' });
-  const send = (e: React.FormEvent) => { e.preventDefault(); window.open(`https://wa.me/${CONTACT.tel.replace('+', '')}?text=${encodeURIComponent(`Bonjour Digilago, je veux ma première version gratuite.\nEntreprise : ${f.name}\nVille : ${f.city}\nMétier : ${f.sector}\nTéléphone : ${f.phone}`)}`, '_blank'); };
+  const [f, setF] = useState({ name: '', city: '', phone: '', sector: 'Restaurants', consent: false, website: '' });
+  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'fallback'>('idle');
+  const [err, setErr] = useState('');
+  const lead: Lead = { name: f.name.trim(), company: f.name.trim(), city: f.city.trim(), phone: f.phone.trim(), sector: f.sector, source: 'formulaire rapide' };
+  const send = async (e: React.FormEvent) => {
+    e.preventDefault(); if (f.website) return;
+    if (!lead.name || !lead.city || !lead.phone) { setErr(tv({ fr: 'Merci de remplir l’entreprise, la ville et le téléphone.', en: 'Please fill in your business, city and phone.', ar: 'يرجى إدخال اسم الشركة والمدينة ورقم الهاتف.' })); return; }
+    if (!f.consent) { setErr(tv({ fr: 'Merci d’accepter l’utilisation de vos données pour vous répondre.', en: 'Please agree to the use of your data so we can reply.', ar: 'يرجى الموافقة على استخدام بياناتك للرد عليك.' })); return; }
+    setErr(''); setState('sending');
+    const ok = await submitLead(lead); setState(ok ? 'sent' : 'fallback'); if (!ok) window.open(waLink(lead), '_blank');
+  };
+  const input = 'mt-2 w-full h-12 rounded-xl bg-nuit border border-white/10 px-4 text-[16px] text-white placeholder:text-white/30 focus:outline-none focus:border-cyan';
   return (
-    <section id="demarrer" className="dark relative overflow-hidden py-20 md:py-24 lg:py-32">
+    <section id="demarrer" className="dark relative overflow-hidden py-32 md:py-40 lg:py-52">
       <Img src={IMG.zellige} alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
       <div className="absolute inset-0 rtl-flip bg-gradient-to-r from-nuit via-nuit/85 to-nuit/30" />
       <div className="wrap relative grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-6"><Reveal><p className="kicker">{t('Sans engagement')}</p></Reveal><ScrollText text={t('Votre première version, en 72 heures.')} className="mt-4 text-[clamp(2.4rem,5vw,4.4rem)]" /><Reveal delay={0.1}><p className="mt-6 text-[18px] text-brume max-w-[46ch]">{t('Indiquez le nom de votre entreprise et votre ville. Vous découvrez un site réel à votre image, puis vous décidez. Aucun paiement avant validation.')}</p></Reveal></div>
+        <div className="lg:col-span-6"><Reveal><p className="kicker">{t('Sans engagement')}</p></Reveal><ScrollText text={t('Votre première version, en 72 heures.')} className="mt-4 text-[clamp(2.16rem,4.5vw,3.96rem)]" /><Reveal delay={0.1}><p className="mt-6 text-[18px] text-brume max-w-[46ch]">{t('Indiquez le nom de votre entreprise et votre ville. Vous découvrez un site réel à votre image, puis vous décidez. Vous ne payez que si le résultat vous plaît.')}</p></Reveal></div>
         <Reveal delay={0.1} className="lg:col-span-6">
-          <form onSubmit={send} className="rounded-3xl bg-nuit-2/90 backdrop-blur ring-1 ring-white/10 p-6 md:p-8 grid sm:grid-cols-2 gap-4">
-            {([['name', 'Entreprise', 'Nom de votre entreprise'], ['city', 'Ville', 'El Jadida, Casablanca…'], ['phone', 'Téléphone', '06 …']] as const).map(([k, l, p]) => (
-              <label key={k} className="text-[14px] text-brume">{t(l)}<input required={k !== 'phone'} placeholder={t(p)} value={(f as any)[k]} onChange={(e) => setF({ ...f, [k]: e.target.value })} className="mt-2 w-full h-12 rounded-xl bg-nuit border border-white/10 px-4 text-[16px] text-white placeholder:text-white/30 focus:outline-none focus:border-cyan" /></label>
+          <AnimatePresence mode="wait">{state === 'sent' || state === 'fallback' ? (
+            <motion.div key="ok" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} className="rounded-3xl bg-nuit-2/90 backdrop-blur ring-1 ring-white/10 p-8 md:p-10 text-center">
+              <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 300, damping: 14 }} className="mx-auto w-14 h-14 rounded-full bg-safran text-nuit flex items-center justify-center"><Check size={26} strokeWidth={2.4} /></motion.span>
+              <p className="mt-5 font-display text-[24px]">{state === 'sent' ? tv({ fr: 'Merci, c’est bien reçu.', en: 'Thank you, we’ve got it.', ar: 'شكرًا لك، وصلنا طلبك.' }) : tv({ fr: 'Votre demande est prête dans WhatsApp.', en: 'Your request is ready in WhatsApp.', ar: 'طلبك جاهز في واتساب.' })}</p>
+              <p className="mt-2 text-brume">{tv({ fr: 'Nous vous rappelons aujourd’hui, du lundi au samedi.', en: 'We’ll call you back today, Monday to Saturday.', ar: 'سنتصل بك اليوم، من الاثنين إلى السبت.' })}</p>
+              <a href={waLink(lead)} target="_blank" rel="noopener noreferrer" className="btn btn-safran mt-6">WhatsApp</a>
+            </motion.div>
+          ) : (
+          <motion.form key="f" exit={{ opacity: 0 }} onSubmit={send} noValidate className="rounded-3xl bg-nuit-2/90 backdrop-blur ring-1 ring-white/10 p-6 md:p-8 grid sm:grid-cols-2 gap-4">
+            {([['name', 'Entreprise', 'Nom de votre entreprise', 'organization'], ['city', 'Ville', 'El Jadida, Casablanca…', 'address-level2'], ['phone', 'Téléphone', '06 …', 'tel']] as const).map(([k, l, p, ac]) => (
+              <label key={k} className="text-[14px] text-brume">{t(l)} *<input placeholder={t(p)} autoComplete={ac} type={k === 'phone' ? 'tel' : 'text'} dir={k === 'phone' ? 'ltr' : undefined} value={(f as any)[k]} onChange={(e) => setF({ ...f, [k]: e.target.value })} className={input} /></label>
             ))}
-            <label className="text-[14px] text-brume">{t('Métier')}<select value={f.sector} onChange={(e) => setF({ ...f, sector: e.target.value })} className="mt-2 w-full h-12 rounded-xl bg-nuit border border-white/10 px-4 text-[16px] text-white focus:outline-none focus:border-cyan">{SECTORS.map((s) => <option key={s.id} value={s.short}>{t(s.short)}</option>)}<option>{t('Autre')}</option></select></label>
+            <label className="text-[14px] text-brume">{t('Métier')}<select value={f.sector} onChange={(e) => setF({ ...f, sector: e.target.value })} className={input}>{SECTORS.map((s) => <option key={s.id} value={s.short}>{t(s.short)}</option>)}<option value="Autre">{t('Autre')}</option></select></label>
+            <input tabIndex={-1} autoComplete="off" name="website" value={f.website} onChange={(e) => setF({ ...f, website: e.target.value })} aria-hidden className="absolute -start-[9999px] w-px h-px opacity-0" />
+            <label className="sm:col-span-2 flex items-start gap-3 text-[13.5px] text-brume cursor-pointer"><input type="checkbox" checked={f.consent} onChange={(e) => setF({ ...f, consent: e.target.checked })} className="mt-0.5 w-5 h-5 accent-[#F4B53F] shrink-0" /><span>{tv({ fr: 'J’accepte que Digilago utilise ces informations pour me répondre (', en: 'I agree that Digilago may use this information to reply to me (', ar: 'أوافق على أن تستخدم ديجيلاغو هذه المعلومات للرد عليّ (' })}<Link to={L('/confidentialite')} className="text-white underline underline-offset-4">{tv({ fr: 'confidentialité', en: 'privacy', ar: 'الخصوصية' })}</Link>).</span></label>
+            {err && <p className="sm:col-span-2 text-[13px] text-[#FF8A7A]">{err}</p>}
             {/* Bouton en forme de D : bord gauche droit, bord droit arrondi, et la vague du logo dans la courbe */}
-            <button className="btn btn-safran btn-d sm:col-span-2 mt-3" style={{ direction: 'ltr' }}>
-              <span dir="auto" className="flex-1 text-start">{t('Recevoir ma première version')}</span>
+            <button disabled={state === 'sending'} className="btn btn-safran btn-d sm:col-span-2 mt-1 disabled:opacity-70" style={{ direction: 'ltr' }}>
+              <span dir="auto" className="flex-1 text-start">{state === 'sending' ? tv({ fr: 'Envoi en cours…', en: 'Sending…', ar: 'جارٍ الإرسال…' }) : t('Commencer ma présence en ligne')}</span>
               <svg viewBox="17 22 31 17" className="d-wave w-11 h-6 shrink-0" aria-hidden>
                 <path d={MARK.wave} pathLength={1} fill="none" stroke="#0A1428" strokeWidth="3.6" strokeLinecap="round" />
                 <circle cx={MARK.dot.cx} cy={MARK.dot.cy} r={MARK.dot.r} fill="#0E8FA0" />
               </svg>
             </button>
-            <p className="sm:col-span-2 text-[13px] text-brume">{t('Votre demande s’ouvre dans WhatsApp. Réponse le jour même, du lundi au samedi.')}</p>
-          </form>
+            <p className="sm:col-span-2 text-[13px] text-brume">{tv({ fr: 'Réponse le jour même, du lundi au samedi.', en: 'Same-day reply, Monday to Saturday.', ar: 'نرد في اليوم نفسه، من الاثنين إلى السبت.' })}</p>
+          </motion.form>
+          )}</AnimatePresence>
         </Reveal>
       </div>
     </section>

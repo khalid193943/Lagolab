@@ -1,1 +1,7 @@
-/*  /index.html  200
+/web                /                          301
+/web/services       /services                  301
+/web/realisations   /realisations              301
+/web/contact        /contact                   301
+/web/technologie    /services#technologie      301
+/web/packs          /services#packs            301
+/web/entreprises    /societe                   301

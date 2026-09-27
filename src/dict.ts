@@ -2,51 +2,51 @@
 export const D: Record<string, [string, string]> = {
  "client": [
   "client",
-  "كليان"
+  "عميل"
  ],
  "Des établissements réels et des concepts pour seize métiers. Survolez pour découvrir chaque site, cliquez pour l’ouvrir en grand.": [
   "Real clients and concepts across sixteen trades. Hover to preview each site, click to open it full size.",
-  "مؤسسات حقيقية وأفكار لـ16 حرفة. دوّز الماوس باش تشوف كل موقع، وكليكي باش تحلّو كبير."
+  "عملاء حقيقيون ونماذج لستة عشر قطاعًا. مرّر المؤشر لمعاينة كل موقع، وانقر لفتحه بالحجم الكامل."
  ],
  "Toutes les réalisations": [
   "See all our work",
-  "شوف كاع الأعمال ديالنا"
+  "استعرض جميع أعمالنا"
  ],
  "Fermer": [
   "Close",
-  "سدّ"
+  "إغلاق"
  ],
  "Livrables": [
   "Deliverables",
-  "شنو كتاخد"
+  "المُخرَجات"
  ],
  "Sans engagement": [
   "No commitment",
-  "بلا حتى التزام"
+  "دون أي التزام"
  ],
  "Votre première version, en 72 heures.": [
   "Your first version, in 72 hours.",
-  "النسخة الأولى ديالك، فـ72 ساعة."
+  "نسختك الأولى خلال 72 ساعة."
  ],
- "Indiquez le nom de votre entreprise et votre ville. Vous découvrez un site réel à votre image, puis vous décidez. Aucun paiement avant validation.": [
-  "Tell us your business name and your city. You get a real website that looks like you, then you decide. No payment until you approve.",
-  "عطينا سمية الشركة ديالك والمدينة. كتشوف موقع حقيقي على قدّك، ومن بعد كتقرّر. ما كتخلّص والو حتى توافق."
+ "Indiquez le nom de votre entreprise et votre ville. Vous découvrez un site réel à votre image, puis vous décidez. Vous ne payez que si le résultat vous plaît.": [
+  "Tell us your business name and your city. You get a real website that looks like you, then you decide. You only pay if you love the result.",
+  "أخبرنا باسم شركتك ومدينتك. ستكتشف موقعًا حقيقيًا يعكس هويتك، ثم تقرّر بنفسك. لا تدفع إلا إذا نالت النتيجة إعجابك."
  ],
  "Métier": [
   "Trade",
-  "الحرفة"
+  "النشاط"
  ],
  "Autre": [
   "Other",
-  "حاجة أخرى"
+  "أخرى"
  ],
- "Recevoir ma première version": [
-  "Get my first version",
-  "بغيت النسخة الأولى ديالي"
+ "Commencer ma présence en ligne": [
+  "Start my online presence",
+  "ابدأ حضورك الرقمي"
  ],
  "Votre demande s’ouvre dans WhatsApp. Réponse le jour même, du lundi au samedi.": [
   "Your request opens in WhatsApp. Same-day reply, Monday to Saturday.",
-  "الطلب ديالك كيتحلّ فالواتساب. كنجاوبوك فنفس النهار، من الاثنين حتى السبت."
+  "يُفتح طلبك عبر واتساب. نرد في اليوم نفسه، من الاثنين إلى السبت."
  ],
  "Navigation principale": [
   "Main navigation",
@@ -56,41 +56,37 @@ export const D: Record<string, [string, string]> = {
   "Digilago, home",
   "ديجيلاغو، الصفحة الرئيسية"
  ],
- "Première version gratuite": [
-  "Free first version",
-  "النسخة الأولى فابور"
- ],
  "Menu mobile": [
   "Mobile menu",
-  "القائمة"
+  "قائمة الجوال"
  ],
  "Appeler": [
   "Call",
-  "عيّط"
+  "اتصل بنا"
  ],
  "El Jadida · Réponse le jour même": [
   "El Jadida · Same-day reply",
-  "الجديدة · الجواب فنفس النهار"
+  "الجديدة · رد في اليوم نفسه"
  ],
  "Un projet en tête ?": [
   "Got a project in mind?",
-  "عندك شي مشروع فبالك؟"
+  "لديك مشروع في ذهنك؟"
  ],
  "Parlons-en autour d’un premier aperçu.": [
   "Let’s talk it over, first draft in hand.",
-  "نهضرو عليه، والنسخة الأولى بين يديك."
+  "لنتحدث عنه، والنسخة الأولى بين يديك."
  ],
  "Démarrer un projet": [
   "Start a project",
-  "بدا مشروعك"
+  "ابدأ مشروعك"
  ],
  "Société de services numériques. Nous concevons, faisons trouver et faisons tourner le numérique des entreprises marocaines.": [
   "A digital services company. We build, rank and run the digital side of Moroccan businesses.",
-  "شركة ديال الخدمات الرقمية. كنصمّمو، كنبرّزو وكنسيّرو الديجيتال ديال الشركات المغربية."
+  "شركة خدمات رقمية. نصمّم ونطوّر ونُظهر ونشغّل الحضور الرقمي للشركات المغربية."
  ],
  "Pied de page": [
   "Footer",
-  "أسفل الصفحة"
+  "تذييل الصفحة"
  ],
  "El Jadida, Maroc": [
   "El Jadida, Morocco",
@@ -98,51 +94,51 @@ export const D: Record<string, [string, string]> = {
  ],
  "Du lundi au samedi": [
   "Monday to Saturday",
-  "من الاثنين حتى السبت"
+  "من الاثنين إلى السبت"
  ],
  "de 9 h à 19 h": [
   "9 am to 7 pm",
-  "من 9 د الصباح حتى 7 د العشية"
+  "من 9 صباحًا إلى 7 مساءً"
  ],
  "Réponse le jour même": [
   "Same-day reply",
-  "الجواب فنفس النهار"
+  "رد في اليوم نفسه"
  ],
  "Conçu et codé à El Jadida.": [
   "Designed and coded in El Jadida.",
-  "مصمّم ومبرمج فالجديدة."
+  "صُمّم وبُرمج في الجديدة."
  ],
  "Aller au contenu": [
   "Skip to content",
-  "سير للمحتوى"
+  "انتقل إلى المحتوى"
  ],
  "Écrire sur WhatsApp": [
   "Message us on WhatsApp",
-  "كتب لينا فالواتساب"
+  "راسلنا عبر واتساب"
  ],
  "Expertises": [
   "Expertise",
-  "الخبرات ديالنا"
+  "خبراتنا"
  ],
  "Ce que nous faisons": [
   "What we do",
-  "شنو كنديرو"
+  "ما نقوم به"
  ],
  "Ce que vous recevez": [
   "What you get",
-  "شنو كتاخد"
+  "ما تحصل عليه"
  ],
  "Voir les 19 services en détail": [
   "See all 19 services in detail",
-  "شوف الـ19 خدمة بالتفصيل"
+  "استعرض الخدمات الـ19 بالتفصيل"
  ],
  "Inclus": [
   "Included",
-  "داخل فيها"
+  "يشمل"
  ],
  "Résultat pour vous": [
   "What you gain",
-  "شنو غادي تربح"
+  "القيمة التي تكسبها"
  ],
  "services": [
   "services",
@@ -150,7 +146,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Carte du Maroc : Digilago accompagne des entreprises de Tanger à Dakhla": [
   "Map of Morocco: Digilago works with businesses from Tangier to Dakhla",
-  "خريطة المغرب: ديجيلاغو خدامة مع الشركات من طنجة حتى الداخلة"
+  "خريطة المغرب: ديجيلاغو ترافق الشركات من طنجة إلى الداخلة"
  ],
  "Siège": [
   "HQ",
@@ -158,23 +154,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "entreprises allumées": [
   "businesses lit up",
-  "شركة ضوّيناها"
+  "شركة أضأناها"
  ],
  "de Tanger à Dakhla": [
   "from Tangier to Dakhla",
-  "من طنجة حتى الداخلة"
+  "من طنجة إلى الداخلة"
  ],
  "Votre entreprise": [
   "Your business",
-  "الشركة ديالك"
+  "شركتك"
  ],
  "votre ville": [
   "your city",
-  "المدينة ديالك"
+  "مدينتك"
  ],
  "Nom de votre entreprise": [
   "Your business name",
-  "سمية الشركة ديالك"
+  "اسم شركتك"
  ],
  "Ville": [
   "City",
@@ -182,115 +178,115 @@ export const D: Record<string, [string, string]> = {
  ],
  "Je veux ce résultat": [
   "I want this result",
-  "بغيت هاد النتيجة"
+  "أريد هذه النتيجة"
  ],
  "Ouvert": [
   "Open",
-  "محلول"
+  "مفتوح"
  ],
  "Démonstration du résultat que nous visons pour vous. Les positions réelles dépendent de votre marché et de votre concurrence.": [
   "A demo of the result we aim for. Actual rankings depend on your market and your competitors.",
-  "هادي غير ديمو ديال النتيجة اللي كنخدمو عليها. البلاصة الحقيقية كتبقى على حساب السوق ديالك والمنافسين."
+  "عرض توضيحي للنتيجة التي نستهدفها لك. يعتمد الترتيب الفعلي على سوقك ومنافسيك."
  ],
  "Voir l’offre": [
   "See the package",
-  "شوف العرض"
+  "اكتشف الباقة"
  ],
  "Société de services numériques, de Tanger à Dakhla": [
   "Digital services company, from Tangier to Dakhla",
-  "شركة ديال الخدمات الرقمية، من طنجة حتى الداخلة"
+  "شركة خدمات رقمية، من طنجة إلى الداخلة"
  ],
- "Le numérique qui fait venir vos clients.": [
-  "Digital that brings customers to your door.",
-  "الديجيتال اللي كيجيب ليك الكليان."
+ "L’infrastructure digitale des entreprises marocaines.": [
+  "The digital infrastructure for Moroccan businesses.",
+  "البنية التحتية الرقمية للشركات المغربية."
  ],
- "Digilago conçoit, référence et opère les sites, applications et logiciels des entreprises marocaines. Depuis El Jadida, nous allumons des entreprises dans tout le Royaume.": [
-  "Digilago designs, ranks and runs websites, apps and software for Moroccan businesses. From El Jadida, we light up businesses across the Kingdom.",
-  "ديجيلاغو كتصمّم، كتبرّز وكتسيّر المواقع والتطبيقات والبرامج ديال الشركات المغربية. من الجديدة، كنضوّيو على الشركات فالمملكة كاملة."
+ "Sites, applications, référencement et visibilité dans les IA : Digilago conçoit et opère tout ce qu’il faut pour être trouvé, choisi et contacté. Depuis El Jadida, pour tout le Royaume.": [
+  "Websites, apps, SEO and AI visibility: Digilago designs and runs everything you need to be found, chosen and contacted. From El Jadida, for the whole Kingdom.",
+  "مواقع، تطبيقات، تحسين محركات البحث، وظهور في الذكاء الاصطناعي: تصمّم ديجيلاغو وتشغّل كل ما تحتاجه شركتك لتُكتشف وتُختار ويُتواصل معها. من الجديدة، إلى كل أرجاء المملكة."
  ],
  "Ma première version en 72 h": [
   "My first version in 72 h",
-  "النسخة الأولى ديالي فـ72 ساعة"
+  "نسختي الأولى خلال 72 ساعة"
  ],
  "Voir nos réalisations": [
   "See our work",
-  "شوف أعمالنا"
+  "استعرض أعمالنا"
  ],
  "Présents là où vos clients vous cherchent.": [
   "Wherever your customers are looking.",
-  "كاينين فين ما كيقلّبو عليك الكليان."
+  "حيثما يبحث عنك عملاؤك."
  ],
  "Une équipe. Trois expertises.": [
   "One team. Three areas of expertise.",
-  "فرقة وحدة. ثلاث خبرات."
+  "فريق واحد. ثلاث خبرات."
  ],
  "Nous concevons vos outils, nous les rendons visibles, puis nous les faisons tourner. Sans intermédiaire, sans sous-traitance.": [
   "We build your tools, make them visible, then keep them running. No middlemen, no outsourcing.",
-  "كنصمّمو الأدوات ديالك، كنبرّزوهم، ومن بعد كنسيّروهم. بلا وسيط، وبلا ما نعطيو الخدمة لشي حد آخر."
+  "نصمّم أدواتك الرقمية، ونجعلها مرئية، ثم نضمن تشغيلها باستمرار. دون وسطاء ودون مقاولة من الباطن."
  ],
  "Essayez": [
   "Try it",
-  "جرّب"
+  "جرّب الآن"
  ],
  "Voyez-vous déjà en ligne.": [
   "See yourself online, today.",
-  "شوف راسك أونلاين من دابا."
+  "شاهد حضورك الرقمي من الآن."
  ],
  "Tapez le nom de votre entreprise. Voici comment vos clients pourraient vous trouver demain, sur Google, sur la carte et auprès des IA.": [
   "Type your business name. Here is how customers could find you tomorrow, on Google, on the map and through AI assistants.",
-  "كتب سمية الشركة ديالك. هكا يقدرو يلقاوك الكليان غدّا، فـGoogle، فالخريطة وعند الذكاء الاصطناعي."
+  "اكتب اسم شركتك، وشاهد كيف سيجدك عملاؤك غدًا على Google وعلى الخرائط ولدى مساعدي الذكاء الاصطناعي."
  ],
  "Secteurs": [
   "Sectors",
-  "المجالات"
+  "القطاعات"
  ],
  "Une offre pensée pour votre métier.": [
   "A package built for your trade.",
-  "عرض مفصّل على قدّ الحرفة ديالك."
+  "باقة مصمّمة لنشاطك."
  ],
  "Sept offres construites à partir de ce que nos clients nous demandent le plus. Survolez ou faites glisser pour découvrir chaque secteur.": [
   "Seven packages shaped by what our clients ask for most. Hover or swipe to explore each sector.",
-  "سبعة ديال العروض بنيناهم على حساب داكشي اللي كيطلبو علينا الكليان بزاف. دوّز الماوس ولا زلّق باش تكتاشف كل مجال."
+  "سبع باقات صمّمناها انطلاقًا من أكثر ما يطلبه عملاؤنا. مرّر المؤشر أو اسحب لاكتشاف كل قطاع."
  ],
  "Comparer les offres": [
   "Compare packages",
-  "قارن العروض"
+  "قارن الباقات"
  ],
  "Notre standard": [
   "Our standard",
-  "المستوى ديالنا"
+  "معاييرنا"
  ],
  "L’exigence, dans chaque détail.": [
   "High standards, down to the last detail.",
-  "الدقة فكل تفصيلة."
+  "الإتقان في كل تفصيل."
  ],
  "Un site professionnel se juge à ce qu’on ne voit pas : sa vitesse, sa solidité, sa lisibilité par Google et les IA. Voici ce que contient chaque projet, sans supplément.": [
   "A professional website is judged by what you don’t see: speed, reliability, and how well Google and AI can read it. Here is what every project includes, at no extra cost.",
-  "الموقع الاحترافي كيبان فداكشي اللي ما كيتشافش: السرعة ديالو، الصحة ديالو، وكيفاش كيقراه Google والذكاء الاصطناعي. هادشي اللي داخل فكل مشروع، بلا زيادة فالثمن."
+  "يُقاس الموقع الاحترافي بما لا يُرى: سرعة التحميل، ومتانة البنية، وقابلية القراءة لدى Google والذكاء الاصطناعي. هذا ما يتضمنه كل مشروع دون أي تكلفة إضافية."
  ],
  "Lignes de code à l’écran, reflets cyan et safran": [
   "Lines of code on screen, cyan and saffron reflections",
-  "سطور ديال الكود فالشاشة، بضو سماوي وزعفراني"
+  "أسطر برمجية على الشاشة بانعكاسات سماوية وزعفرانية"
  ],
  "Chaque ligne de code": [
   "Every line of code",
-  "كل سطر ديال الكود"
+  "كل سطر برمجي"
  ],
  "écrite, relue et testée chez nous": [
   "written, reviewed and tested in-house",
-  "مكتوب، مراجَع ومجرَّب عندنا"
+  "يُكتب ويُراجع ويُختبر داخل فريقنا"
  ],
  "Références": [
   "Clients",
-  "الكليان ديالنا"
+  "مراجعنا"
  ],
  "Ils nous ont confié leur image.": [
   "They trusted us with their image.",
-  "عطاونا الثقة فالصورة ديالهم."
+  "منحونا ثقتهم في صورتهم."
  ],
  "Des établissements d’El Jadida qui gèrent aujourd’hui leurs inscriptions, leurs actualités et la relation avec les parents en ligne.": [
   "Schools in El Jadida that now handle enrolment, news and parent communication online.",
-  "مؤسسات فالجديدة ولّاو كيسيّرو التسجيلات، الأخبار والتواصل مع الواليدين أونلاين."
+  "مؤسسات في الجديدة باتت تدير التسجيل والأخبار والتواصل مع أولياء الأمور عبر الإنترنت."
  ],
  "Études de cas": [
   "Case studies",
@@ -298,27 +294,27 @@ export const D: Record<string, [string, string]> = {
  ],
  "Méthode": [
   "Method",
-  "الطريقة ديالنا"
+  "منهجيتنا"
  ],
  "Une méthode claire, du premier appel au lancement.": [
   "A clear process, from first call to launch.",
-  "طريقة واضحة، من أول مكالمة حتى الإطلاق."
+  "منهجية واضحة، من أول مكالمة حتى الإطلاق."
  ],
  "Chaque étape produit un résultat concret. Vous ne payez qu’après avoir validé la première version.": [
   "Every step delivers something concrete. You only pay once you have approved the first version.",
-  "كل مرحلة فيها نتيجة كتشوفها بعينيك. ما كتخلّص حتى توافق على النسخة الأولى."
+  "كل مرحلة تقدّم نتيجة ملموسة. لا تدفع إلا بعد موافقتك على النسخة الأولى."
  ],
  "Un nouveau site de restaurant ouvert sur un ordinateur portable": [
   "A new restaurant website open on a laptop",
-  "موقع جديد ديال ريسطو محلول فبورطابل"
+  "موقع مطعم جديد معروض على حاسوب محمول"
  ],
  "Les remparts de la Cité portugaise d’El Jadida au crépuscule": [
   "The walls of El Jadida’s Portuguese City at dusk",
-  "سور الحي البرتغالي فالجديدة مع المغرب"
+  "أسوار الحي البرتغالي بالجديدة عند الغروب"
  ],
  "Salle de réunion Digilago, réseau d’entreprises à l’écran": [
   "Digilago meeting room, a business network on screen",
-  "قاعة الاجتماعات ديال ديجيلاغو، وشبكة ديال الشركات فالشاشة"
+  "قاعة اجتماعات ديجيلاغو وشبكة شركات على الشاشة"
  ],
  "La société": [
   "The company",
@@ -326,7 +322,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Ancrés à El Jadida. Ouverts sur tout le Maroc.": [
   "Rooted in El Jadida. Working across Morocco.",
-  "جذورنا فالجديدة. وخدمتنا فالمغرب كامل."
+  "جذورنا في الجديدة، وحضورنا في كل المغرب."
  ],
  "Découvrir Digilago": [
   "Discover Digilago",
@@ -334,19 +330,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Questions fréquentes": [
   "FAQ",
-  "الأسئلة اللي كتتعاود"
+  "الأسئلة الشائعة"
  ],
  "Les réponses, avant même la question.": [
   "Answers, before you even ask.",
-  "الأجوبة، قبل ما تسول."
+  "الإجابات قبل أن تسأل."
  ],
  "Une autre question ?": [
   "Another question?",
-  "عندك سؤال آخر؟"
+  "لديك سؤال آخر؟"
  ],
  "Écrivez-nous. Un membre de l’équipe vous répond le jour même.": [
   "Write to us. Someone from the team will reply the same day.",
-  "كتب لينا. واحد من الفرقة غادي يجاوبك فنفس النهار."
+  "راسلنا، وسيرد عليك أحد أعضاء الفريق في اليوم نفسه."
  ],
  "Le besoin.": [
   "The brief.",
@@ -358,19 +354,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Nos réalisations parlent pour nous.": [
   "Our work speaks for itself.",
-  "الأعمال ديالنا كتهضر علينا."
+  "أعمالنا تتحدث عنا."
  ],
  "Des établissements réels en service, et une bibliothèque de concepts pour imaginer le vôtre.": [
   "Real clients, live sites, and a library of concepts to picture yours.",
-  "مؤسسات حقيقية خدامة بالمواقع ديالنا، ومكتبة ديال الأفكار باش تتخيّل الموقع ديالك."
+  "مؤسسات حقيقية تعمل بمواقعنا، ومكتبة من النماذج لتتخيّل موقعك."
  ],
  "Des projets livrés, des résultats visibles.": [
   "Projects delivered, results you can see.",
-  "مشاريع سالينا، ونتائج باينة."
+  "مشاريع مُنجزة ونتائج ملموسة."
  ],
  "Pour chaque établissement : le besoin de départ et ce que nous avons mis en place.": [
   "For each client: the starting brief and what we put in place.",
-  "لكل مؤسسة: الحاجة اللي كانت عندها، وشنو درنا ليها."
+  "لكل مؤسسة: الحاجة الأولية وما قمنا بتنفيذه."
  ],
  "Bibliothèque": [
   "Library",
@@ -378,19 +374,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Une direction pour chaque métier.": [
   "A direction for every trade.",
-  "فكرة لكل حرفة."
+  "توجّه تصميمي لكل نشاط."
  ],
  "Filtrez par secteur et ouvrez un concept pour voir la direction que pourrait prendre votre site.": [
   "Filter by sector and open a concept to see where your website could go.",
-  "ختار المجال وحلّ شي فكرة باش تشوف كيفاش يقدر يكون الموقع ديالك."
+  "اختر القطاع وافتح نموذجًا لترى الاتجاه الذي قد يأخذه موقعك."
  ],
  "Bouton principal du site :": [
   "Main call to action:",
-  "البوطونة الرئيسية فالموقع:"
+  "زر الدعوة الرئيسي:"
  ],
  "Je veux un site comme celui-ci": [
   "I want a site like this",
-  "بغيت موقع بحال هادا"
+  "أريد موقعًا مثل هذا"
  ],
  "Services": [
   "Services",
@@ -398,91 +394,91 @@ export const D: Record<string, [string, string]> = {
  ],
  "Trois expertises, un seul interlocuteur.": [
   "Three areas of expertise, one point of contact.",
-  "ثلاث خبرات، ومخاطَب واحد."
+  "ثلاث خبرات، ومحاور واحد."
  ],
  "Maquettes de site en cours de conception": [
   "Website mock-ups being designed",
-  "ماكيطات ديال موقع فطور التصميم"
+  "نماذج مواقع قيد التصميم"
  ],
  "En pratique": [
   "In practice",
-  "فالواقع"
+  "على أرض الواقع"
  ],
  "Ce que nos clients vivent au quotidien.": [
   "What our clients experience every day.",
-  "شنو كيعيشو الكليان ديالنا كل نهار."
+  "ما يعيشه عملاؤنا كل يوم."
  ],
  "Standard": [
   "Standard",
-  "المستوى"
+  "المعايير"
  ],
  "Inclus dans chaque projet, sans supplément.": [
   "Included in every project, at no extra cost.",
-  "داخل فكل مشروع، بلا زيادة."
+  "مُدرج في كل مشروع دون تكلفة إضافية."
  ],
  "Anatomie d’un projet": [
   "Inside a project",
-  "كيفاش كيتبنى المشروع"
+  "كيف يُبنى المشروع"
  ],
  "De votre premier message au lancement.": [
   "From your first message to launch.",
-  "من أول ميساج ديالك حتى الإطلاق."
+  "من رسالتك الأولى حتى الإطلاق."
  ],
  "Atelier de conception avec maquettes au tableau": [
   "Design workshop with mock-ups on the board",
-  "ورشة تصميم والماكيطات فالسبورة"
+  "ورشة تصميم ونماذج على السبورة"
  ],
  "Offres par secteur": [
   "Packages by sector",
-  "العروض حسب المجال"
+  "الباقات حسب القطاع"
  ],
  "Une offre pour chaque secteur.": [
   "A package for every sector.",
-  "عرض لكل مجال."
+  "باقة لكل قطاع."
  ],
  "Chaque offre réunit ce dont votre métier a besoin. Le prix est annoncé par écrit avant de commencer, selon la complexité du projet.": [
   "Each package brings together what your trade needs. The price is confirmed in writing before we start, based on the project’s complexity.",
-  "كل عرض فيه داكشي اللي كتحتاجو الحرفة ديالك. الثمن كنعطيوه ليك مكتوب قبل ما نبداو، على حساب الصعوبة ديال المشروع."
+  "تجمع كل باقة ما يحتاجه نشاطك. نحدّد السعر كتابيًا قبل البدء، حسب درجة تعقيد المشروع."
  ],
  "Offres": [
   "Packages",
-  "العروض"
+  "الباقات"
  ],
  "Demander cette offre": [
   "Request this package",
-  "طلب هاد العرض"
+  "اطلب هذه الباقة"
  ],
  "Technologie": [
   "Technology",
-  "التكنولوجيا"
+  "التقنيات"
  ],
  "Une technologie de premier plan pour votre entreprise.": [
   "First-class technology for your business.",
-  "تكنولوجيا من المستوى العالي للشركة ديالك."
+  "تقنيات من الطراز الأول لشركتك."
  ],
  "Des outils modernes, rapides et maintenus, choisis pour que votre site reste performant dans cinq ans.": [
   "Modern, fast, well-maintained tools, chosen so your site still performs in five years.",
-  "أدوات حديثة، سريعة وديما محدّثة، ختارناهم باش يبقى الموقع ديالك قوي حتى من بعد خمس سنين."
+  "أدوات حديثة وسريعة ومحدّثة باستمرار، اخترناها ليبقى موقعك عالي الأداء بعد خمس سنوات."
  ],
  "Contact": [
   "Contact",
-  "تواصل معانا"
+  "اتصل بنا"
  ],
  "Parlons de votre projet.": [
   "Let’s talk about your project.",
-  "يلاه نهضرو على المشروع ديالك."
+  "لنتحدث عن مشروعك."
  ],
  "Dix minutes d’échange suffisent pour démarrer. Choisissez le canal qui vous convient, nous répondons le jour même.": [
   "Ten minutes is all it takes to get started. Pick the channel that suits you; we reply the same day.",
-  "عشر دقايق ديال الهضرة كافية باش نبداو. ختار الطريقة اللي كتناسبك، وكنجاوبوك فنفس النهار."
+  "عشر دقائق تكفي للانطلاق. اختر قناة التواصل التي تناسبك، ونرد في اليوم نفسه."
  ],
  "Lundi au samedi, de 9 h à 19 h.": [
   "Monday to Saturday, 9 am to 7 pm.",
-  "من الاثنين حتى السبت، من 9 د الصباح حتى 7 د العشية."
+  "من الاثنين إلى السبت، من 9 صباحًا إلى 7 مساءً."
  ],
  "Le studio Digilago à El Jadida": [
   "The Digilago studio in El Jadida",
-  "الستوديو ديال ديجيلاغو فالجديدة"
+  "استوديو ديجيلاغو في الجديدة"
  ],
  "Rendez-vous": [
   "Meetings",
@@ -490,59 +486,59 @@ export const D: Record<string, [string, string]> = {
  ],
  "Sur place à El Jadida, ou en visio partout au Maroc.": [
   "In person in El Jadida, or by video anywhere in Morocco.",
-  "حضوري فالجديدة، ولا بالفيديو من أي بلاصة فالمغرب."
+  "حضوريًا في الجديدة، أو عن بُعد في أي مكان بالمغرب."
  ],
- "Nous vous recevons au studio, nous nous déplaçons chez vous quand c’est utile, ou nous échangeons en visio. Le premier rendez-vous est toujours offert.": [
-  "We welcome you at the studio, come to you when it helps, or meet by video. The first meeting is always free.",
-  "كنستقبلوك فالستوديو، كنجيو عندك إلا كانت الحاجة، ولا كنتلاقاو بالفيديو. الموعد الأول ديما فابور."
+ "Nous vous recevons au studio, nous nous déplaçons chez vous quand c’est utile, ou nous échangeons en visio. Le premier rendez-vous est sans engagement.": [
+  "We welcome you at the studio, come to you when it helps, or meet by video. The first meeting comes with no commitment.",
+  "نستقبلك في الاستوديو، أو نزورك عند الحاجة، أو نلتقي عبر الفيديو. الموعد الأول دون أي التزام."
  ],
  "Une société tech, née face à l’Atlantique.": [
   "A tech company, born facing the Atlantic.",
-  "شركة تيك، تزادت قدّام المحيط الأطلسي."
+  "شركة تقنية وُلدت على ضفاف الأطلسي."
  ],
  "Notre histoire": [
   "Our story",
-  "القصة ديالنا"
+  "قصتنا"
  ],
  "Le savoir-faire est là. Nous le rendons visible.": [
   "The talent is there. We make it visible.",
-  "الحرفة كاينة. حنا كنبيّنوها."
+  "الكفاءة موجودة، ونحن نجعلها مرئية."
  ],
  "Maquettes et parcours clients au tableau": [
   "Mock-ups and customer journeys on the board",
-  "الماكيطات ومسار الكليان فالسبورة"
+  "نماذج ومسارات العملاء على السبورة"
  ],
  "Nos engagements": [
   "Our commitments",
-  "الالتزامات ديالنا"
+  "التزاماتنا"
  ],
  "Quatre engagements, tenus sur chaque projet.": [
   "Four commitments, kept on every project.",
-  "ربعة ديال الالتزامات، كنحتارموهم فكل مشروع."
+  "أربعة التزامات نحترمها في كل مشروع."
  ],
  "Le studio Digilago face à l’océan": [
   "The Digilago studio facing the ocean",
-  "الستوديو ديال ديجيلاغو قدّام البحر"
+  "استوديو ديجيلاغو المطل على المحيط"
  ],
  "Grands comptes": [
   "Enterprise",
-  "الشركات الكبار"
+  "كبار الحسابات"
  ],
  "Des projets d’envergure, la même exigence.": [
   "Larger projects, the same standards.",
-  "مشاريع كبار، بنفس الدقة."
+  "مشاريع أكبر، بالمعايير نفسها."
  ],
  "Groupes scolaires, cliniques, promoteurs, réseaux d’agences : nous menons les plateformes sur-mesure avec des jalons écrits, un interlocuteur unique et un code qui vous appartient.": [
   "School groups, clinics, developers, agency networks: we deliver custom platforms with written milestones, a single point of contact and code you own.",
-  "مجموعات مدرسية، كلينيكات، منعشين عقاريين، شبكات ديال الوكالات: كنخدمو منصات على المقاس بمراحل مكتوبة، مخاطَب واحد، وكود ديالك نتا."
+  "مجموعات مدرسية، مصحات، منعشون عقاريون، شبكات وكالات: ننجز منصات مخصّصة بمراحل مكتوبة ومحاور واحد وشيفرة مصدرية ملك لك."
  ],
  "Parler de votre projet": [
   "Discuss your project",
-  "هضر معانا على المشروع ديالك"
+  "ناقش مشروعك معنا"
  ],
  "Nous construisons aussi nos propres produits.": [
   "We also build our own products.",
-  "حتى حنا كنبنيو المنتوجات ديالنا."
+  "نبني أيضًا منتجاتنا الخاصة."
  ],
  "Société": [
   "Company",
@@ -558,7 +554,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Clinique privée": [
   "Private clinic",
-  "كلينيك خاصة"
+  "مصحة خاصة"
  ],
  "Rabat": [
   "Rabat",
@@ -574,7 +570,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Entreprise de BTP": [
   "Construction company",
-  "شركة ديال البني"
+  "شركة بناء وأشغال"
  ],
  "Tanger": [
   "Tangier",
@@ -582,7 +578,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Hôtel": [
   "Hotel",
-  "أوطيل"
+  "فندق"
  ],
  "Tétouan": [
   "Tetouan",
@@ -598,7 +594,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Boutique de caftans": [
   "Kaftan boutique",
-  "بوتيك ديال القفاطن"
+  "متجر قفاطين"
  ],
  "Nador": [
   "Nador",
@@ -606,7 +602,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Garage automobile": [
   "Car garage",
-  "كراج ديال الطوموبيلات"
+  "مرأب سيارات"
  ],
  "Oujda": [
   "Oujda",
@@ -622,7 +618,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Salle de sport": [
   "Gym",
-  "صالة الرياضة"
+  "نادٍ رياضي"
  ],
  "Errachidia": [
   "Errachidia",
@@ -630,7 +626,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Centre de formation": [
   "Training centre",
-  "مركز التكوين"
+  "مركز تكوين"
  ],
  "Merzouga": [
   "Merzouga",
@@ -638,7 +634,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Agence de voyages": [
   "Travel agency",
-  "وكالة الأسفار"
+  "وكالة أسفار"
  ],
  "Ouarzazate": [
   "Ouarzazate",
@@ -654,7 +650,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Laboratoire d’analyses": [
   "Medical lab",
-  "مختبر التحاليل"
+  "مختبر تحاليل"
  ],
  "Marrakech": [
   "Marrakesh",
@@ -678,7 +674,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Cosmétiques à l’argan": [
   "Argan cosmetics",
-  "مواد التجميل بالأركان"
+  "مستحضرات تجميل بالأركان"
  ],
  "Agadir": [
   "Agadir",
@@ -686,7 +682,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Club de padel": [
   "Padel club",
-  "نادي البادل"
+  "نادي بادل"
  ],
  "Tiznit": [
   "Tiznit",
@@ -694,7 +690,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Artisan bijoutier": [
   "Jewellery maker",
-  "صايغ"
+  "صائغ حرفي"
  ],
  "Guelmim": [
   "Guelmim",
@@ -702,7 +698,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Auto-école": [
   "Driving school",
-  "أوطو إيكول"
+  "مدرسة تعليم السياقة"
  ],
  "Laâyoune": [
   "Laayoune",
@@ -710,7 +706,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Cabinet dentaire": [
   "Dental practice",
-  "عيادة الأسنان"
+  "عيادة أسنان"
  ],
  "Smara": [
   "Smara",
@@ -726,7 +722,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Lodge de kitesurf": [
   "Kitesurf lodge",
-  "لودج ديال الكايتسورف"
+  "نُزل ركوب الأمواج الشراعي"
  ],
  "El Jadida": [
   "El Jadida",
@@ -738,23 +734,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réserver une table": [
   "book a table",
-  "تحجز طابلة"
+  "حجز طاولة"
  ],
  "Clinique": [
   "Clinic",
-  "كلينيك"
+  "مصحة"
  ],
  "clinique": [
   "clinic",
-  "كلينيك"
+  "مصحة"
  ],
  "Prendre rendez-vous": [
   "book an appointment",
-  "تاخد موعد"
+  "حجز موعد"
  ],
  "dentiste": [
   "dentist",
-  "طبيب ديال السنان"
+  "طبيب أسنان"
  ],
  "école privée": [
   "private school",
@@ -762,19 +758,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réserver une visite": [
   "book a visit",
-  "تحجز زيارة"
+  "حجز زيارة"
  ],
  "padel": [
   "padel club",
-  "نادي البادل"
+  "نادي بادل"
  ],
  "Réserver un terrain": [
   "book a court",
-  "تحجز تيران"
+  "حجز ملعب"
  ],
  "Hôtel ou riad": [
   "Hotel or riad",
-  "أوطيل ولا رياض"
+  "فندق أو رياض"
  ],
  "riad": [
   "riad",
@@ -782,15 +778,15 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réserver une chambre": [
   "book a room",
-  "تحجز بيت"
+  "حجز غرفة"
  ],
  "salle de sport": [
   "gym",
-  "صالة الرياضة"
+  "نادٍ رياضي"
  ],
  "Essai gratuit": [
   "free trial",
-  "تجربة فابور"
+  "حصة تجريبية مجانية"
  ],
  "agence immobilière": [
   "real estate agency",
@@ -798,31 +794,31 @@ export const D: Record<string, [string, string]> = {
  ],
  "Voir les biens": [
   "view properties",
-  "تشوف العقارات"
+  "تصفّح العقارات"
  ],
  "avocat": [
   "lawyer",
-  "محامي"
+  "محامٍ"
  ],
  "Garage": [
   "Garage",
-  "كراج"
+  "مرأب"
  ],
  "garage": [
   "garage",
-  "كراج"
+  "مرأب"
  ],
  "Boutique": [
   "Shop",
-  "بوتيك"
+  "متجر"
  ],
  "boutique": [
   "shop",
-  "بوتيك"
+  "متجر"
  ],
  "Voir la boutique": [
   "visit the shop",
-  "تشوف البوتيك"
+  "زيارة المتجر"
  ],
  "Google": [
   "Google",
@@ -838,23 +834,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "Itinéraire": [
   "Directions",
-  "الطريق"
+  "الاتجاهات"
  ],
  "Site web": [
   "Website",
-  "الموقع"
+  "الموقع الإلكتروني"
  ],
  "Réserver": [
   "Book",
-  "حجز"
+  "احجز"
  ],
  "Horaires et accès": [
   "Hours and directions",
-  "الأوقات والطريق"
+  "الأوقات والعنوان"
  ],
  "Nos services": [
   "Our services",
-  "الخدمات ديالنا"
+  "خدماتنا"
  ],
  "WhatsApp": [
   "WhatsApp",
@@ -862,11 +858,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Téléphone": [
   "Phone",
-  "التيليفون"
+  "الهاتف"
  ],
  "E-mail": [
   "Email",
-  "الإيميل"
+  "البريد الإلكتروني"
  ],
  "Adresse": [
   "Address",
@@ -874,103 +870,103 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réponse le jour même, du lundi au samedi": [
   "Same-day reply, Monday to Saturday",
-  "الجواب فنفس النهار، من الاثنين حتى السبت"
+  "رد في اليوم نفسه، من الاثنين إلى السبت"
  ],
  "Devis écrit avant tout engagement": [
   "Written quote before any commitment",
-  "الديفي مكتوب قبل أي التزام"
+  "عرض سعر مكتوب قبل أي التزام"
  ],
- "Première version offerte sous 72 heures": [
-  "Free first version within 72 hours",
-  "النسخة الأولى فابور فـ72 ساعة"
+ "Première version sous 72 heures, sans engagement": [
+  "First version within 72 hours, no commitment",
+  "نسخة أولى خلال 72 ساعة، دون التزام"
  ],
  "Des réservations reçues sur WhatsApp": [
   "Bookings coming in on WhatsApp",
-  "حجوزات كتوصلك فالواتساب"
+  "حجوزات تصلك عبر واتساب"
  ],
  "Votre entreprise en tête sur Google": [
   "Your business at the top of Google",
-  "الشركة ديالك الأولى فـGoogle"
+  "شركتك في صدارة نتائج Google"
  ],
  "Un agenda en ligne pour vos rendez-vous": [
   "An online calendar for your appointments",
-  "أجندة أونلاين للمواعيد ديالك"
+  "أجندة إلكترونية لمواعيدك"
  ],
  "Concevoir": [
   "Build",
-  "نصمّمو"
+  "التصميم والتطوير"
  ],
  "Des sites et des applications dessinés pour votre métier, codés pour durer.": [
   "Websites and apps designed for your trade, built to last.",
-  "مواقع وتطبيقات مصمّمين على قدّ الحرفة ديالك، ومبرمجين باش يدوْمو."
+  "مواقع وتطبيقات مصمّمة لنشاطك ومبنية لتدوم."
  ],
  "Sites web sur-mesure": [
   "Custom websites",
-  "مواقع على المقاس"
+  "مواقع مخصّصة"
  ],
  "Boutiques en ligne": [
   "Online stores",
-  "بوتيكات أونلاين"
+  "متاجر إلكترونية"
  ],
  "Applications web et mobiles": [
   "Web and mobile apps",
-  "تطبيقات ويب وموبايل"
+  "تطبيقات ويب وجوال"
  ],
  "Branding et logo": [
   "Branding and logo",
-  "الهوية واللوغو"
+  "الهوية البصرية والشعار"
  ],
  "Maquette validée avant le code": [
   "Design approved before any code",
-  "الماكيط كتوافق عليها قبل الكود"
+  "اعتماد التصميم قبل البرمجة"
  ],
  "Version arabe, française et anglaise": [
   "Arabic, French and English versions",
-  "نسخة بالعربية، الفرنسية والإنجليزية"
+  "نسخ بالعربية والفرنسية والإنجليزية"
  ],
  "Espace pour modifier vos contenus": [
   "A space to edit your content",
-  "بلاصة باش تبدّل المحتوى ديالك بوحدك"
+  "لوحة تحكم لتعديل المحتوى"
  ],
  "Code source remis à votre nom": [
   "Source code handed over in your name",
-  "الكود كيتسلّم ليك باسمك"
+  "الشيفرة المصدرية باسمك"
  ],
  "Faire trouver": [
   "Get found",
-  "نبرّزوك"
+  "الظهور الرقمي"
  ],
  "Votre nom en tête sur Google, sur la carte et dans les réponses des IA.": [
   "Your name at the top of Google, on the map and in AI answers.",
-  "السمية ديالك الأولى فـGoogle، فالخريطة وفالأجوبة ديال الذكاء الاصطناعي."
+  "اسمك في صدارة Google والخرائط وإجابات الذكاء الاصطناعي."
  ],
  "Fiche Google Business": [
   "Google Business Profile",
-  "فيشة Google Business"
+  "ملف Google Business"
  ],
  "Référencement SEO local": [
   "Local SEO",
-  "الريفيرونسمون المحلي SEO"
+  "تحسين محركات البحث المحلي SEO"
  ],
  "Visibilité dans les IA (GEO)": [
   "AI visibility (GEO)",
-  "الظهور فالذكاء الاصطناعي (GEO)"
+  "الظهور في الذكاء الاصطناعي (GEO)"
  ],
  "Publicité Google et Meta": [
   "Google and Meta ads",
-  "الإشهار فـGoogle وMeta"
+  "إعلانات Google وMeta"
  ],
  "Fiche Google complète et vérifiée": [
   "Complete, verified Google profile",
-  "فيشة Google كاملة وموثّقة"
+  "ملف Google مكتمل وموثّق"
  ],
  "Balisage Schema.org et llms.txt": [
   "Schema.org markup and llms.txt",
-  "الترميز Schema.org وllms.txt"
+  "ترميز Schema.org وملف llms.txt"
  ],
  "Suivi des positions par ville": [
   "Ranking tracked city by city",
-  "تتبّع البلاصة ديالك مدينة بمدينة"
+  "تتبّع الترتيب حسب المدينة"
  ],
  "Rapport mensuel lisible": [
   "A clear monthly report",
@@ -978,11 +974,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Faire tourner": [
   "Keep running",
-  "نسيّرو"
+  "التشغيل والصيانة"
  ],
  "Hébergement, sécurité et logiciels métier, surveillés jour et nuit.": [
   "Hosting, security and business software, monitored day and night.",
-  "الاستضافة، الأمان والبرامج ديال الخدمة، تحت العين ليل ونهار."
+  "الاستضافة والأمان وبرمجيات الأعمال، تحت المراقبة ليلًا ونهارًا."
  ],
  "Hébergement et maintenance": [
   "Hosting and maintenance",
@@ -990,47 +986,47 @@ export const D: Record<string, [string, string]> = {
  ],
  "Intégrations : paiement, WhatsApp, agenda": [
   "Integrations: payments, WhatsApp, calendar",
-  "الربط: الخلاص، الواتساب، الأجندة"
+  "التكاملات: الدفع، واتساب، الأجندة"
  ],
  "Logiciels métier et tableaux de bord": [
   "Business software and dashboards",
-  "برامج الخدمة ولوحات التتبّع"
+  "برمجيات الأعمال ولوحات القيادة"
  ],
  "Support le jour même": [
   "Same-day support",
-  "الدعم فنفس النهار"
+  "دعم في اليوم نفسه"
  ],
  "Certificat SSL et CDN mondial": [
   "SSL certificate and global CDN",
-  "شهادة SSL وCDN عالمي"
+  "شهادة SSL وشبكة CDN عالمية"
  ],
  "Sauvegardes quotidiennes": [
   "Daily backups",
-  "نسخة احتياطية كل نهار"
+  "نسخ احتياطي يومي"
  ],
  "Mises à jour de sécurité": [
   "Security updates",
-  "تحديثات الأمان"
+  "تحديثات أمنية"
  ],
  "Un interlocuteur qui connaît votre projet": [
   "A contact who knows your project",
-  "مخاطَب عارف المشروع ديالك مزيان"
+  "محاور يعرف مشروعك جيدًا"
  ],
  "Design sur-mesure": [
   "Custom design",
-  "تصميم على المقاس"
+  "تصميم مخصّص"
  ],
  "Aucun thème acheté. Chaque écran est dessiné pour votre métier et vos clients.": [
   "No off-the-shelf themes. Every screen is designed for your trade and your customers.",
-  "ما كنشريوش تيمات واجدين. كل صفحة كنرسموها على قدّ الحرفة ديالك والكليان ديالك."
+  "لا قوالب جاهزة. كل واجهة تُصمَّم خصيصًا لنشاطك وعملائك."
  ],
  "Code professionnel": [
   "Professional code",
-  "كود احترافي"
+  "برمجة احترافية"
  ],
  "React et TypeScript, les standards des grandes plateformes. Rapide, sûr, évolutif.": [
   "React and TypeScript, the standards of major platforms. Fast, secure, scalable.",
-  "React وTypeScript، نفس الأدوات ديال المنصات الكبار. سريع، آمن، وكيكبر معاك."
+  "React وTypeScript، معايير كبرى المنصات. سرعة وأمان وقابلية للتوسّع."
  ],
  "Moins d’une seconde": [
   "Under one second",
@@ -1038,23 +1034,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "Images optimisées et servies au plus près de vos visiteurs. Google récompense la vitesse.": [
   "Optimised images served close to your visitors. Google rewards speed.",
-  "تصاور مخفّفين وكيوصلو من أقرب بلاصة للزوار. Google كيعطي الأولوية للسرعة."
+  "صور مُحسّنة تُقدَّم من أقرب خادم لزوّارك. وGoogle يكافئ السرعة."
  ],
  "Mobile d’abord": [
   "Mobile first",
-  "التيليفون هو الأول"
+  "الجوال أولًا"
  ],
  "La majorité de vos clients arrivent par téléphone. Tout est conçu pour eux en premier.": [
   "Most of your customers arrive on a phone. Everything is designed for them first.",
-  "أغلب الكليان ديالك كيدخلو من التيليفون. كلشي كنصمّموه ليهم هوما الأولين."
+  "معظم عملائك يزورونك من الهاتف، لذا نصمّم كل شيء لهم أولًا."
  ],
  "Lisible par Google et les IA": [
   "Readable by Google and AI",
-  "مفهوم عند Google والذكاء الاصطناعي"
+  "مقروء لدى Google والذكاء الاصطناعي"
  ],
  "Données structurées, contenus clairs, fiche Google reliée au site.": [
   "Structured data, clear content, Google profile linked to your site.",
-  "بيانات منظّمة، محتوى واضح، وفيشة Google مربوطة بالموقع."
+  "بيانات مُهيكلة، ومحتوى واضح، وملف Google مرتبط بالموقع."
  ],
  "Trois langues": [
   "Three languages",
@@ -1062,71 +1058,71 @@ export const D: Record<string, [string, string]> = {
  ],
  "Arabe, français et anglais, pour votre clientèle locale comme internationale.": [
   "Arabic, French and English, for local and international customers alike.",
-  "العربية، الفرنسية والإنجليزية، للكليان ديال هنا وديال برّا."
+  "العربية والفرنسية والإنجليزية، لعملائك المحليين والدوليين."
  ],
  "Propriété totale": [
   "Full ownership",
-  "كلشي ديالك"
+  "ملكية كاملة"
  ],
  "Domaine, code et données sont à votre nom. Aucune dépendance, aucun piège.": [
   "Domain, code and data are in your name. No lock-in, no catch.",
-  "الدومين، الكود والبيانات كلهم باسمك. ما كاين لا تبعية لا فخ."
+  "النطاق والشيفرة والبيانات باسمك. لا تبعية ولا قيود."
  ],
  "Autonomie": [
   "Independence",
-  "تسيّر بوحدك"
+  "استقلالية"
  ],
  "Trente minutes de formation pour modifier seul horaires, tarifs et actualités.": [
   "A thirty-minute training so you can update hours, prices and news yourself.",
-  "نص ساعة ديال التكوين باش تبدّل بوحدك الأوقات، الأسعار والأخبار."
+  "تدريب لمدة ثلاثين دقيقة لتعدّل الأوقات والأسعار والأخبار بنفسك."
  ],
  "Écoute": [
   "Listening",
-  "نسمعوك"
+  "الإصغاء"
  ],
  "Un appel de dix minutes pour comprendre votre activité, vos clients et vos objectifs.": [
   "A ten-minute call to understand your business, your customers and your goals.",
-  "مكالمة ديال عشر دقايق باش نفهمو الخدمة ديالك، الكليان ديالك والأهداف ديالك."
+  "مكالمة من عشر دقائق لفهم نشاطك وعملائك وأهدافك."
  ],
  "Fiche projet": [
   "Project brief",
-  "فيشة المشروع"
+  "بطاقة المشروع"
  ],
  "Première version": [
   "First version",
   "النسخة الأولى"
  ],
- "Sous 72 heures, un site réel avec vos informations. Offert, sans engagement.": [
-  "Within 72 hours, a real website with your details. Free, no commitment.",
-  "فـ72 ساعة، موقع حقيقي بالمعلومات ديالك. فابور، وبلا التزام."
+ "Sous 72 heures, un site réel avec vos informations. Sans engagement : vous ne payez que s’il vous plaît.": [
+  "Within 72 hours, a real website with your details. No commitment: you only pay if you love it.",
+  "خلال 72 ساعة، موقع حقيقي بمعلوماتك. دون التزام: لا تدفع إلا إذا نال إعجابك."
  ],
  "Lien de démonstration": [
   "Demo link",
-  "ليان ديال الديمو"
+  "رابط العرض"
  ],
  "Affinage": [
   "Refinement",
-  "التعديل"
+  "التحسين"
  ],
  "Vous commentez, nous ajustons. Trois cycles de retouches sont inclus.": [
   "You comment, we adjust. Three rounds of revisions included.",
-  "نتا كتعطي رأيك، وحنا كنعدّلو. ثلاث مرات ديال التعديلات داخلين."
+  "تبدي ملاحظاتك ونعدّل. ثلاث جولات من التعديلات مشمولة."
  ],
  "Design validé": [
   "Approved design",
-  "تصميم موافَق عليه"
+  "تصميم معتمد"
  ],
  "Développement": [
   "Development",
-  "البرمجة"
+  "التطوير"
  ],
  "Code écrit à la main, testé sur téléphone, tablette et ordinateur.": [
   "Hand-written code, tested on phone, tablet and desktop.",
-  "كود مكتوب باليد، مجرَّب فالتيليفون، التابليت والبيسي."
+  "شيفرة مكتوبة يدويًا، ومختبرة على الهاتف والجهاز اللوحي والحاسوب."
  ],
  "Site complet et testé": [
   "Complete, tested site",
-  "موقع كامل ومجرَّب"
+  "موقع مكتمل ومختبر"
  ],
  "Lancement": [
   "Launch",
@@ -1134,11 +1130,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Domaine, sécurité, fiche Google, référencement et balisage pour les IA.": [
   "Domain, security, Google profile, SEO and AI-ready markup.",
-  "الدومين، الأمان، فيشة Google، الريفيرونسمون والترميز للذكاء الاصطناعي."
+  "النطاق، الأمان، ملف Google، تحسين محركات البحث، وترميز جاهز للذكاء الاصطناعي."
  ],
  "Site public et indexé": [
   "Live and indexed site",
-  "موقع أونلاين وباين فـGoogle"
+  "موقع منشور ومفهرس"
  ],
  "Accompagnement": [
   "Ongoing support",
@@ -1146,7 +1142,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Hébergement, sauvegardes et évolutions. Une équipe joignable sur WhatsApp.": [
   "Hosting, backups and improvements. A team you can reach on WhatsApp.",
-  "الاستضافة، النسخ الاحتياطية والتطويرات. وفرقة تلقاها فالواتساب."
+  "الاستضافة والنسخ الاحتياطي والتطوير المستمر، مع فريق متاح عبر واتساب."
  ],
  "Rapport mensuel": [
   "Monthly report",
@@ -1154,31 +1150,31 @@ export const D: Record<string, [string, string]> = {
  ],
  "Présenter une école de la maternelle au baccalauréat et gérer les inscriptions de la rentrée.": [
   "Present a school from nursery to baccalaureate and manage back-to-school enrolment.",
-  "تقديم مدرسة من الروض حتى الباكالوريا، وتسيير التسجيلات ديال الدخول المدرسي."
+  "تقديم مدرسة من التعليم الأولي إلى البكالوريا، وتدبير تسجيلات الدخول المدرسي."
  ],
  "Site bilingue français / anglais": [
   "Bilingual French / English site",
-  "موقع بجوج لغات فرنسية وإنجليزية"
+  "موقع ثنائي اللغة فرنسي / إنجليزي"
  ],
  "Espace administration complet": [
   "Full admin area",
-  "فضاء إدارة كامل"
+  "لوحة إدارة متكاملة"
  ],
  "Planning intégré et actualités": [
   "Built-in timetable and news",
-  "جدول الحصص والأخبار مدمجين"
+  "جدول حصص وأخبار مدمجة"
  ],
  "Donner une identité forte à une école et recevoir les pré-inscriptions en ligne.": [
   "Give a school a strong identity and take pre-registrations online.",
-  "نعطيو للمدرسة هوية قوية، ونخلّيوها تستقبل التسجيل المسبق أونلاين."
+  "منح المدرسة هوية قوية واستقبال التسجيل المسبق عبر الإنترنت."
  ],
  "Identité « Donner des ailes »": [
   "“Giving wings” identity",
-  "هوية «نعطيو الجناحات»"
+  "هوية «نمنح الأجنحة»"
  ],
  "Pré-inscriptions en ligne": [
   "Online pre-registration",
-  "التسجيل المسبق أونلاين"
+  "التسجيل المسبق عبر الإنترنت"
  ],
  "Actualités et agenda": [
   "News and calendar",
@@ -1186,123 +1182,123 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réunir deux campus, de la crèche au primaire, sur un seul site clair pour les parents.": [
   "Bring two campuses, from nursery to primary, together on one clear site for parents.",
-  "نجمعو جوج ديال الكامبوس، من الكريش حتى الابتدائي، فموقع واحد واضح للواليدين."
+  "جمع حرمين دراسيين، من الحضانة إلى الابتدائي، في موقع واحد واضح لأولياء الأمور."
  ],
  "Deux campus sur une seule page": [
   "Two campuses on one page",
-  "جوج كامبوس فصفحة وحدة"
+  "حرمان دراسيان في صفحة واحدة"
  ],
  "Itinéraire en un geste": [
   "Directions in one tap",
-  "الطريق بكليك وحدة"
+  "الاتجاهات بنقرة واحدة"
  ],
  "Espace administration": [
   "Admin area",
-  "فضاء الإدارة"
+  "لوحة الإدارة"
  ],
  "Combien coûte un projet avec Digilago ?": [
   "How much does a project with Digilago cost?",
-  "شحال كيكلّف مشروع مع ديجيلاغو؟"
+  "كم تبلغ تكلفة مشروع مع ديجيلاغو؟"
  ],
- "Le prix dépend de ce dont vous avez besoin : une présence en ligne complète (site, fiche Google, référencement) reste volontairement accessible, puis le budget évolue avec la complexité (réservation, boutique, application, plateforme). Il est toujours annoncé par écrit avant de commencer, et vous voyez une première version offerte avant de payer quoi que ce soit.": [
-  "It depends on what you need. A complete online presence (website, Google profile, SEO) is deliberately affordable; the budget then grows with complexity (bookings, store, app, platform). The price is always confirmed in writing before we start, and you see a free first version before paying anything.",
-  "الثمن كيتبدّل على حساب شنو محتاج. الحضور الكامل أونلاين (موقع، فيشة Google، ريفيرونسمون) درناه فالمتناول، ومن بعد الميزانية كتطلع مع الصعوبة (حجز، بوتيك، تطبيق، منصة). ديما كنعطيوك الثمن مكتوب قبل ما نبداو، وكتشوف نسخة أولى فابور قبل ما تخلّص حتى درهم."
+ "Le prix dépend de ce dont vous avez besoin : une présence en ligne complète (site, fiche Google, référencement) reste volontairement accessible, puis le budget évolue avec la complexité (réservation, boutique, application, plateforme). Il est toujours annoncé par écrit avant de commencer, et vous découvrez une première version de votre site avant tout engagement : si elle ne vous plaît pas, vous ne payez rien.": [
+  "It depends on what you need. A complete online presence (website, Google profile, SEO) is deliberately affordable; the budget then grows with complexity (bookings, store, app, platform). The price is always confirmed in writing before we start, and you see a first version of your site before committing: if you don’t like it, you pay nothing.",
+  "يعتمد السعر على احتياجاتك. الحضور الرقمي المتكامل (موقع، ملف Google، تحسين محركات البحث) في متناولك عمدًا، ثم تتدرج الميزانية حسب التعقيد (حجز، متجر، تطبيق، منصة). نحدّد السعر كتابيًا دائمًا قبل البدء، وتكتشف نسخة أولى من موقعك قبل أي التزام: إن لم تنل إعجابك، لا تدفع شيئًا."
  ],
  "Que se passe-t-il après mon premier message ?": [
   "What happens after my first message?",
-  "شنو كيوقع من بعد أول ميساج نصيفطو؟"
+  "ماذا يحدث بعد رسالتي الأولى؟"
  ],
  "Nous vous rappelons le jour même pour un échange de dix minutes. Sous 72 heures, vous recevez le lien de votre première version. Vous nous faites vos retours, nous ajustons, puis nous mettons en ligne, créons votre fiche Google et vous formons en trente minutes.": [
   "We call you back the same day for a ten-minute chat. Within 72 hours, you receive the link to your first version. You share your feedback, we adjust, then we go live, set up your Google profile and train you in thirty minutes.",
-  "كنعيطو ليك فنفس النهار باش نهضرو عشر دقايق. فـ72 ساعة، كيوصلك الليان ديال النسخة الأولى. كتعطينا رأيك، كنعدّلو، ومن بعد كنطلقو الموقع، كنصاوبو ليك فيشة Google وكنكوّنوك فنص ساعة."
+  "نتصل بك في اليوم نفسه لمحادثة مدتها عشر دقائق. وخلال 72 ساعة، تتلقى رابط نسختك الأولى. تشاركنا ملاحظاتك، فنعدّل، ثم نطلق الموقع وننشئ ملف Google الخاص بك وندرّبك في ثلاثين دقيقة."
  ],
- "Que signifie « 0 dirham avant validation » ?": [
-  "What does “0 dirham before approval” mean?",
-  "شنو معنى «0 درهم قبل الموافقة»؟"
+ "Et si le résultat ne me plaît pas ?": [
+  "What if I don’t like the result?",
+  "ماذا لو لم تعجبني النتيجة؟"
  ],
- "Nous réalisons une première version de votre site, offerte. Si elle vous convainc, nous poursuivons ensemble. Sinon, vous ne nous devez rien.": [
-  "We build a first version of your website for free. If it convinces you, we carry on together. If not, you owe us nothing.",
-  "كنصاوبو ليك نسخة أولى من الموقع فابور. إلا عجباتك، كنكمّلو مع بعض. وإلا ما عجباتكش، ما كتسالنا والو."
+ "Vous ne payez rien. Nous réalisons d’abord une première version de votre site, et vous ne vous engagez que si elle vous convainc. Nous travaillons ainsi parce que nous avons confiance dans notre design, notre référencement et nos textes.": [
+  "You pay nothing. We build a first version of your website first, and you only commit if it convinces you. We work this way because we trust our design, our SEO and our copywriting.",
+  "لا تدفع شيئًا. ننجز أولًا نسخة من موقعك، ولا تلتزم إلا إذا أقنعتك. نعمل بهذه الطريقة لأننا واثقون من جودة تصميمنا وتحسيننا لمحركات البحث ومحتوانا."
  ],
  "Qu’est-ce que la visibilité dans les IA (GEO) ?": [
   "What is AI visibility (GEO)?",
-  "شنو هو الظهور فالذكاء الاصطناعي (GEO)؟"
+  "ما هو الظهور في الذكاء الاصطناعي (GEO)؟"
  ],
  "Le Generative Engine Optimization consiste à faire connaître votre entreprise aux assistants comme ChatGPT, Gemini ou Perplexity, afin qu’ils la recommandent lorsqu’on leur demande « un bon dentiste à Rabat » ou « un club de padel ouvert ce soir ».": [
   "Generative Engine Optimization means making sure assistants like ChatGPT, Gemini and Perplexity know your business, so they recommend it when someone asks for “a good dentist in Rabat” or “a padel club open tonight”.",
-  "الـGEO هو أننا نعرّفو الشركة ديالك عند المساعدين بحال ChatGPT وGemini وPerplexity، باش ينصحو بيها ملّي شي حد يسولهم على «طبيب سنان مزيان فالرباط» ولا «نادي بادل محلول هاد الليلة»."
+  "تحسين الظهور في محركات الذكاء الاصطناعي التوليدي (GEO) يعني تعريف المساعدات الذكية مثل ChatGPT وGemini وPerplexity بشركتك، لتوصي بها حين يُسأل عن «طبيب أسنان جيد في الرباط» أو «نادي بادل مفتوح الليلة»."
  ],
  "Travaillez-vous en dehors d’El Jadida ?": [
   "Do you work outside El Jadida?",
-  "واش كتخدمو غير فالجديدة؟"
+  "هل تعملون خارج الجديدة؟"
  ],
  "Oui. Notre équipe est basée à El Jadida et accompagne des entreprises dans tout le Maroc, ainsi que des clients à l’étranger. Tout se fait à distance, avec des rendez-vous sur place quand c’est utile.": [
   "Yes. Our team is based in El Jadida and works with businesses all over Morocco, as well as clients abroad. Everything can be done remotely, with in-person meetings when useful.",
-  "لا. الفرقة ديالنا فالجديدة، ولكن كنخدمو مع شركات فالمغرب كامل، ومع كليان حتى من برّا. كلشي كيتدار عن بعد، وكنتلاقاو وجه لوجه إلا كانت الحاجة."
+  "نعم. فريقنا مقيم في الجديدة ويرافق الشركات في كل أنحاء المغرب، وعملاء في الخارج أيضًا. يتم كل شيء عن بُعد، مع لقاءات حضورية عند الحاجة."
  ],
  "Le site sera-t-il disponible en arabe ?": [
   "Will my website be available in Arabic?",
-  "واش الموقع غادي يكون بالعربية؟"
+  "هل سيتوفر الموقع باللغة العربية؟"
  ],
  "Oui. La version arabe est incluse dans la présence en ligne complète. L’anglais est proposé pour le tourisme et les clientèles internationales.": [
   "Yes. The Arabic version is included in the complete online presence. English is available for tourism and international customers.",
-  "إيه. النسخة العربية داخلة فالحضور الكامل أونلاين. والإنجليزية كنقترحوها للسياحة والكليان الأجانب."
+  "نعم. النسخة العربية مشمولة في الحضور الرقمي المتكامل، والإنجليزية متاحة للقطاع السياحي والعملاء الدوليين."
  ],
  "Qui s’occupe du site après le lancement ?": [
   "Who looks after the site after launch?",
-  "شكون كيتهلّا فالموقع من بعد الإطلاق؟"
+  "من يتولى الموقع بعد الإطلاق؟"
  ],
  "Nous. Hébergement, sécurité, sauvegardes et mises à jour sont pris en charge. Vous gardez la main sur vos contenus depuis un espace simple, et notre équipe reste joignable sur WhatsApp.": [
   "We do. Hosting, security, backups and updates are all taken care of. You stay in control of your content from a simple dashboard, and our team is always reachable on WhatsApp.",
-  "حنا. الاستضافة، الأمان، النسخ الاحتياطية والتحديثات كلها علينا. نتا كتبقى متحكّم فالمحتوى ديالك من فضاء ساهل، والفرقة ديالنا ديما موجودة فالواتساب."
+  "نحن. الاستضافة والأمان والنسخ الاحتياطي والتحديثات كلها على عاتقنا. تتحكم في محتواك من لوحة بسيطة، ويظل فريقنا متاحًا عبر واتساب."
  ],
  "Padel, foot à 5, salles de sport": [
   "Padel, five-a-side, gyms",
-  "البادل، الميني فوت، صالات الرياضة"
+  "البادل، كرة القدم الخماسية، الأندية الرياضية"
  ],
  "Réservation de terrain ou de cours par créneau": [
   "Court or class booking by time slot",
-  "حجز التيران ولا الحصة حسب الوقت"
+  "حجز الملاعب أو الحصص حسب التوقيت"
  ],
  "Paiement en ligne ou confirmation WhatsApp": [
   "Online payment or WhatsApp confirmation",
-  "الخلاص أونلاين ولا التأكيد فالواتساب"
+  "دفع إلكتروني أو تأكيد عبر واتساب"
  ],
  "Planning en temps réel, abonnements": [
   "Live schedule, memberships",
-  "البلانينغ مباشر، والاشتراكات"
+  "جدولة فورية واشتراكات"
  ],
  "Fiche Google et avis": [
   "Google profile and reviews",
-  "فيشة Google والآراء"
+  "ملف Google والتقييمات"
  ],
  "Application mobile en option": [
   "Mobile app optional",
-  "تطبيق موبايل إلا بغيتي"
+  "تطبيق جوال اختياري"
  ],
  "Cliniques, médecins, dentistes, laboratoires": [
   "Clinics, doctors, dentists, labs",
-  "الكلينيكات، الأطباء، أطباء السنان، المختبرات"
+  "المصحات، الأطباء، أطباء الأسنان، المختبرات"
  ],
  "Prise de rendez-vous en ligne": [
   "Online appointment booking",
-  "أخذ المواعيد أونلاين"
+  "حجز المواعيد عبر الإنترنت"
  ],
  "Spécialités, équipe, urgences, horaires": [
   "Specialties, team, emergencies, hours",
-  "التخصصات، الفرقة، المستعجلات، الأوقات"
+  "التخصصات، الفريق، المستعجلات، الأوقات"
  ],
  "Fiche Google et itinéraire": [
   "Google profile and directions",
-  "فيشة Google والطريق"
+  "ملف Google والاتجاهات"
  ],
  "Conformité et confidentialité": [
   "Compliance and privacy",
-  "احترام القوانين والسرية"
+  "الامتثال وحماية الخصوصية"
  ],
  "Écoles, crèches, centres de formation": [
   "Schools, nurseries, training centres",
-  "المدارس، الكريشات، مراكز التكوين"
+  "المدارس، الحضانات، مراكز التكوين"
  ],
  "Cycles, programmes, vie scolaire": [
   "Levels, curriculum, school life",
@@ -1314,103 +1310,103 @@ export const D: Record<string, [string, string]> = {
  ],
  "Espace administration : actualités, demandes": [
   "Admin area: news, requests",
-  "فضاء الإدارة: الأخبار والطلبات"
+  "لوحة الإدارة: الأخبار والطلبات"
  ],
  "Version arabe et anglaise": [
   "Arabic and English versions",
-  "نسخة بالعربية والإنجليزية"
+  "نسخ بالعربية والإنجليزية"
  ],
  "Planning et espace parents en option": [
   "Timetable and parent portal optional",
-  "جدول الحصص وفضاء الواليدين إلا بغيتي"
+  "جدول الحصص وفضاء أولياء الأمور اختياريًا"
  ],
  "Restaurants, cafés, hôtels, riads": [
   "Restaurants, cafés, hotels, riads",
-  "المطاعم، القهاوي، الأوطيلات، الرياضات"
+  "المطاعم، المقاهي، الفنادق، الرياضات"
  ],
  "Menu ou chambres avec photos": [
   "Menu or rooms with photos",
-  "المنيو ولا البيوت بالتصاور"
+  "قائمة الطعام أو الغرف مع الصور"
  ],
  "Réservation directe, sans commission": [
   "Direct booking, no commission",
-  "حجز مباشر، بلا كوميسيون"
+  "حجز مباشر دون عمولة"
  ],
  "Multilingue pour les visiteurs étrangers": [
   "Multilingual for international guests",
-  "بزاف ديال اللغات للزوار الأجانب"
+  "متعدد اللغات للزوار الأجانب"
  ],
  "Avis Google mis en avant": [
   "Google reviews front and centre",
-  "آراء Google باينين مزيان"
+  "إبراز تقييمات Google"
  ],
  "Livraison ou click-and-collect en option": [
   "Delivery or click-and-collect optional",
-  "التوصيل ولا «كوموندي وجي خود» إلا بغيتي"
+  "التوصيل أو الطلب والاستلام اختياريًا"
  ],
  "Boutiques, marques, artisans": [
   "Shops, brands, artisans",
-  "البوتيكات، الماركات، الصنايعية"
+  "المتاجر، العلامات التجارية، الحرفيون"
  ],
  "Boutique en ligne complète": [
   "Complete online store",
-  "بوتيك أونلاين كاملة"
+  "متجر إلكتروني متكامل"
  ],
  "Paiement à la livraison et CMI": [
   "Cash on delivery and CMI",
-  "الخلاص عند التوصيل وCMI"
+  "الدفع عند التسليم وCMI"
  ],
  "Catalogue, stock, suivi des commandes": [
   "Catalogue, stock, order tracking",
-  "الكاطالوغ، السطوك، تتبّع الكوموندات"
+  "الكتالوج والمخزون وتتبع الطلبات"
  ],
  "Fiche Google pour la boutique physique": [
   "Google profile for your physical store",
-  "فيشة Google للمحل ديالك"
+  "ملف Google لمتجرك الفعلي"
  ],
  "Avocats, immobilier, BTP, architectes, garages": [
   "Lawyers, real estate, construction, architects, garages",
-  "المحامين، العقار، البني، المهندسين، الكراجات"
+  "المحامون، العقار، البناء، المهندسون، المرائب"
  ],
  "Site de confiance : équipe, réalisations, avis": [
   "A trustworthy site: team, projects, reviews",
-  "موقع كيعطي الثقة: الفرقة، الخدمات، الآراء"
+  "موقع يبعث على الثقة: الفريق، الإنجازات، التقييمات"
  ],
  "Devis ou rendez-vous en ligne": [
   "Online quotes or appointments",
-  "ديفي ولا موعد أونلاين"
+  "عروض أسعار أو مواعيد عبر الإنترنت"
  ],
  "Annonces ou portfolio filtrables": [
   "Filterable listings or portfolio",
-  "إعلانات ولا بورتفوليو بالفلاتر"
+  "إعلانات أو معرض أعمال قابل للتصفية"
  ],
  "Référencement local par ville": [
   "Local SEO city by city",
-  "الريفيرونسمون المحلي مدينة بمدينة"
+  "تحسين محلي لمحركات البحث حسب المدينة"
  ],
  "Espace client en option": [
   "Client portal optional",
-  "فضاء الكليان إلا بغيتي"
+  "بوابة عملاء اختيارية"
  ],
  "Toute entreprise avec un besoin métier": [
   "Any business with a specific need",
-  "أي شركة عندها حاجة خاصة"
+  "كل شركة لها حاجة خاصة"
  ],
  "Application web ou mobile": [
   "Web or mobile app",
-  "تطبيق ويب ولا موبايل"
+  "تطبيق ويب أو جوال"
  ],
  "Tableaux de bord, planning, facturation": [
   "Dashboards, scheduling, invoicing",
-  "لوحات التتبّع، البلانينغ، الفاكتورات"
+  "لوحات القيادة، الجدولة، الفوترة"
  ],
  "Espace clients ou membres": [
   "Client or member area",
-  "فضاء الكليان ولا الأعضاء"
+  "فضاء العملاء أو الأعضاء"
  ],
  "Hébergement, sécurité, évolutions": [
   "Hosting, security, improvements",
-  "الاستضافة، الأمان، التطويرات"
+  "الاستضافة، الأمان، التطوير المستمر"
  ],
  "Sport": [
   "Sport",
@@ -1434,7 +1430,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Sur-mesure & SaaS": [
   "Custom & SaaS",
-  "على المقاس وSaaS"
+  "حلول مخصّصة وSaaS"
  ],
  "Interface": [
   "Interface",
@@ -1442,15 +1438,15 @@ export const D: Record<string, [string, string]> = {
  ],
  "Ce que voient vos clients : rapide, fluide, beau sur téléphone.": [
   "What your customers see: fast, smooth, beautiful on mobile.",
-  "داكشي اللي كيشوفو الكليان: سريع، سلس، وزوين فالتيليفون."
+  "ما يراه عملاؤك: سريع وسلس وأنيق على الهاتف."
  ],
  "Données & métier": [
   "Data & business logic",
-  "البيانات والخدمة"
+  "البيانات ومنطق الأعمال"
  ],
  "Réservations, commandes, espaces clients : des données fiables, en temps réel.": [
   "Bookings, orders, client portals: reliable, real-time data.",
-  "الحجوزات، الكوموندات، فضاءات الكليان: بيانات مضمونة ومباشرة."
+  "الحجوزات والطلبات وبوابات العملاء: بيانات موثوقة وفي الوقت الفعلي."
  ],
  "Hébergement": [
   "Hosting",
@@ -1458,23 +1454,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "Servi au plus près de vos clients, sécurisé, sauvegardé.": [
   "Served close to your customers, secure, backed up.",
-  "كيوصل من أقرب بلاصة للكليان، آمن، ومحفوظ."
+  "يُقدَّم من أقرب خادم لعملائك، آمن ومحفوظ احتياطيًا."
  ],
  "Sauvegardes": [
   "Backups",
-  "النسخ الاحتياطية"
+  "النسخ الاحتياطي"
  ],
  "Être trouvé": [
   "Getting found",
-  "باش يلقاوك"
+  "الظهور في البحث"
  ],
  "Google, Maps et les IA lisent votre site comme un livre ouvert.": [
   "Google, Maps and AI read your site like an open book.",
-  "Google وMaps والذكاء الاصطناعي كيقراو الموقع ديالك بحال شي كتاب محلول."
+  "Google والخرائط والذكاء الاصطناعي يقرؤون موقعك ككتاب مفتوح."
  ],
  "SEO technique": [
   "Technical SEO",
-  "SEO تقني"
+  "تحسين تقني لمحركات البحث"
  ],
  "Intelligence artificielle": [
   "Artificial intelligence",
@@ -1482,19 +1478,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Assistants, contenus, recommandations : l’IA au service de votre métier.": [
   "Assistants, content, recommendations: AI working for your business.",
-  "مساعدين، محتوى، توصيات: الذكاء الاصطناعي فخدمة الحرفة ديالك."
+  "مساعدون ذكيون، محتوى، توصيات: الذكاء الاصطناعي في خدمة نشاطك."
  ],
  "Assistants de réservation": [
   "Booking assistants",
-  "مساعدين ديال الحجز"
+  "مساعدو الحجز"
  ],
  "Rédaction assistée": [
   "AI-assisted writing",
-  "الكتابة بمساعدة الذكاء الاصطناعي"
+  "كتابة بمساعدة الذكاء الاصطناعي"
  ],
  "Analyse d’avis": [
   "Review analysis",
-  "تحليل الآراء"
+  "تحليل التقييمات"
  ],
  "Qualité": [
   "Quality",
@@ -1502,39 +1498,39 @@ export const D: Record<string, [string, string]> = {
  ],
  "Mesuré, testé, accessible. Rien n’est laissé au hasard.": [
   "Measured, tested, accessible. Nothing left to chance.",
-  "مقاس، مجرَّب، وساهل للجميع. حتى حاجة ما خلّيناها للزهر."
+  "مقاس، مختبر، وسهل الوصول. لا شيء متروك للصدفة."
  ],
  "Accessibilité WCAG": [
   "WCAG accessibility",
-  "سهولة الولوج WCAG"
+  "إتاحة الوصول WCAG"
  ],
  "Tests automatisés": [
   "Automated testing",
-  "اختبارات أوتوماتيكية"
+  "اختبارات آلية"
  ],
  "Analytics respectueux": [
   "Privacy-friendly analytics",
-  "إحصائيات كتحترم الخصوصية"
+  "تحليلات تحترم الخصوصية"
  ],
  "Donner à chaque entreprise marocaine, de l’artisan au groupe, une présence en ligne à la hauteur de son savoir-faire.": [
   "To give every Moroccan business, from the artisan to the group, an online presence worthy of its craft.",
-  "نعطيو لكل شركة مغربية، من الصنايعي حتى المجموعة الكبيرة، حضور أونلاين فالمستوى ديال الحرفة ديالها."
+  "أن نمنح كل شركة مغربية، من الحرفي إلى المجموعة الكبرى، حضورًا رقميًا يليق بخبرتها."
  ],
  "Aujourd’hui, on choisit un restaurant, un médecin ou un fournisseur en quelques secondes, sur Google ou auprès d’une IA. Notre rôle : faire en sorte que la réponse soit vous, avec les bonnes informations, dans chaque métier et chaque ville du Maroc.": [
   "Today, people choose a restaurant, a doctor or a supplier in seconds, on Google or through an AI assistant. Our job is to make sure the answer is you, with the right information, in every trade and every city in Morocco.",
-  "اليوم، الناس كيختارو مطعم، طبيب ولا مورّد فثواني، فـGoogle ولا عند الذكاء الاصطناعي. الخدمة ديالنا هي أن الجواب يكون نتا، بالمعلومات الصحيحة، فكل حرفة وكل مدينة فالمغرب."
+  "اليوم، يختار الناس مطعمًا أو طبيبًا أو مورّدًا في ثوانٍ، عبر Google أو مساعد ذكي. مهمتنا أن تكون أنت الجواب، بالمعلومات الصحيحة، في كل نشاط وكل مدينة مغربية."
  ],
  "Digilago est née à El Jadida d’un constat simple : le savoir-faire des entreprises marocaines est immense, leur visibilité en ligne ne l’est pas encore. Nous avons commencé avec des écoles, puis des commerces, des cliniques et des cabinets. Chaque projet est construit à la main, avec les technologies d’aujourd’hui et l’exigence d’un grand groupe.": [
   "Digilago was born in El Jadida from a simple observation: Moroccan businesses have immense talent, but their online visibility hasn’t caught up yet. We started with schools, then shops, clinics and practices. Every project is hand-built, with today’s technology and the standards of a large group.",
-  "ديجيلاغو تزادت فالجديدة من ملاحظة بسيطة: الشركات المغربية عندها حرفة كبيرة، ولكن الظهور ديالها أونلاين مازال ما وصلش ليها. بدينا مع المدارس، ومن بعد الحوانت، الكلينيكات والمكاتب. كل مشروع كنبنيوه باليد، بتكنولوجيا اليوم وبالدقة ديال الشركات الكبار."
+  "وُلدت ديجيلاغو في الجديدة من ملاحظة بسيطة: خبرة الشركات المغربية هائلة، لكن ظهورها الرقمي لم يواكبها بعد. بدأنا مع المدارس، ثم المتاجر والمصحات والمكاتب. نبني كل مشروع بعناية، بأحدث التقنيات وبمعايير الشركات الكبرى."
  ],
  "Exigence": [
   "Rigour",
-  "الدقة"
+  "الإتقان"
  ],
  "Aucun modèle générique. Chaque ligne de code est écrite pour son propriétaire.": [
   "No generic templates. Every line of code is written for its owner.",
-  "ما كاين حتى قالب واجد. كل سطر ديال الكود كنكتبوه لمولاه."
+  "لا قوالب عامة. كل سطر برمجي يُكتب لصاحبه."
  ],
  "Résultats": [
   "Results",
@@ -1542,23 +1538,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "Un site existe pour être trouvé et générer des contacts. Tout est mesuré dans ce sens.": [
   "A website exists to be found and to bring in enquiries. Everything is measured with that in mind.",
-  "الموقع كاين باش يتلقى ويجيب ليك الاتصالات. كلشي كنقيسوه على هاد الأساس."
+  "وُجد الموقع ليُعثر عليه وليجلب طلبات التواصل. ونقيس كل شيء على هذا الأساس."
  ],
  "Transparence": [
   "Transparency",
-  "الوضوح"
+  "الشفافية"
  ],
- "Première version offerte, prix annoncé avant de commencer, aucun frais caché.": [
-  "Free first version, price confirmed before we start, no hidden fees.",
-  "النسخة الأولى فابور، الثمن معروف قبل ما نبداو، وما كاين حتى مصروف مخبّي."
+ "Vous ne payez que si le résultat vous plaît, prix annoncé avant de commencer, aucun frais caché.": [
+  "You only pay if you love the result; price set before we start, no hidden fees.",
+  "لا تدفع إلا إذا نالت النتيجة إعجابك، والسعر محدد قبل البدء، دون أي رسوم خفية."
  ],
  "Durée": [
   "Long term",
-  "على المدى الطويل"
+  "الاستمرارية"
  ],
  "Nous restons après le lancement : hébergement, sécurité, évolutions.": [
   "We stay on after launch: hosting, security, improvements.",
-  "كنبقاو معاك من بعد الإطلاق: الاستضافة، الأمان، التطويرات."
+  "نبقى معك بعد الإطلاق: استضافة، أمان، تطوير."
  ],
  "72 h": [
   "72 h",
@@ -1566,27 +1562,27 @@ export const D: Record<string, [string, string]> = {
  ],
  "pour une première version": [
   "for a first version",
-  "للنسخة الأولى"
+  "لإنجاز النسخة الأولى"
  ],
  "0 MAD": [
   "0 MAD",
   "0 درهم"
  ],
- "avant validation": [
-  "before approval",
-  "قبل الموافقة"
+ "si le résultat ne vous plaît pas": [
+  "if you don’t love the result",
+  "إن لم تعجبك النتيجة"
  ],
  "métiers couverts": [
   "trades covered",
-  "حرفة كنخدمو معاها"
+  "قطاعًا نغطيه"
  ],
  "code écrit à la main": [
   "hand-written code",
-  "كود مكتوب باليد"
+  "شيفرة مكتوبة يدويًا"
  ],
  "Digilago ne construit pas que pour les autres. Digilago Labs, c’est notre laboratoire : des produits que nous concevons, testons et faisons grandir, nés des besoins vus chez nos clients.": [
   "Digilago doesn’t only build for others. Digilago Labs is our lab: products we design, test and grow, born from needs we see with our clients.",
-  "ديجيلاغو ما كتبنيش غير للناس. Digilago Labs هو المختبر ديالنا: منتوجات كنصمّموها، كنجرّبوها وكنكبّروها، خرجو من الحاجات اللي شفناها عند الكليان ديالنا."
+  "لا تبني ديجيلاغو للآخرين فقط. Digilago Labs هو مختبرنا: منتجات نصمّمها ونختبرها ونطوّرها، وُلدت من احتياجات لاحظناها لدى عملائنا."
  ],
  "SaaS · sport": [
   "SaaS · sport",
@@ -1598,7 +1594,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réservation de terrains de padel et de foot par créneau, paiement ou WhatsApp, planning en temps réel. Né des clubs qui nous demandaient la même chose.": [
   "Padel and football court booking by time slot, with payment or WhatsApp and a live schedule. Born from clubs that kept asking us for the same thing.",
-  "حجز تيرانات البادل والكورة حسب الوقت، بالخلاص ولا بالواتساب، والبلانينغ مباشر. تزاد من النوادي اللي كانو كيطلبو علينا نفس الحاجة."
+  "حجز ملاعب البادل وكرة القدم حسب التوقيت، مع الدفع أو واتساب وجدولة فورية. وُلد من أندية طلبت منا الحل نفسه مرارًا."
  ],
  "SaaS · éducation": [
   "SaaS · education",
@@ -1606,11 +1602,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "En développement": [
   "In development",
-  "فطور البرمجة"
+  "قيد التطوير"
  ],
  "L’espace administration des écoles : actualités, pré-inscriptions, messages, agenda. Déjà en service dans nos sites d’écoles, en cours de transformation en produit.": [
   "The admin area for schools: news, pre-registrations, messages, calendar. Already running on our school websites and now becoming a product.",
-  "فضاء الإدارة ديال المدارس: الأخبار، التسجيل المسبق، الميساجات، الأجندة. خدام دابا فالمواقع ديال المدارس ديالنا، وكنرجّعوه منتوج."
+  "لوحة إدارة المدارس: الأخبار، التسجيل المسبق، الرسائل، الأجندة. تعمل حاليًا في مواقع المدارس التي أنجزناها، ونحوّلها إلى منتج."
  ],
  "SaaS · santé": [
   "SaaS · health",
@@ -1618,7 +1614,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Prise de rendez-vous en ligne pour cabinets et cliniques, rappels WhatsApp, agenda partagé. Simple pour le patient, sûr pour le praticien.": [
   "Online appointment booking for practices and clinics, WhatsApp reminders, shared calendar. Simple for patients, safe for practitioners.",
-  "أخذ المواعيد أونلاين للعيادات والكلينيكات، تذكير فالواتساب، وأجندة مشتركة. ساهل للمريض، ومضمون للطبيب."
+  "حجز المواعيد عبر الإنترنت للعيادات والمصحات، تذكير عبر واتساب، وأجندة مشتركة. بسيط للمريض وآمن للطبيب."
  ],
  "IA · web": [
   "AI · web",
@@ -1626,59 +1622,59 @@ export const D: Record<string, [string, string]> = {
  ],
  "Recherche": [
   "Research",
-  "بحث"
+  "بحث وتطوير"
  ],
  "Notre chaîne interne : à partir d’un nom et d’un métier, générer le contenu, les visuels et une première version de site en 72 heures. Le moteur de notre promesse des 72 heures.": [
   "Our internal pipeline: from a name and a trade, it generates content, visuals and a first website version in 72 hours. The engine behind our 72-hour promise.",
-  "السلسلة الداخلية ديالنا: من سمية وحرفة، كتخرج المحتوى، التصاور ونسخة أولى من الموقع فـ72 ساعة. هي المحرّك ديال الوعد ديالنا ديال 72 ساعة."
+  "سلسلتنا الداخلية: انطلاقًا من اسم ونشاط، تولّد المحتوى والصور ونسخة أولى من الموقع خلال 72 ساعة. إنها المحرّك وراء وعدنا بـ72 ساعة."
  ],
  "Des outils numériques dessinés pour votre métier et codés pour durer.": [
   "Digital tools designed for your trade and built to last.",
-  "أدوات رقمية مصمّمة على قدّ الحرفة ديالك، ومبرمجة باش تدوم."
+  "أدوات رقمية مصمّمة لنشاطك ومبنية لتدوم."
  ],
  "Site vitrine sur-mesure": [
   "Custom showcase website",
-  "موقع تعريفي على المقاس"
+  "موقع تعريفي مخصّص"
  ],
  "Un site rapide et élégant qui présente votre activité et transforme les visites en contacts.": [
   "A fast, elegant website that presents your business and turns visits into enquiries.",
-  "موقع سريع وأنيق كيقدّم الخدمة ديالك وكيحوّل الزيارات لاتصالات."
+  "موقع سريع وأنيق يقدّم نشاطك ويحوّل الزيارات إلى طلبات تواصل."
  ],
  "Design unique, pensé mobile d’abord": [
   "Unique, mobile-first design",
-  "تصميم فريد، مفكّر فيه للتيليفون قبل كلشي"
+  "تصميم فريد يعتمد الجوال أولًا"
  ],
  "Arabe, français et anglais": [
   "Arabic, French and English",
-  "العربية، الفرنسية والإنجليزية"
+  "العربية والفرنسية والإنجليزية"
  ],
  "Une image professionnelle, visible 24 h sur 24.": [
   "A professional image, visible around the clock.",
-  "صورة احترافية، باينة 24 ساعة على 24."
+  "صورة احترافية متاحة على مدار الساعة."
  ],
  "Boutique en ligne": [
   "Online store",
-  "بوتيك أونلاين"
+  "متجر إلكتروني"
  ],
  "Vendez partout au Maroc et à l’étranger, avec un parcours d’achat simple.": [
   "Sell across Morocco and abroad, with a simple checkout.",
-  "بيع فالمغرب كامل وبرّا، بطريقة شرا ساهلة."
+  "بع في كل المغرب وخارجه بمسار شراء بسيط."
  ],
  "Catalogue, panier, variantes": [
   "Catalogue, cart, variants",
-  "الكاطالوغ، الباني، الأنواع"
+  "الكتالوج، السلة، الخيارات"
  ],
  "Paiement CMI ou à la livraison": [
   "CMI payment or cash on delivery",
-  "الخلاص بـCMI ولا عند التوصيل"
+  "الدفع عبر CMI أو عند التسليم"
  ],
  "Suivi des commandes et du stock": [
   "Order and stock tracking",
-  "تتبّع الكوموندات والسطوك"
+  "تتبع الطلبات والمخزون"
  ],
  "Des ventes, même quand la boutique est fermée.": [
   "Sales, even when the shop is closed.",
-  "البيع خدام، حتى والمحل مسدود."
+  "مبيعات مستمرة، حتى عندما يكون المتجر مغلقًا."
  ],
  "Réservation et rendez-vous": [
   "Bookings and appointments",
@@ -1686,55 +1682,55 @@ export const D: Record<string, [string, string]> = {
  ],
  "Vos clients réservent un créneau, une table ou une chambre sans appeler.": [
   "Customers book a slot, a table or a room without calling.",
-  "الكليان كيحجزو وقت، طابلة ولا بيت بلا ما يعيطو."
+  "يحجز عملاؤك موعدًا أو طاولة أو غرفة دون اتصال هاتفي."
  ],
  "Agenda en temps réel": [
   "Real-time calendar",
-  "أجندة مباشرة"
+  "أجندة فورية"
  ],
  "Confirmation et rappels WhatsApp": [
   "WhatsApp confirmations and reminders",
-  "التأكيد والتذكير فالواتساب"
+  "تأكيدات وتذكيرات عبر واتساب"
  ],
  "Acompte en ligne en option": [
   "Online deposit optional",
-  "العربون أونلاين إلا بغيتي"
+  "عربون إلكتروني اختياري"
  ],
  "Moins d’appels manqués, plus de rendez-vous tenus.": [
   "Fewer missed calls, more appointments kept.",
-  "مكالمات ضايعة قلال، ومواعيد محترمة كثار."
+  "مكالمات فائتة أقل، ومواعيد محترمة أكثر."
  ],
  "Application web et espace client": [
   "Web app and client portal",
-  "تطبيق ويب وفضاء الكليان"
+  "تطبيق ويب وبوابة عملاء"
  ],
  "Espaces membres, portails parents, extranets : vos clients autonomes, vos équipes soulagées.": [
   "Member areas, parent portals, extranets: self-service for your customers, relief for your team.",
-  "فضاءات الأعضاء، بوابات الواليدين، الإكسترانيت: الكليان كيتسيّرو بوحدهم، والفرقة ديالك كترتاح."
+  "فضاءات الأعضاء، بوابات أولياء الأمور، الشبكات الخارجية: عملاء مستقلون وفريق مرتاح."
  ],
  "Comptes et droits d’accès": [
   "Accounts and access rights",
-  "الحسابات وصلاحيات الدخول"
+  "الحسابات وصلاحيات الوصول"
  ],
  "Documents, factures, messages": [
   "Documents, invoices, messages",
-  "الوثائق، الفاكتورات، الميساجات"
+  "الوثائق، الفواتير، الرسائل"
  ],
  "Tableaux de bord": [
   "Dashboards",
-  "لوحات التتبّع"
+  "لوحات القيادة"
  ],
  "Un service client disponible en permanence.": [
   "Customer service that’s always on.",
-  "خدمة الكليان موجودة ديما."
+  "خدمة عملاء متاحة باستمرار."
  ],
  "Application mobile": [
   "Mobile app",
-  "تطبيق موبايل"
+  "تطبيق جوال"
  ],
  "Une application iOS et Android pour fidéliser et commander en un geste.": [
   "An iOS and Android app to build loyalty and take orders in one tap.",
-  "تطبيق iOS وAndroid باش تحافظ على الكليان وياخدو الكوموند بكليك وحدة."
+  "تطبيق iOS وAndroid لتعزيز الولاء وتلقي الطلبات بنقرة واحدة."
  ],
  "Notifications ciblées": [
   "Targeted notifications",
@@ -1742,79 +1738,79 @@ export const D: Record<string, [string, string]> = {
  ],
  "Programme de fidélité": [
   "Loyalty programme",
-  "برنامج الوفاء"
+  "برنامج الولاء"
  ],
  "Publication sur les stores": [
   "App store publishing",
-  "النشر فالستورات"
+  "النشر على متاجر التطبيقات"
  ],
  "Votre marque dans la poche de vos clients.": [
   "Your brand in your customers’ pockets.",
-  "الماركة ديالك فجيب الكليان ديالك."
+  "علامتك التجارية في جيب عملائك."
  ],
  "Design UX / UI": [
   "UX / UI design",
-  "تصميم UX / UI"
+  "تصميم تجربة وواجهة المستخدم UX / UI"
  ],
  "Parcours, maquettes et prototypes cliquables avant la moindre ligne de code.": [
   "User journeys, mock-ups and clickable prototypes before a single line of code.",
-  "مسارات، ماكيطات ونماذج كتكليكي عليهم قبل حتى سطر ديال الكود."
+  "مسارات المستخدم، نماذج بالحجم الحقيقي ونماذج تفاعلية قبل كتابة أي سطر برمجي."
  ],
  "Ateliers et parcours utilisateurs": [
   "Workshops and user journeys",
-  "ورشات ومسارات المستعملين"
+  "ورشات ومسارات المستخدم"
  ],
  "Maquettes haute fidélité": [
   "High-fidelity mock-ups",
-  "ماكيطات دقيقة"
+  "نماذج عالية الدقة"
  ],
  "Prototype testé avec vos clients": [
   "Prototype tested with your customers",
-  "نموذج مجرَّب مع الكليان ديالك"
+  "نموذج تفاعلي مختبر مع عملائك"
  ],
  "Des décisions validées, sans surprise au développement.": [
   "Decisions validated upfront, no surprises during development.",
-  "قرارات واضحة من الأول، وبلا مفاجآت فالبرمجة."
+  "قرارات محسومة مسبقًا، دون مفاجآت أثناء التطوير."
  ],
  "Identité visuelle et logo": [
   "Visual identity and logo",
-  "الهوية البصرية واللوغو"
+  "الهوية البصرية والشعار"
  ],
  "Un logo, des couleurs et une typographie qui vous distinguent partout.": [
   "A logo, colours and typography that set you apart everywhere.",
-  "لوغو، ألوان وخط كيميّزوك فكل بلاصة."
+  "شعار وألوان وخطوط تميّزك في كل مكان."
  ],
  "Logo et déclinaisons": [
   "Logo and variations",
-  "اللوغو والنسخ ديالو"
+  "الشعار وتنويعاته"
  ],
  "Palette et typographies": [
   "Colour palette and typefaces",
-  "الألوان والخطوط"
+  "لوحة الألوان والخطوط"
  ],
  "Guide d’utilisation": [
   "Brand guidelines",
-  "دليل الاستعمال"
+  "دليل الهوية البصرية"
  ],
  "Une marque reconnaissable du site à l’enseigne.": [
   "A brand people recognise, from website to shopfront.",
-  "ماركة كتعرفها من الموقع حتى البلاكة ديال المحل."
+  "علامة يتعرّف عليها الجميع، من الموقع إلى واجهة المحل."
  ],
  "Votre nom en tête là où vos clients cherchent : Google, la carte et les IA.": [
   "Your name on top wherever customers search: Google, maps and AI.",
-  "السمية ديالك الأولى فين ما قلّبو الكليان: Google، الخريطة والذكاء الاصطناعي."
+  "اسمك في الصدارة أينما بحث عملاؤك: Google والخرائط والذكاء الاصطناعي."
  ],
  "Création, vérification et optimisation de votre fiche sur Google et Maps.": [
   "Creating, verifying and optimising your profile on Google and Maps.",
-  "نصاوبو، نوثّقو ونحسّنو الفيشة ديالك فـGoogle وMaps."
+  "إنشاء ملفك على Google والخرائط والتحقق منه وتحسينه."
  ],
  "Photos, horaires, services": [
   "Photos, hours, services",
-  "التصاور، الأوقات، الخدمات"
+  "الصور، الأوقات، الخدمات"
  ],
  "Catégories et zones optimisées": [
   "Optimised categories and areas",
-  "أصناف ومناطق محسّنة"
+  "فئات ومناطق مُحسّنة"
  ],
  "Publications régulières": [
   "Regular posts",
@@ -1822,11 +1818,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Des appels et des itinéraires directement depuis Google.": [
   "Calls and directions straight from Google.",
-  "مكالمات وطلبات الطريق نيشان من Google."
+  "مكالمات وطلبات اتجاهات مباشرة من Google."
  ],
  "Votre site en première page quand on cherche votre métier dans votre ville.": [
   "Your site on page one when people search for your trade in your city.",
-  "الموقع ديالك فالصفحة الأولى ملّي كيقلّبو على الحرفة ديالك فالمدينة ديالك."
+  "موقعك في الصفحة الأولى حين يُبحث عن نشاطك في مدينتك."
  ],
  "Audit technique et mots-clés": [
   "Technical audit and keywords",
@@ -1838,19 +1834,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Suivi mensuel des positions": [
   "Monthly ranking tracking",
-  "تتبّع البلاصة كل شهر"
+  "تتبع شهري للترتيب"
  ],
  "Un flux de clients durable, sans payer chaque clic.": [
   "A steady flow of customers, without paying for every click.",
-  "الكليان جايين بانتظام، بلا ما تخلّص على كل كليك."
+  "تدفق مستمر من العملاء دون الدفع مقابل كل نقرة."
  ],
  "ChatGPT, Gemini et Perplexity connaissent votre entreprise et la recommandent.": [
   "ChatGPT, Gemini and Perplexity know your business and recommend it.",
-  "ChatGPT وGemini وPerplexity كيعرفو الشركة ديالك وكينصحو بيها."
+  "ChatGPT وGemini وPerplexity يعرفون شركتك ويوصون بها."
  ],
  "Données structurées Schema.org": [
   "Schema.org structured data",
-  "بيانات منظّمة Schema.org"
+  "بيانات مُهيكلة Schema.org"
  ],
  "Fichier llms.txt": [
   "llms.txt file",
@@ -1858,15 +1854,15 @@ export const D: Record<string, [string, string]> = {
  ],
  "Contenus pensés pour les assistants": [
   "Content written for AI assistants",
-  "محتوى مكتوب للمساعدين الذكيين"
+  "محتوى مكتوب للمساعدات الذكية"
  ],
  "Vous êtes la réponse quand on demande conseil à une IA.": [
   "You’re the answer when someone asks an AI for advice.",
-  "نتا هو الجواب ملّي شي حد كيطلب النصيحة من الذكاء الاصطناعي."
+  "أنت الجواب حين يطلب أحدهم نصيحة من الذكاء الاصطناعي."
  ],
  "Des campagnes ciblées sur votre quartier, votre clientèle et votre budget.": [
   "Campaigns targeted to your area, your customers and your budget.",
-  "حملات موجّهة للحومة ديالك، للكليان ديالك وعلى قدّ الميزانية ديالك."
+  "حملات موجّهة لمنطقتك وعملائك وميزانيتك."
  ],
  "Stratégie et ciblage": [
   "Strategy and targeting",
@@ -1882,79 +1878,79 @@ export const D: Record<string, [string, string]> = {
  ],
  "Des résultats rapides, mesurés au dirham près.": [
   "Fast results, measured down to the last dirham.",
-  "نتائج زربة، محسوبة بالدرهم."
+  "نتائج سريعة، مقاسة بدقة حتى آخر درهم."
  ],
  "Contenus et rédaction": [
   "Content and copywriting",
-  "المحتوى والكتابة"
+  "المحتوى وكتابة النصوص"
  ],
  "Textes, articles et visuels qui rassurent vos clients et plaisent à Google.": [
   "Copy, articles and visuals that reassure customers and please Google.",
-  "نصوص، مقالات وتصاور كيطمّنو الكليان وكيعجبو Google."
+  "نصوص ومقالات وصور تطمئن عملاءك وتلقى استحسان Google."
  ],
  "Rédaction en trois langues": [
   "Writing in three languages",
-  "الكتابة بثلاث لغات"
+  "كتابة بثلاث لغات"
  ],
  "Articles de blog": [
   "Blog articles",
-  "مقالات البلوغ"
+  "مقالات المدونة"
  ],
  "Visuels pour le site et les réseaux": [
   "Visuals for your site and social media",
-  "تصاور للموقع وللسوشيال ميديا"
+  "مرئيات للموقع ولشبكات التواصل"
  ],
  "Un discours clair qui donne envie de vous contacter.": [
   "Clear messaging that makes people want to get in touch.",
-  "هضرة واضحة كتخلّي الناس يتواصلو معاك."
+  "رسالة واضحة تحفّز على التواصل معك."
  ],
  "Avis et réputation": [
   "Reviews and reputation",
-  "الآراء والسمعة"
+  "التقييمات والسمعة الرقمية"
  ],
  "Collectez plus d’avis cinq étoiles et répondez à chacun avec soin.": [
   "Collect more five-star reviews and reply to each one with care.",
-  "جمع آراء ديال خمس نجوم كثر، وجاوب على كل واحد بعناية."
+  "اجمع مزيدًا من تقييمات الخمس نجوم، وردّ على كل واحد منها بعناية."
  ],
  "Demande d’avis automatisée": [
   "Automated review requests",
-  "طلب الآراء أوتوماتيكيا"
+  "طلب تقييمات آليًا"
  ],
  "Réponses aux avis": [
   "Review replies",
-  "الجواب على الآراء"
+  "الرد على التقييمات"
  ],
  "Alertes en cas d’avis négatif": [
   "Alerts for negative reviews",
-  "تنبيه ملّي كيجي شي رأي خايب"
+  "تنبيهات عند التقييمات السلبية"
  ],
  "Une note qui inspire confiance au premier regard.": [
   "A rating that inspires trust at first glance.",
-  "تقييم كيعطي الثقة من أول نظرة."
+  "تقييم يبعث الثقة من النظرة الأولى."
  ],
  "Hébergement, sécurité, intégrations et logiciels : tout fonctionne, tout le temps.": [
   "Hosting, security, integrations and software: everything works, all the time.",
-  "الاستضافة، الأمان، الربط والبرامج: كلشي خدام، ديما."
+  "الاستضافة والأمان والتكاملات والبرمجيات: كل شيء يعمل، طوال الوقت."
  ],
  "Hébergement et nom de domaine": [
   "Hosting and domain name",
-  "الاستضافة والدومين"
+  "الاستضافة واسم النطاق"
  ],
  "Un site servi au plus près de vos visiteurs, au Maroc comme à l’étranger.": [
   "A site served close to your visitors, in Morocco and abroad.",
-  "موقع كيوصل من أقرب بلاصة للزوار، فالمغرب ولا برّا."
+  "موقع يُقدَّم من أقرب خادم لزوارك، في المغرب والخارج."
  ],
  "Domaine .ma ou .com": [
   ".ma or .com domain",
-  "دومين .ma ولا .com"
+  "نطاق .ma أو .com"
  ],
  "Adresses e-mail professionnelles": [
   "Professional email addresses",
-  "إيميلات احترافية"
+  "عناوين بريد إلكتروني احترافية"
  ],
  "Un site rapide et toujours en ligne.": [
   "A fast site that’s always online.",
-  "موقع سريع وديما خدام."
+  "موقع سريع ومتاح دائمًا."
  ],
  "Maintenance et sécurité": [
   "Maintenance and security",
@@ -1962,59 +1958,59 @@ export const D: Record<string, [string, string]> = {
  ],
  "Mises à jour, sauvegardes et surveillance, sans que vous ayez à y penser.": [
   "Updates, backups and monitoring, without you having to think about it.",
-  "التحديثات، النسخ الاحتياطية والمراقبة، بلا ما تشغل بالك."
+  "التحديثات والنسخ الاحتياطي والمراقبة، دون أن تشغل بالك."
  ],
  "Surveillance jour et nuit": [
   "Round-the-clock monitoring",
-  "مراقبة ليل ونهار"
+  "مراقبة على مدار الساعة"
  ],
  "Corrections sous 24 heures": [
   "Fixes within 24 hours",
-  "الإصلاح فـ24 ساعة"
+  "إصلاحات خلال 24 ساعة"
  ],
  "La tranquillité, sans mauvaise surprise.": [
   "Peace of mind, no nasty surprises.",
-  "راحة البال، بلا مفاجآت خايبة."
+  "راحة بال، دون مفاجآت."
  ],
  "Intégrations": [
   "Integrations",
-  "الربط مع الأدوات"
+  "التكاملات"
  ],
  "Votre site relié à vos outils : paiement, WhatsApp, agenda, CRM, comptabilité.": [
   "Your site connected to your tools: payments, WhatsApp, calendar, CRM, accounting.",
-  "الموقع ديالك مربوط بالأدوات ديالك: الخلاص، الواتساب، الأجندة، CRM، والمحاسبة."
+  "موقعك متصل بأدواتك: الدفع، واتساب، الأجندة، CRM، المحاسبة."
  ],
  "Paiement CMI et Stripe": [
   "CMI and Stripe payments",
-  "الخلاص بـCMI وStripe"
+  "الدفع عبر CMI وStripe"
  ],
  "Agenda, CRM, facturation": [
   "Calendar, CRM, invoicing",
-  "الأجندة، CRM، الفاكتورات"
+  "الأجندة، CRM، الفوترة"
  ],
  "Moins de saisie, zéro double emploi.": [
   "Less data entry, zero duplication.",
-  "كتابة قليلة، وحتى حاجة ما كتعاود."
+  "إدخال بيانات أقل، ودون أي تكرار."
  ],
  "Planning, facturation, suivi d’activité : des outils taillés pour vos process.": [
   "Scheduling, invoicing, activity tracking: tools shaped around how you work.",
-  "البلانينغ، الفاكتورات، تتبّع النشاط: أدوات مفصّلة على الطريقة ديال الخدمة ديالك."
+  "الجدولة والفوترة وتتبع النشاط: أدوات مصمّمة حول طريقة عملك."
  ],
  "Analyse de vos besoins": [
   "Needs analysis",
-  "تحليل الحاجات ديالك"
+  "تحليل الاحتياجات"
  ],
  "Développement par étapes": [
   "Step-by-step development",
-  "برمجة مرحلة بمرحلة"
+  "تطوير على مراحل"
  ],
  "Formation des équipes": [
   "Team training",
-  "تكوين الفرقة"
+  "تدريب الفرق"
  ],
  "Des équipes plus efficaces, des décisions éclairées.": [
   "More effective teams, better-informed decisions.",
-  "فرقة خدامة مزيان، وقرارات واضحة."
+  "فرق أكثر فعالية، وقرارات مبنية على البيانات."
  ],
  "Automatisation et IA": [
   "Automation and AI",
@@ -2022,47 +2018,47 @@ export const D: Record<string, [string, string]> = {
  ],
  "Assistants de réservation, réponses WhatsApp, tri des demandes, rédaction assistée.": [
   "Booking assistants, WhatsApp replies, request sorting, AI-assisted writing.",
-  "مساعدين ديال الحجز، أجوبة فالواتساب، ترتيب الطلبات، وكتابة بمساعدة الذكاء الاصطناعي."
+  "مساعدو الحجز، ردود واتساب، فرز الطلبات، كتابة بمساعدة الذكاء الاصطناعي."
  ],
  "Assistant WhatsApp": [
   "WhatsApp assistant",
-  "مساعد فالواتساب"
+  "مساعد واتساب"
  ],
  "Automatisation des tâches répétitives": [
   "Automating repetitive tasks",
-  "أتمتة الخدمات اللي كتعاود"
+  "أتمتة المهام المتكررة"
  ],
  "Analyse des avis clients": [
   "Customer review analysis",
-  "تحليل آراء الكليان"
+  "تحليل تقييمات العملاء"
  ],
  "Des heures gagnées chaque semaine.": [
   "Hours saved every week.",
-  "سوايع كتربحها كل سيمانة."
+  "ساعات توفّرها كل أسبوع."
  ],
  "Formation et accompagnement": [
   "Training and support",
-  "التكوين والمواكبة"
+  "التدريب والمواكبة"
  ],
  "Vous et vos équipes savez utiliser vos outils, et nous restons joignables.": [
   "You and your team know how to use your tools, and we stay within reach.",
-  "نتا والفرقة ديالك كتعرفو تخدمو بالأدوات ديالكم، وحنا ديما موجودين."
+  "أنت وفريقك تتقنون استخدام أدواتكم، ونبقى في متناولكم."
  ],
  "Formation de prise en main": [
   "Onboarding training",
-  "تكوين باش تبدا"
+  "تدريب على الاستخدام"
  ],
  "Guides vidéo": [
   "Video guides",
-  "شروحات بالفيديو"
+  "أدلة بالفيديو"
  ],
  "Support WhatsApp le jour même": [
   "Same-day WhatsApp support",
-  "الدعم فالواتساب فنفس النهار"
+  "دعم عبر واتساب في اليوم نفسه"
  ],
  "Une autonomie réelle, un partenaire disponible.": [
   "Real independence, a partner on hand.",
-  "تسيّر بوحدك بصح، ومعاك شريك ديما حاضر."
+  "استقلالية حقيقية وشريك حاضر دائمًا."
  ],
  "Sidi Bouzid · El Jadida": [
   "Sidi Bouzid · El Jadida",
@@ -2070,15 +2066,15 @@ export const D: Record<string, [string, string]> = {
  ],
  "Site bilingue FR / EN": [
   "Bilingual FR / EN site",
-  "موقع بالفرنسية والإنجليزية"
+  "موقع ثنائي اللغة FR / EN"
  ],
  "Administration complète": [
   "Full admin",
-  "إدارة كاملة"
+  "إدارة متكاملة"
  ],
  "Planning intégré": [
   "Built-in timetable",
-  "بلانينغ مدمج"
+  "جدول حصص مدمج"
  ],
  "Plateau · El Jadida": [
   "Plateau · El Jadida",
@@ -2086,11 +2082,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Crèche · Maternelle · Primaire": [
   "Nursery · Kindergarten · Primary",
-  "كريش · روض · ابتدائي"
+  "حضانة · تعليم أولي · ابتدائي"
  ],
  "Deux campus": [
   "Two campuses",
-  "جوج كامبوس"
+  "حرمان دراسيان"
  ],
  "Tous": [
   "All",
@@ -2106,7 +2102,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Bâtiment": [
   "Construction",
-  "البني"
+  "البناء"
  ],
  "Beauté": [
   "Beauty",
@@ -2114,7 +2110,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Auto": [
   "Auto",
-  "الطوموبيلات"
+  "السيارات"
  ],
  "Tourisme": [
   "Tourism",
@@ -2126,7 +2122,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Foot": [
   "Football",
-  "الكورة"
+  "كرة القدم"
  ],
  "Écoles": [
   "Schools",
@@ -2134,7 +2130,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Cliniques": [
   "Clinics",
-  "الكلينيكات"
+  "المصحات"
  ],
  "Médecins": [
   "Doctors",
@@ -2146,11 +2142,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Hôtels": [
   "Hotels",
-  "الأوطيلات"
+  "الفنادق"
  ],
  "BTP": [
   "Construction",
-  "البني"
+  "البناء والأشغال"
  ],
  "E-commerce": [
   "E-commerce",
@@ -2162,31 +2158,31 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réservation par créneau": [
   "Booking by time slot",
-  "الحجز حسب الوقت"
+  "الحجز حسب التوقيت"
  ],
  "Paiement en ligne ou WhatsApp": [
   "Online or WhatsApp payment",
-  "الخلاص أونلاين ولا بالواتساب"
+  "الدفع إلكترونيًا أو عبر واتساب"
  ],
  "Tournois et coaching": [
   "Tournaments and coaching",
-  "الدوريات والكوتشينغ"
+  "البطولات والتدريب"
  ],
  "Foot à 5": [
   "Five-a-side football",
-  "الميني فوت"
+  "كرة القدم الخماسية"
  ],
  "Réserver un match": [
   "Book a match",
-  "حجز ماتش"
+  "احجز مباراة"
  ],
  "Planning des terrains": [
   "Pitch schedule",
-  "بلانينغ التيرانات"
+  "جدول الملاعب"
  ],
  "Réservation d’équipe": [
   "Team booking",
-  "حجز الفرقة"
+  "حجز الفرق"
  ],
  "Ligues et classements": [
   "Leagues and standings",
@@ -2194,15 +2190,15 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réserver un essai": [
   "Book a trial",
-  "حجز حصة تجريبية"
+  "احجز حصة تجريبية"
  ],
  "Planning des cours": [
   "Class schedule",
-  "بلانينغ الحصص"
+  "جدول الحصص"
  ],
  "Abonnements en ligne": [
   "Online memberships",
-  "الاشتراكات أونلاين"
+  "اشتراكات عبر الإنترنت"
  ],
  "Spécialités et médecins": [
   "Specialties and doctors",
@@ -2214,15 +2210,15 @@ export const D: Record<string, [string, string]> = {
  ],
  "Rendez-vous en ligne": [
   "Online appointments",
-  "المواعيد أونلاين"
+  "مواعيد عبر الإنترنت"
  ],
  "Actes et tarifs": [
   "Treatments and fees",
-  "العلاجات والأسعار"
+  "العلاجات والتسعيرة"
  ],
  "Rappels WhatsApp": [
   "WhatsApp reminders",
-  "التذكير فالواتساب"
+  "تذكيرات عبر واتساب"
  ],
  "Laboratoire": [
   "Laboratory",
@@ -2230,11 +2226,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Mes résultats": [
   "My results",
-  "النتائج ديالي"
+  "نتائجي"
  ],
  "Résultats en ligne": [
   "Results online",
-  "النتائج أونلاين"
+  "النتائج عبر الإنترنت"
  ],
  "Horaires et prélèvements": [
   "Hours and sample collection",
@@ -2242,11 +2238,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Espace patient": [
   "Patient portal",
-  "فضاء المريض"
+  "بوابة المريض"
  ],
  "Commander": [
   "Order",
-  "كوموندي"
+  "اطلب الآن"
  ],
  "Pharmacie de garde": [
   "On-duty pharmacy",
@@ -2254,47 +2250,47 @@ export const D: Record<string, [string, string]> = {
  ],
  "Commande et livraison": [
   "Order and delivery",
-  "الكوموند والتوصيل"
+  "الطلب والتوصيل"
  ],
  "Fiche Google": [
   "Google profile",
-  "فيشة Google"
+  "ملف Google"
  ],
  "Menu et photos": [
   "Menu and photos",
-  "المنيو والتصاور"
+  "القائمة والصور"
  ],
  "Réservation de table": [
   "Table booking",
-  "حجز الطابلة"
+  "حجز الطاولات"
  ],
  "Avis Google": [
   "Google reviews",
-  "آراء Google"
+  "تقييمات Google"
  ],
  "Café": [
   "Café",
-  "قهوة"
+  "مقهى"
  ],
  "Voir le menu": [
   "See the menu",
-  "شوف المنيو"
+  "اطّلع على القائمة"
  ],
  "Menu du jour": [
   "Daily menu",
-  "منيو النهار"
+  "طبق اليوم"
  ],
  "Click and collect": [
   "Click and collect",
-  "كوموندي وجي خود"
+  "الطلب والاستلام"
  ],
  "Programme fidélité": [
   "Loyalty programme",
-  "برنامج الوفاء"
+  "برنامج الولاء"
  ],
  "Chambres et tarifs": [
   "Rooms and rates",
-  "البيوت والأسعار"
+  "الغرف والأسعار"
  ],
  "Réservation directe": [
   "Direct booking",
@@ -2302,11 +2298,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Voir les chambres": [
   "See the rooms",
-  "شوف البيوت"
+  "اكتشف الغرف"
  ],
  "Réservation sans commission": [
   "Commission-free booking",
-  "حجز بلا كوميسيون"
+  "حجز دون عمولة"
  ],
  "Offres et séjours": [
   "Offers and stays",
@@ -2314,19 +2310,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Avis voyageurs": [
   "Guest reviews",
-  "آراء المسافرين"
+  "آراء النزلاء"
  ],
  "Annonces filtrables": [
   "Filterable listings",
-  "إعلانات بالفلاتر"
+  "إعلانات قابلة للتصفية"
  ],
  "Visite virtuelle": [
   "Virtual tour",
-  "زيارة افتراضية"
+  "جولة افتراضية"
  ],
  "Alerte nouveaux biens": [
   "New listing alerts",
-  "تنبيه بالعقارات الجداد"
+  "تنبيهات بالعقارات الجديدة"
  ],
  "Promoteur": [
   "Property developer",
@@ -2334,11 +2330,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Découvrir le programme": [
   "Explore the development",
-  "اكتاشف المشروع"
+  "اكتشف المشروع"
  ],
  "Plans et disponibilités": [
   "Plans and availability",
-  "التصاميم والشقق المتوفرة"
+  "المخططات والوحدات المتاحة"
  ],
  "Simulateur de financement": [
   "Financing calculator",
@@ -2346,19 +2342,19 @@ export const D: Record<string, [string, string]> = {
  ],
  "Prise de rendez-vous": [
   "Appointment booking",
-  "أخذ المواعيد"
+  "حجز المواعيد"
  ],
  "Domaines d’expertise": [
   "Practice areas",
-  "مجالات الخبرة"
+  "مجالات الاختصاص"
  ],
  "Équipe et parcours": [
   "Team and background",
-  "الفرقة والمسار"
+  "الفريق والمسار المهني"
  ],
  "Consultation en ligne": [
   "Online consultation",
-  "استشارة أونلاين"
+  "استشارة عن بُعد"
  ],
  "Notaire": [
   "Notary",
@@ -2366,7 +2362,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "Demander un rendez-vous": [
   "Request an appointment",
-  "طلب موعد"
+  "اطلب موعدًا"
  ],
  "Actes et démarches": [
   "Deeds and procedures",
@@ -2374,23 +2370,23 @@ export const D: Record<string, [string, string]> = {
  ],
  "Pièces à préparer": [
   "Documents to prepare",
-  "الوثائق اللي خاصك توجّد"
+  "الوثائق المطلوبة"
  ],
  "Demander un devis": [
   "Request a quote",
-  "طلب ديفي"
+  "اطلب عرض سعر"
  ],
  "Réalisations avant/après": [
   "Before/after projects",
-  "الخدمات قبل ومن بعد"
+  "إنجازات قبل وبعد"
  ],
  "Devis en ligne": [
   "Online quotes",
-  "ديفي أونلاين"
+  "عروض أسعار عبر الإنترنت"
  ],
  "Zones d’intervention": [
   "Service areas",
-  "المناطق اللي كنخدمو فيها"
+  "مناطق التدخل"
  ],
  "Menuiserie": [
   "Carpentry",
@@ -2398,35 +2394,35 @@ export const D: Record<string, [string, string]> = {
  ],
  "Portfolio de créations": [
   "Portfolio of work",
-  "بورتفوليو ديال الخدمات"
+  "معرض الأعمال"
  ],
  "Sur-mesure et délais": [
   "Made to measure and lead times",
-  "على المقاس والآجال"
+  "حسب الطلب مع آجال واضحة"
  ],
  "Contact WhatsApp": [
   "WhatsApp contact",
-  "التواصل فالواتساب"
+  "التواصل عبر واتساب"
  ],
  "Réserver un soin": [
   "Book a treatment",
-  "حجز حصة"
+  "احجز جلسة"
  ],
  "Carte des soins": [
   "Treatment menu",
-  "لائحة العلاجات"
+  "قائمة العلاجات"
  ],
  "Réservation en ligne": [
   "Online booking",
-  "الحجز أونلاين"
+  "الحجز عبر الإنترنت"
  ],
  "Cartes cadeaux": [
   "Gift cards",
-  "بطائق الهدايا"
+  "بطاقات الهدايا"
  ],
  "Salon de coiffure": [
   "Hair salon",
-  "صالون الحلاقة"
+  "صالون تصفيف الشعر"
  ],
  "Prestations et tarifs": [
   "Services and prices",
@@ -2434,11 +2430,11 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réservation par coiffeur": [
   "Booking by stylist",
-  "الحجز حسب الكوافور"
+  "الحجز حسب المصفّف"
  ],
  "Galerie": [
   "Gallery",
-  "الغاليري"
+  "معرض الصور"
  ],
  "Services et tarifs": [
   "Services and prices",
@@ -2446,31 +2442,31 @@ export const D: Record<string, [string, string]> = {
  ],
  "Rendez-vous atelier": [
   "Workshop appointments",
-  "موعد فالورشة"
+  "مواعيد الورشة"
  ],
  "Catalogue et panier": [
   "Catalogue and cart",
-  "الكاطالوغ والباني"
+  "الكتالوج والسلة"
  ],
  "Paiement à la livraison": [
   "Cash on delivery",
-  "الخلاص عند التوصيل"
+  "الدفع عند التسليم"
  ],
  "Livraison Maroc et monde": [
   "Delivery in Morocco and worldwide",
-  "التوصيل فالمغرب وفالعالم"
+  "التوصيل داخل المغرب وإلى العالم"
  ],
  "Abonnement produits": [
   "Product subscription",
-  "اشتراك فالمنتوجات"
+  "اشتراك في المنتجات"
  ],
  "Avis clients": [
   "Customer reviews",
-  "آراء الكليان"
+  "تقييمات العملاء"
  ],
  "Réserver un circuit": [
   "Book a tour",
-  "حجز رحلة"
+  "احجز رحلة"
  ],
  "Circuits et prix": [
   "Tours and prices",
@@ -2478,63 +2474,63 @@ export const D: Record<string, [string, string]> = {
  ],
  "Réservation multilingue": [
   "Multilingual booking",
-  "حجز بعدة لغات"
+  "حجز متعدد اللغات"
  ],
  "Architecte d’intérieur": [
   "Interior designer",
-  "مهندس ديكور"
+  "مصمّم ديكور داخلي"
  ],
  "Parler du projet": [
   "Discuss the project",
-  "هضر على المشروع"
+  "ناقش المشروع"
  ],
  "Projets en grand": [
   "Projects in full size",
-  "المشاريع بالكبير"
+  "المشاريع بالحجم الكامل"
  ],
  "Approche et équipe": [
   "Approach and team",
-  "الطريقة والفرقة"
+  "المنهجية والفريق"
  ],
  "Prise de contact": [
   "Get in touch",
-  "التواصل"
+  "تواصل معنا"
  ],
  "S’inscrire": [
   "Sign up",
-  "سجّل"
+  "سجّل الآن"
  ],
  "Formules et prix": [
   "Packages and prices",
-  "العروض والأسعار"
+  "الباقات والأسعار"
  ],
  "Inscription en ligne": [
   "Online registration",
-  "التسجيل أونلاين"
+  "التسجيل عبر الإنترنت"
  ],
  "Planning des leçons": [
   "Lesson schedule",
-  "بلانينغ الدروس"
+  "جدول الدروس"
  ],
  "Catalogue de formations": [
   "Course catalogue",
-  "كاطالوغ التكوينات"
+  "دليل التكوينات"
  ],
  "Certificats": [
   "Certificates",
-  "الشواهد"
+  "الشهادات"
  ],
  "Cabinet comptable": [
   "Accounting firm",
-  "مكتب المحاسبة"
+  "مكتب محاسبة"
  ],
  "Services et forfaits": [
   "Services and packages",
-  "الخدمات والعروض"
+  "الخدمات والباقات"
  ],
  "Espace client": [
   "Client portal",
-  "فضاء الكليان"
+  "بوابة العملاء"
  ],
  "100 %": [
   "100%",
@@ -2666,7 +2662,7 @@ export const D: Record<string, [string, string]> = {
  ],
  "CDN images AVIF": [
   "AVIF image CDN",
-  "CDN للتصاور بـAVIF"
+  "شبكة CDN للصور بصيغة AVIF"
  ],
  "RGPD · CNDP": [
   "GDPR · CNDP",
@@ -2726,6 +2722,6 @@ export const D: Record<string, [string, string]> = {
  ],
  "en ligne": [
   "live",
-  "أونلاين"
+  "على الإنترنت"
  ]
 };

@@ -1,7 +1,7 @@
 /**
  * Chat Digilago : remplace les boutons WhatsApp et Appeler.
- * Une bulle « Salam 👋 N9dar n3awnek? » apparaît près du logo ; au clic, une petite conversation guidée
- * (en darija sur le site français, en darija arabe sur /ar, en anglais sur /en) oriente vers
+ * Une bulle d'accroche apparaît près du logo ; au clic, une petite conversation guidée
+ * (en français, en anglais ou en arabe selon la langue du site) oriente vers
  * le contact, les réalisations ou la page société. Un message libre part directement sur WhatsApp.
  */
 import { useEffect, useRef, useState } from 'react';
@@ -20,39 +20,39 @@ type Topic = { chip: string; reply: string[]; actions: Action[] };
 const S = () => {
   const wa = CONTACT.whatsapp, tel = `tel:${CONTACT.tel}`;
   return {
-    teaser: tv({ fr: 'Salam 👋 N9dar n3awnek?', en: 'Hi 👋 Can I help you?', ar: 'السلام 👋 نقدر نعاونك؟' }),
+    teaser: tv({ fr: 'Bonjour 👋 Je peux vous aider ?', en: 'Hi 👋 Can I help you?', ar: 'مرحبًا 👋 هل يمكنني مساعدتك؟' }),
     name: 'Digilago',
-    status: tv({ fr: 'Kanjawbo f nhar', en: 'Replies the same day', ar: 'كنجاوبو فنفس النهار' }),
+    status: tv({ fr: 'Réponse le jour même', en: 'Replies the same day', ar: 'نرد في اليوم نفسه' }),
     hello: [
-      tv({ fr: 'Marhba bik f Digilago! 😊', en: 'Welcome to Digilago! 😊', ar: 'مرحبا بيك ف ديجيلاغو! 😊' }),
-      tv({ fr: 'Bghiti tkoun nta bayn f l’internet? Site, fiche Google, w 7ta f ChatGPT…', en: 'Want your business to be seen online? Website, Google profile, even on ChatGPT…', ar: 'بغيتي تكون نتا باين فالأنترنيت؟ موقع، فيشة Google، وحتى فـChatGPT…' }),
-      tv({ fr: 'Khtar chi haja men hna 👇', en: 'Pick an option below 👇', ar: 'ختار شي حاجة من هنا 👇' }),
+      tv({ fr: 'Bienvenue chez Digilago ! 😊', en: 'Welcome to Digilago! 😊', ar: 'مرحبًا بك في ديجيلاغو! 😊' }),
+      tv({ fr: 'Vous voulez que votre entreprise soit visible en ligne ? Site web, fiche Google, et même dans ChatGPT…', en: 'Want your business to be seen online? Website, Google profile, even on ChatGPT…', ar: 'هل تريد أن تكون شركتك حاضرة بقوة على الإنترنت؟ موقع احترافي، ملف Google، وظهور حتى في ChatGPT…' }),
+      tv({ fr: 'Choisissez une option ci-dessous 👇', en: 'Pick an option below 👇', ar: 'اختر أحد الخيارات أدناه 👇' }),
     ],
-    again: tv({ fr: 'Chi haja okhra? 🙂', en: 'Anything else? 🙂', ar: 'شي حاجة أخرى؟ 🙂' }),
-    placeholder: tv({ fr: 'Kteb lina hna…', en: 'Type your message…', ar: 'كتب لينا هنا…' }),
-    sending: tv({ fr: 'Safi! Ghadi n7ellou lik WhatsApp bach twsslna l’message dyalek 🚀', en: 'Great! Opening WhatsApp so your message reaches us 🚀', ar: 'صافي! غادي نحلّو ليك الواتساب باش يوصلنا الميساج ديالك 🚀' }),
-    waPrefix: tv({ fr: 'Salam Digilago, ', en: 'Hello Digilago, ', ar: 'السلام ديجيلاغو، ' }),
-    open: tv({ fr: 'Ouvrir le chat', en: 'Open chat', ar: 'حلّ الشات' }),
-    close: tv({ fr: 'Fermer le chat', en: 'Close chat', ar: 'سدّ الشات' }),
+    again: tv({ fr: 'Autre chose ? 🙂', en: 'Anything else? 🙂', ar: 'هل تحتاج شيئًا آخر؟ 🙂' }),
+    placeholder: tv({ fr: 'Écrivez votre message…', en: 'Type your message…', ar: 'اكتب رسالتك هنا…' }),
+    sending: tv({ fr: 'Parfait ! J’ouvre WhatsApp pour que votre message nous parvienne 🚀', en: 'Great! Opening WhatsApp so your message reaches us 🚀', ar: 'ممتاز! سنفتح واتساب لتصلنا رسالتك مباشرة 🚀' }),
+    waPrefix: tv({ fr: 'Bonjour Digilago, ', en: 'Hello Digilago, ', ar: 'مرحبًا ديجيلاغو، ' }),
+    open: tv({ fr: 'Ouvrir le chat', en: 'Open chat', ar: 'فتح المحادثة' }),
+    close: tv({ fr: 'Fermer le chat', en: 'Close chat', ar: 'إغلاق المحادثة' }),
     topics: [
-      { chip: tv({ fr: 'Ah, bghit nban f l’internet', en: 'Yes, I want to be online', ar: 'إيه، بغيت نبان فالأنترنيت' }),
-        reply: [tv({ fr: 'Mzyan bzaf! 🙌 Kansaybo lik site kamel, fiche Google w référencement.', en: 'Great! 🙌 We build your full website, Google profile and SEO.', ar: 'مزيان بزاف! 🙌 كنصاوبو ليك موقع كامل، فيشة Google والريفيرونسمون.' }),
-                tv({ fr: 'L’version lwla katwsslek f 72 sa3a, w ma katkhelless walou 7ta tw9ef 3liha.', en: 'Your first version arrives in 72 hours, and you pay nothing until you approve it.', ar: 'النسخة الأولى كتوصلك فـ72 ساعة، وما كتخلّص والو حتى توافق عليها.' })],
-        actions: [{ label: tv({ fr: 'Sift talab dyalek', en: 'Send your request', ar: 'صيفط الطلب ديالك' }), to: '/contact' }, { label: tv({ fr: 'Hder m3ana f WhatsApp', en: 'Chat on WhatsApp', ar: 'هضر معانا فالواتساب' }), href: wa, icon: 'wa' }] },
-      { chip: tv({ fr: 'Bghit nchouf l’khedma dyalkom', en: 'Show me your work', ar: 'بغيت نشوف الخدمة ديالكم' }),
-        reply: [tv({ fr: 'Hahouma chi projets li dernaha, w bzaf dyal les idées l ga3 l7iraf 👇', en: 'Here are some projects we’ve delivered, plus ideas for every trade 👇', ar: 'هاهوما شي مشاريع اللي درناها، وبزاف ديال الأفكار لكاع الحرف 👇' })],
-        actions: [{ label: tv({ fr: 'Chouf les réalisations', en: 'See our work', ar: 'شوف أعمالنا' }), to: '/realisations' }] },
-      { chip: tv({ fr: 'Chkoun ntouma?', en: 'Who are you?', ar: 'شكون نتوما؟' }),
-        reply: [tv({ fr: '7na Digilago, charika men El Jadida 🌊', en: 'We’re Digilago, a company from El Jadida 🌊', ar: 'حنا ديجيلاغو، شركة من الجديدة 🌊' }),
-                tv({ fr: '11 3am w 7na kanbniw sites, applications w e-commerce. Daba kan3awnou les entreprises ybanou f l’internet, w kandirou ta9riban kolchi blasthom.', en: 'For 11 years we’ve built websites, apps and e-commerce. Now we help businesses get seen online, and we do almost everything for them.', ar: '11 عام وحنا كنبنيو مواقع، تطبيقات وتجارة إلكترونية. دابا كنعاونو الشركات يبانو فالأنترنيت، وكنديرو تقريبا كلشي بلاصتهم.' })],
-        actions: [{ label: tv({ fr: 'Chkoun 7na', en: 'About us', ar: 'شكون حنا' }), to: '/societe' }] },
-      { chip: tv({ fr: 'Chhal kaykellef?', en: 'How much does it cost?', ar: 'شحال كيكلّف؟' }),
-        reply: [tv({ fr: 'Taman kaytbeddel 3la 7sab chno m7taj.', en: 'The price depends on what you need.', ar: 'الثمن كيتبدّل على حساب شنو محتاج.' }),
-                tv({ fr: 'L’version lwla fabor, w taman kan3tiwh lik maktoub 9bel ma nbdaw. Bla mfaja2at 👌', en: 'The first version is free, and you get the price in writing before we start. No surprises 👌', ar: 'النسخة الأولى فابور، والثمن كنعطيوه ليك مكتوب قبل ما نبداو. بلا مفاجآت 👌' })],
-        actions: [{ label: tv({ fr: 'Tlob devis', en: 'Get a quote', ar: 'طلب ديفي' }), to: '/contact' }] },
-      { chip: tv({ fr: 'Bghit nhder m3a chi wa7ed', en: 'I’d like to talk to someone', ar: 'بغيت نهضر مع شي واحد' }),
-        reply: [tv({ fr: 'Mra7ba! Kanjawbo f nhar, men tnin 7ta sebt, men 9 d sba7 7ta 7 d l3chiya.', en: 'Of course! We reply the same day, Monday to Saturday, 9 am to 7 pm.', ar: 'مرحبا! كنجاوبو فنفس النهار، من الاثنين حتى السبت، من 9 د الصباح حتى 7 د العشية.' })],
-        actions: [{ label: 'WhatsApp', href: wa, icon: 'wa' }, { label: tv({ fr: '3ayet lina', en: 'Call us', ar: 'عيّط لينا' }), href: tel, icon: 'tel' }] },
+      { chip: tv({ fr: 'Oui, je veux être visible en ligne', en: 'Yes, I want to be online', ar: 'نعم، أريد أن أكون حاضرًا على الإنترنت' }),
+        reply: [tv({ fr: 'Excellent ! 🙌 Nous créons votre site complet, votre fiche Google et votre référencement.', en: 'Great! 🙌 We build your full website, Google profile and SEO.', ar: 'ممتاز! 🙌 نصمّم موقعك المتكامل، ونُعدّ ملفك على Google، ونحسّن ظهورك في محركات البحث.' }),
+                tv({ fr: 'Votre première version arrive en 72 heures, et vous ne payez que si le résultat vous plaît.', en: 'Your first version arrives in 72 hours, and you only pay if you love the result.', ar: 'تصلك النسخة الأولى خلال 72 ساعة، ولا تدفع إلا إذا نالت النتيجة إعجابك.' })],
+        actions: [{ label: tv({ fr: 'Envoyer ma demande', en: 'Send your request', ar: 'أرسل طلبك' }), to: '/contact' }, { label: tv({ fr: 'Discuter sur WhatsApp', en: 'Chat on WhatsApp', ar: 'تواصل عبر واتساب' }), href: wa, icon: 'wa' }] },
+      { chip: tv({ fr: 'Je veux voir vos réalisations', en: 'Show me your work', ar: 'أريد رؤية أعمالكم' }),
+        reply: [tv({ fr: 'Voici des projets que nous avons livrés, et des idées pour chaque métier 👇', en: 'Here are some projects we’ve delivered, plus ideas for every trade 👇', ar: 'إليك مشاريع أنجزناها، ونماذج مصمّمة لكل قطاع 👇' })],
+        actions: [{ label: tv({ fr: 'Voir les réalisations', en: 'See our work', ar: 'استعرض أعمالنا' }), to: '/realisations' }] },
+      { chip: tv({ fr: 'Qui êtes-vous ?', en: 'Who are you?', ar: 'من أنتم؟' }),
+        reply: [tv({ fr: 'Nous sommes Digilago, une société basée à El Jadida 🌊', en: 'We’re Digilago, a company from El Jadida 🌊', ar: 'نحن ديجيلاغو، شركة تقنية مقرّها الجديدة 🌊' }),
+                tv({ fr: 'Onze ans d’expérience en sites, applications et e-commerce. Aujourd’hui, nous aidons les entreprises à se rendre visibles en ligne, et nous faisons presque tout pour elles.', en: 'For 11 years we’ve built websites, apps and e-commerce. Now we help businesses get seen online, and we do almost everything for them.', ar: 'أحد عشر عامًا من الخبرة في تطوير المواقع والتطبيقات والتجارة الإلكترونية. واليوم نساعد الشركات على بناء حضور رقمي قوي، ونتولى عنها كل شيء تقريبًا.' })],
+        actions: [{ label: tv({ fr: 'Qui sommes-nous', en: 'About us', ar: 'من نحن' }), to: '/societe' }] },
+      { chip: tv({ fr: 'Combien ça coûte ?', en: 'How much does it cost?', ar: 'كم تبلغ التكلفة؟' }),
+        reply: [tv({ fr: 'Le prix dépend de ce dont vous avez besoin.', en: 'The price depends on what you need.', ar: 'يعتمد السعر على احتياجاتك.' }),
+                tv({ fr: 'Nous vous l’annonçons par écrit avant de commencer, et si la première version ne vous plaît pas, vous ne payez rien. Aucune surprise 👌', en: 'We confirm it in writing before we start, and if you don’t love the first version, you pay nothing. No surprises 👌', ar: 'نحدّده لك كتابيًا قبل البدء، وإن لم تنل النسخة الأولى إعجابك فلن تدفع شيئًا. دون مفاجآت 👌' })],
+        actions: [{ label: tv({ fr: 'Demander un devis', en: 'Get a quote', ar: 'اطلب عرض سعر' }), to: '/contact' }] },
+      { chip: tv({ fr: 'Je veux parler à quelqu’un', en: 'I’d like to talk to someone', ar: 'أريد التحدث مع أحد أعضاء الفريق' }),
+        reply: [tv({ fr: 'Avec plaisir ! Nous répondons le jour même, du lundi au samedi, de 9 h à 19 h.', en: 'Of course! We reply the same day, Monday to Saturday, 9 am to 7 pm.', ar: 'بكل سرور! نرد في اليوم نفسه، من الاثنين إلى السبت، من 9 صباحًا إلى 7 مساءً.' })],
+        actions: [{ label: 'WhatsApp', href: wa, icon: 'wa' }, { label: tv({ fr: 'Nous appeler', en: 'Call us', ar: 'اتصل بنا' }), href: tel, icon: 'tel' }] },
     ] as Topic[],
   };
 };
@@ -116,17 +116,17 @@ export const ChatBot = () => {
   return (
     <>
       {/* Bouton flottant (ordinateur) */}
-      <div className="hidden lg:block fixed end-5 bottom-5 z-[56]">
+      <div className="fixed end-4 bottom-4 lg:end-5 lg:bottom-5 z-[56]" style={{ marginBottom: 'env(safe-area-inset-bottom)' }}>
         <Launcher open={open} onClick={() => { setOpen(!open); hideTeaser(); }} label={open ? s.close : s.open} />
       </div>
 
       {/* Bulle d'accroche */}
       <AnimatePresence>{teaser && !open && (
-        <motion.div className="fixed z-[56] start-4 lg:start-auto lg:end-5 bottom-[92px] lg:bottom-[96px] max-w-[270px]" initial={{ opacity: 0, y: 14, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 8, scale: 0.95 }} transition={{ type: 'spring', stiffness: 300, damping: 22 }} style={{ transformOrigin: 'bottom' }}>
-          <button onClick={() => { setOpen(true); hideTeaser(); }} className="relative w-full text-start rounded-2xl rounded-es-md lg:rounded-es-2xl lg:rounded-ee-md bg-white text-encre px-4 py-3 shadow-[0_20px_50px_-15px_rgba(0,0,0,.6)] ring-1 ring-black/5">
+        <motion.div className="fixed z-[56] end-4 lg:end-5 bottom-[88px] lg:bottom-[96px] max-w-[270px]" initial={{ opacity: 0, y: 14, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 8, scale: 0.95 }} transition={{ type: 'spring', stiffness: 300, damping: 22 }} style={{ transformOrigin: 'bottom' }}>
+          <button onClick={() => { setOpen(true); hideTeaser(); }} className="relative w-full text-start rounded-2xl rounded-ee-md bg-white text-encre px-4 py-3 shadow-[0_20px_50px_-15px_rgba(0,0,0,.6)] ring-1 ring-black/5">
             <span className="flex items-center gap-2.5"><Avatar size="w-8 h-8" /><span><span className="block text-[12px] text-ardoise">{s.name}</span><span className="block text-[15.5px] font-medium">{s.teaser}</span></span></span>
           </button>
-          <button onClick={hideTeaser} aria-label={s.close} className="absolute -top-2.5 -end-2.5 lg:end-auto lg:-start-2.5 w-7 h-7 rounded-full bg-nuit text-white ring-1 ring-white/20 flex items-center justify-center"><X size={13} /></button>
+          <button onClick={hideTeaser} aria-label={s.close} className="absolute -top-2.5 -start-2.5 w-7 h-7 rounded-full bg-nuit text-white ring-1 ring-white/20 flex items-center justify-center"><X size={13} /></button>
         </motion.div>
       )}</AnimatePresence>
 
@@ -150,7 +150,7 @@ export const ChatBot = () => {
                 <div className="max-w-[82%]">
                   <p dir="auto" className={`px-4 py-2.5 text-[15px] leading-relaxed ${m.from === 'user' ? 'bg-safran text-nuit rounded-2xl rounded-ee-md font-medium' : 'bg-nuit-2 ring-1 ring-white/8 text-white/92 rounded-2xl rounded-es-md'}`}>{m.text}</p>
                   {m.actions && <div className="mt-2 flex flex-wrap gap-2">{m.actions.map((a) => (
-                    <button key={a.label} onClick={() => act(a)} className={`h-10 px-4 rounded-full text-[14px] font-medium flex items-center gap-2 transition-transform active:scale-95 ${a.icon === 'wa' ? 'bg-[#25D366] text-nuit' : a.icon === 'tel' ? 'bg-white/10 ring-1 ring-white/15' : 'btn-safran'}`}>
+                    <button key={a.label} onClick={() => act(a)} className={`h-10 ps-3.5 pe-4 d-shape relative overflow-hidden text-[14px] font-medium flex items-center gap-2 transition-transform active:scale-95 ${a.icon === 'wa' ? 'bg-[#25D366] text-nuit' : a.icon === 'tel' ? 'bg-white/10 ring-1 ring-white/15' : 'btn-safran'}`}>
                       {a.icon === 'wa' ? <MessageCircle size={16} /> : a.icon === 'tel' ? <Phone size={15} /> : null}{a.label}{a.to && <ArrowUpRight size={15} />}
                     </button>
                   ))}</div>}

@@ -1,1 +1,1 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+{ "cleanUrls": true, "trailingSlash": false, "redirects": [{ "source": "/web", "destination": "/", "permanent": true }, { "source": "/web/:p(services|realisations|contact)", "destination": "/:p", "permanent": true }, { "source": "/web/entreprises", "destination": "/societe", "permanent": true }] }
