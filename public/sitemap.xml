@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://digilago.ma/</loc></url>
-  <url><loc>https://digilago.ma/services</loc></url>
-  <url><loc>https://digilago.ma/realisations</loc></url>
-  <url><loc>https://digilago.ma/societe</loc></url>
-  <url><loc>https://digilago.ma/contact</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://digilago.ma/</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar"/></url>
+  <url><loc>https://digilago.ma/en</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar"/></url>
+  <url><loc>https://digilago.ma/ar</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar"/></url>
+  <url><loc>https://digilago.ma/services</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/services"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/services"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/services"/></url>
+  <url><loc>https://digilago.ma/en/services</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/services"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/services"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/services"/></url>
+  <url><loc>https://digilago.ma/ar/services</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/services"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/services"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/services"/></url>
+  <url><loc>https://digilago.ma/realisations</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/realisations"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/realisations"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/realisations"/></url>
+  <url><loc>https://digilago.ma/en/realisations</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/realisations"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/realisations"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/realisations"/></url>
+  <url><loc>https://digilago.ma/ar/realisations</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/realisations"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/realisations"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/realisations"/></url>
+  <url><loc>https://digilago.ma/societe</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/societe"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/societe"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/societe"/></url>
+  <url><loc>https://digilago.ma/en/societe</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/societe"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/societe"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/societe"/></url>
+  <url><loc>https://digilago.ma/ar/societe</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/societe"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/societe"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/societe"/></url>
+  <url><loc>https://digilago.ma/contact</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/contact"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/contact"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/contact"/></url>
+  <url><loc>https://digilago.ma/en/contact</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/contact"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/contact"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/contact"/></url>
+  <url><loc>https://digilago.ma/ar/contact</loc><xhtml:link rel="alternate" hreflang="fr" href="https://digilago.ma/contact"/><xhtml:link rel="alternate" hreflang="en" href="https://digilago.ma/en/contact"/><xhtml:link rel="alternate" hreflang="ar-MA" href="https://digilago.ma/ar/contact"/></url>
 </urlset>

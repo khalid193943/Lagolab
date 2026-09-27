@@ -50,7 +50,7 @@ export const CountUp = ({ value, className = '' }: { value: string; className?: 
   const m = value.match(/^(\d+)(.*)$/); const target = m ? parseInt(m[1], 10) : 0; const rest = m ? m[2] : value;
   const [v, setV] = useState(reduce || !m ? target : 0);
   useEffect(() => { if (!inView || reduce || !m) return; const c = animate(0, target, { duration: 1.6, ease: [0.16, 1, 0.3, 1], onUpdate: (x) => setV(Math.round(x)) }); return () => c.stop(); }, [inView]);
-  return <span ref={ref} className={`tabular-nums ${className}`}>{m ? v : ''}{rest}</span>;
+  return <span ref={ref} dir="auto" className={`tabular-nums ${className}`}>{m ? v : ''}{rest}</span>;
 };
 
 /* Halo qui suit la souris : on pose deux variables CSS, le reste est en CSS (.spot) */

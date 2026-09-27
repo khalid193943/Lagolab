@@ -147,20 +147,22 @@ export const IMG = {
   maps: HF + 'hf_20260927_002945_ec3653cd-0bad-4ee6-a7fa-279594c3d0c6.png',
   servers: HF + 'hf_20260927_002945_2976eb44-2f57-4d64-ae66-c4d61a3a5b96.png',
   app: HF + 'hf_20260927_002945_36a7cd74-60ae-4927-8040-3067bce17b6f.png',
-  team: HF + 'hf_20260927_002945_2d97885e-a42d-4a38-9027-7a5311031be1.png',
-  client: HF + 'hf_20260927_002945_19d26d6d-69ac-449e-9e8f-bed99abcffba.png',
+  team: HF + 'hf_20260927_014938_ab688f20-bb35-489b-97f6-ed7f88ced807.png',
+  client: HF + 'hf_20260927_014938_8f0349b2-22f4-4353-a81a-d9d8907ca2b9.png',
   zellige: HF + 'hf_20260927_002946_287c9f4b-2f65-422e-a68e-3307f3484d7e.png',
   eljadida: HF + 'hf_20260927_010342_ebf90327-e558-4ea0-b331-b0207b5ec604.png',
   workshop: HF + 'hf_20260927_010342_43856e2d-02bc-4b61-b7d3-1a98a696a532.png',
-  code: HF + 'hf_20260927_010342_10f973b2-cdb1-4a57-b9ea-b917f0b1d935.png',
+  code: HF + 'hf_20260927_014938_1b9728a3-90af-403e-92b5-52bb3d0ec58a.png',
   whatsapp: HF + 'hf_20260927_010342_73251983-3ffe-46df-97e3-6abf01842755.png',
   search: HF + 'hf_20260927_010342_cf619f05-06f5-41a3-8f11-2da4f31e1be2.png',
+  heroBg: HF + 'hf_20260927_012603_cfcfd162-c92f-4867-8058-cb219297b540.png',
+  night: HF + 'hf_20260927_012603_651b1a22-00c2-4d47-a7ed-05d5bc21277a.png',
 };
 /* Une image par offre métier */
 export const PACK_IMG: Record<string, string> = {
   sport: HF + 'hf_20260927_010342_b7ab0862-5b44-4cd9-bba5-d0b74aa18c4a.png',
   sante: HF + 'hf_20260927_010342_d8fef008-dc47-49d1-88a7-0807e6988aaa.png',
-  education: HF + 'hf_20260927_010342_d7639fe4-5fe4-48cf-ac1f-a94ef8811c42.png',
+  education: HF + 'hf_20260927_014938_74283ff1-0e04-4ffd-a6d4-afa71eb00692.png',
   hospitalite: HF + 'hf_20260927_010342_c334eb90-94ea-4df7-b42b-ba4fee192e42.png',
   commerce: HF + 'hf_20260927_010342_742c0bca-3c34-4614-9ee6-f0ea59d45cc3.png',
   services: HF + 'hf_20260927_010342_0c69eb1e-0a2b-4cab-b3f2-d8abd8a75a03.png',
@@ -207,4 +209,35 @@ export const CASES = [
   { ...WORK[0], brief: 'Présenter une école de la maternelle au baccalauréat et gérer les inscriptions de la rentrée.', done: ['Site bilingue français / anglais', 'Espace administration complet', 'Planning intégré et actualités'] },
   { ...WORK[1], brief: 'Donner une identité forte à une école et recevoir les pré-inscriptions en ligne.', done: ['Identité « Donner des ailes »', 'Pré-inscriptions en ligne', 'Actualités et agenda'] },
   { ...WORK[2], brief: 'Réunir deux campus, de la crèche au primaire, sur un seul site clair pour les parents.', done: ['Deux campus sur une seule page', 'Itinéraire en un geste', 'Espace administration'] },
+];
+
+/* ------------------------------ Catalogue détaillé des services (page Services) ------------------------------ */
+import { Globe as G2, ShoppingCart as Cart2, LayoutDashboard, Smartphone as Phone2, CalendarCheck, PenTool as Pen2, Figma, MapPin as Pin2, Search as Search2, Bot as Bot2, Megaphone as Mega2, FileText, Star as Star2, Server as Server2, ShieldCheck, Plug, BarChart3, Sparkles as Spark2, GraduationCap as Grad2 } from 'lucide-react';
+export type Service = { Icon: any; t: string; d: string; inc: string[]; res: string };
+export const CATALOG: { id: string; title: string; lead: string; img: string; items: Service[] }[] = [
+  { id: 'concevoir', title: 'Concevoir', lead: 'Des outils numériques dessinés pour votre métier et codés pour durer.', img: IMG.workshop, items: [
+    { Icon: G2, t: 'Site vitrine sur-mesure', d: 'Un site rapide et élégant qui présente votre activité et transforme les visites en contacts.', inc: ['Design unique, pensé mobile d’abord', 'Arabe, français et anglais', 'Espace pour modifier vos contenus'], res: 'Une image professionnelle, visible 24 h sur 24.' },
+    { Icon: Cart2, t: 'Boutique en ligne', d: 'Vendez partout au Maroc et à l’étranger, avec un parcours d’achat simple.', inc: ['Catalogue, panier, variantes', 'Paiement CMI ou à la livraison', 'Suivi des commandes et du stock'], res: 'Des ventes, même quand la boutique est fermée.' },
+    { Icon: CalendarCheck, t: 'Réservation et rendez-vous', d: 'Vos clients réservent un créneau, une table ou une chambre sans appeler.', inc: ['Agenda en temps réel', 'Confirmation et rappels WhatsApp', 'Acompte en ligne en option'], res: 'Moins d’appels manqués, plus de rendez-vous tenus.' },
+    { Icon: LayoutDashboard, t: 'Application web et espace client', d: 'Espaces membres, portails parents, extranets : vos clients autonomes, vos équipes soulagées.', inc: ['Comptes et droits d’accès', 'Documents, factures, messages', 'Tableaux de bord'], res: 'Un service client disponible en permanence.' },
+    { Icon: Phone2, t: 'Application mobile', d: 'Une application iOS et Android pour fidéliser et commander en un geste.', inc: ['Notifications ciblées', 'Programme de fidélité', 'Publication sur les stores'], res: 'Votre marque dans la poche de vos clients.' },
+    { Icon: Figma, t: 'Design UX / UI', d: 'Parcours, maquettes et prototypes cliquables avant la moindre ligne de code.', inc: ['Ateliers et parcours utilisateurs', 'Maquettes haute fidélité', 'Prototype testé avec vos clients'], res: 'Des décisions validées, sans surprise au développement.' },
+    { Icon: Pen2, t: 'Identité visuelle et logo', d: 'Un logo, des couleurs et une typographie qui vous distinguent partout.', inc: ['Logo et déclinaisons', 'Palette et typographies', 'Guide d’utilisation'], res: 'Une marque reconnaissable du site à l’enseigne.' },
+  ]},
+  { id: 'trouver', title: 'Faire trouver', lead: 'Votre nom en tête là où vos clients cherchent : Google, la carte et les IA.', img: IMG.search, items: [
+    { Icon: Pin2, t: 'Fiche Google Business', d: 'Création, vérification et optimisation de votre fiche sur Google et Maps.', inc: ['Photos, horaires, services', 'Catégories et zones optimisées', 'Publications régulières'], res: 'Des appels et des itinéraires directement depuis Google.' },
+    { Icon: Search2, t: 'Référencement SEO local', d: 'Votre site en première page quand on cherche votre métier dans votre ville.', inc: ['Audit technique et mots-clés', 'Pages par service et par ville', 'Suivi mensuel des positions'], res: 'Un flux de clients durable, sans payer chaque clic.' },
+    { Icon: Bot2, t: 'Visibilité dans les IA (GEO)', d: 'ChatGPT, Gemini et Perplexity connaissent votre entreprise et la recommandent.', inc: ['Données structurées Schema.org', 'Fichier llms.txt', 'Contenus pensés pour les assistants'], res: 'Vous êtes la réponse quand on demande conseil à une IA.' },
+    { Icon: Mega2, t: 'Publicité Google et Meta', d: 'Des campagnes ciblées sur votre quartier, votre clientèle et votre budget.', inc: ['Stratégie et ciblage', 'Création des annonces', 'Rapport clair chaque mois'], res: 'Des résultats rapides, mesurés au dirham près.' },
+    { Icon: FileText, t: 'Contenus et rédaction', d: 'Textes, articles et visuels qui rassurent vos clients et plaisent à Google.', inc: ['Rédaction en trois langues', 'Articles de blog', 'Visuels pour le site et les réseaux'], res: 'Un discours clair qui donne envie de vous contacter.' },
+    { Icon: Star2, t: 'Avis et réputation', d: 'Collectez plus d’avis cinq étoiles et répondez à chacun avec soin.', inc: ['Demande d’avis automatisée', 'Réponses aux avis', 'Alertes en cas d’avis négatif'], res: 'Une note qui inspire confiance au premier regard.' },
+  ]},
+  { id: 'operer', title: 'Faire tourner', lead: 'Hébergement, sécurité, intégrations et logiciels : tout fonctionne, tout le temps.', img: IMG.servers, items: [
+    { Icon: Server2, t: 'Hébergement et nom de domaine', d: 'Un site servi au plus près de vos visiteurs, au Maroc comme à l’étranger.', inc: ['Domaine .ma ou .com', 'Certificat SSL et CDN mondial', 'Adresses e-mail professionnelles'], res: 'Un site rapide et toujours en ligne.' },
+    { Icon: ShieldCheck, t: 'Maintenance et sécurité', d: 'Mises à jour, sauvegardes et surveillance, sans que vous ayez à y penser.', inc: ['Sauvegardes quotidiennes', 'Surveillance jour et nuit', 'Corrections sous 24 heures'], res: 'La tranquillité, sans mauvaise surprise.' },
+    { Icon: Plug, t: 'Intégrations', d: 'Votre site relié à vos outils : paiement, WhatsApp, agenda, CRM, comptabilité.', inc: ['Paiement CMI et Stripe', 'WhatsApp Business API', 'Agenda, CRM, facturation'], res: 'Moins de saisie, zéro double emploi.' },
+    { Icon: BarChart3, t: 'Logiciels métier et tableaux de bord', d: 'Planning, facturation, suivi d’activité : des outils taillés pour vos process.', inc: ['Analyse de vos besoins', 'Développement par étapes', 'Formation des équipes'], res: 'Des équipes plus efficaces, des décisions éclairées.' },
+    { Icon: Spark2, t: 'Automatisation et IA', d: 'Assistants de réservation, réponses WhatsApp, tri des demandes, rédaction assistée.', inc: ['Assistant WhatsApp', 'Automatisation des tâches répétitives', 'Analyse des avis clients'], res: 'Des heures gagnées chaque semaine.' },
+    { Icon: Grad2, t: 'Formation et accompagnement', d: 'Vous et vos équipes savez utiliser vos outils, et nous restons joignables.', inc: ['Formation de prise en main', 'Guides vidéo', 'Support WhatsApp le jour même'], res: 'Une autonomie réelle, un partenaire disponible.' },
+  ]},
 ];

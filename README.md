@@ -22,3 +22,15 @@ Typographies : Sora (titres), Instrument Sans (texte), JetBrains Mono (élément
 Les visuels (hero, services, équipe, fond zellige) et la bibliothèque de concepts sont hébergés sur le CDN Higgsfield (`IMG` et `LIBRARY` dans `src/data.ts`).
 Pour les héberger vous-même : téléchargez-les dans `public/images/` et remplacez les adresses par `/images/nom.png`.
 Les captures clients sont dans `src/assets/`.
+
+## Mobile
+Sur téléphone : menu plein écran animé, barre d'actions en bas (Appeler, WhatsApp, Première version) qui se cache au défilement,
+carrousels à glisser (expertises, secteurs, références, technologies, Labs), onglets Google / Carte / IA dans le simulateur,
+frise de méthode qui se dessine, grain et halos désactivés pour économiser la batterie.
+Conseil performance : en hébergeant les images vous-même, convertissez-les en WebP (largeur 1600 px max), elles passeront de ~2 Mo à ~150 Ko.
+
+## Langues
+Français à la racine (`/`), anglais sur `/en`, darija sur `/ar` (de droite à gauche, police Readex Pro).
+Le texte source est en français dans le code ; `src/dict.ts` contient la traduction de chaque phrase : `"texte français": ["English", "الدارجة"]`.
+Pour modifier une traduction, changez la valeur dans `dict.ts`. Pour ajouter un texte, écrivez-le en français dans le code avec `t('…')`, puis ajoutez sa ligne dans `dict.ts`.
+Le sélecteur FR / EN / دارجة (menu, menu mobile, pied de page) garde la même page en changeant de langue.

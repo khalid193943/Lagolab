@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
+import { t, tv, L, LANGS, Lang, setLang, langFromPath, stripLang } from './i18n';
 import { BrowserRouter, HashRouter, Routes, Route, Link, NavLink, Navigate, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, motion, useScroll, useSpring, useTransform, useReducedMotion, useInView } from 'motion/react';
+import { useRef } from 'react';
 import { Menu, X, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { CONTACT } from './data';
-import { Logo } from './ui';
+import { Logo, Mark, MARK, Wordmark } from './ui';
+import { ScrollText } from './fx';
+import { SnakeButton } from './snake';
+import { ChatBot, Launcher, openChat } from './chat';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Realisations from './pages/Realisations';
@@ -16,50 +21,166 @@ const Nav = () => {
   const [open, setOpen] = useState(false); const [solid, setSolid] = useState(false); const { pathname } = useLocation();
   useEffect(() => { const f = () => setSolid(window.scrollY > 24); f(); window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f); }, []);
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => { document.documentElement.style.overflow = open ? 'hidden' : ''; return () => { document.documentElement.style.overflow = ''; }; }, [open]);
   return (
-    <header style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }} className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${solid || open ? 'bg-nuit/92 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
-      <nav className="wrap h-[76px] flex items-center justify-between gap-6" aria-label="Navigation principale">
-        <Link to="/" aria-label="Digilago, accueil"><Logo /></Link>
-        <div className="hidden lg:flex items-center h-11 px-1.5 rounded-full bg-white/[0.04] ring-1 ring-white/10 backdrop-blur-md">{LINKS.map(([l, h]) => <NavLink key={h} to={h} className={({ isActive }) => `navlink h-8 px-4 flex items-center rounded-full text-[14.5px] transition-colors ${isActive ? 'bg-white/10 text-white' : 'text-white/70 hover:text-white'}`}>{l}</NavLink>)}</div>
+    <>
+    <header style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }} className={`fixed inset-x-0 top-0 z-[59] transition-colors duration-300 ${solid || open ? 'bg-nuit/92 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
+      <nav className="wrap h-[76px] flex items-center justify-between gap-6" aria-label={t('Navigation principale')}>
+        <Link to={L('/')} aria-label={t('Digilago, accueil')}><Logo draw /></Link>
+        <div className="hidden lg:flex items-center h-11 px-1.5 rounded-full bg-white/[0.04] ring-1 ring-white/10 backdrop-blur-md">{LINKS.map(([l, h]) => <NavLink key={h} to={L(h)} className={({ isActive }) => `navlink h-8 px-4 flex items-center rounded-full text-[14.5px] transition-colors ${isActive ? 'bg-white/10 text-white' : 'text-white/70 hover:text-white'}`}>{t(l)}</NavLink>)}</div>
         <div className="flex items-center gap-3">
-          <a href={`tel:${CONTACT.tel}`} className="hidden xl:inline text-[14px] text-brume hover:text-white">{CONTACT.phone}</a>
-          <Link to="/contact" className="btn btn-safran !h-11 hidden sm:inline-flex">Première version gratuite</Link>
+          <LangSwitch className="hidden md:flex" />
+          <SnakeButton to={L('/contact')} className="hidden sm:inline-flex" linkClass="!h-11">{t('Première version gratuite')}</SnakeButton>
           <button onClick={() => setOpen(!open)} className="lg:hidden w-11 h-11 flex items-center justify-center rounded-full ring-1 ring-white/15" aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={open}>{open ? <X size={20} /> : <Menu size={20} />}</button>
         </div>
       </nav>
-      <AnimatePresence>{open && <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="lg:hidden overflow-hidden"><div className="wrap pb-6 grid">{[['Accueil', '/'] as [string, string], ...LINKS].map(([l, h]) => <Link key={h} to={h} className="py-4 border-b border-white/10 font-display text-[22px]">{l}</Link>)}<Link to="/contact" className="btn btn-safran mt-6">Première version gratuite</Link></div></motion.div>}</AnimatePresence>
+
     </header>
+      <AnimatePresence>{open && (
+        <motion.div className="lg:hidden fixed inset-0 top-[76px] z-[58] bg-nuit overflow-y-auto" initial={{ clipPath: 'inset(0 0 100% 0)' }} animate={{ clipPath: 'inset(0 0 0% 0)' }} exit={{ clipPath: 'inset(0 0 100% 0)' }} transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }} style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+          <Mark className="absolute -end-24 bottom-10 w-[420px] h-[480px] opacity-[0.05] pointer-events-none" />
+          <nav className="wrap relative pt-6 pb-10 flex flex-col min-h-full" aria-label={t('Menu mobile')}>
+            {[['Accueil', '/'] as [string, string], ...LINKS].map(([l, h], k) => (
+              <motion.div key={h} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18 + k * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}>
+                <NavLink to={L(h)} end className={({ isActive }) => `flex items-center justify-between py-4 border-b border-white/10 font-display text-[34px] tracking-[-0.03em] ${isActive ? 'text-safran' : ''}`}>{t(l)}<span className="text-[13px] text-brume tabular-nums">0{k + 1}</span></NavLink>
+              </motion.div>
+            ))}
+            <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}><LangSwitch className="w-fit" /></motion.div>
+            <motion.div className="mt-auto pt-10 grid gap-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}>
+              <SnakeButton to={L('/contact')} className="flex">{t('Première version gratuite')}</SnakeButton>
+              <div className="grid grid-cols-2 gap-3"><a href={`tel:${CONTACT.tel}`} className="btn btn-line"><Phone size={16} /> {t('Appeler')}</a><a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-line"><MessageCircle size={16} /> WhatsApp</a></div>
+              <p className="mt-2 text-[13px] text-brume text-center">{t('El Jadida · Réponse le jour même')}</p>
+            </motion.div>
+          </nav>
+        </motion.div>
+      )}</AnimatePresence>
+    </>
+  );
+};
+
+/* Ouverture : le logo se dessine, une fois par visite */
+const Intro = () => {
+  const reduce = useReducedMotion();
+  const [show, setShow] = useState(() => { if (reduce) return false; try { return !sessionStorage.getItem('dg-intro'); } catch { return true; } });
+  useEffect(() => { if (!show) return; try { sessionStorage.setItem('dg-intro', '1'); } catch { /* stockage indisponible */ } const id = window.setTimeout(() => setShow(false), 1900); return () => window.clearTimeout(id); }, [show]);
+  return (
+    <AnimatePresence>{show && (
+      <motion.div className="fixed inset-0 z-[100] bg-nuit flex items-center justify-center" exit={{ clipPath: 'inset(0 0 100% 0)' }} transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }} aria-hidden>
+        <div className="flex items-center gap-4"><Mark className="w-16 h-[72px]" draw /><motion.span initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9, duration: 0.6 }}><Wordmark className="text-[44px]" delay={1.2} loop={false} /></motion.span></div>
+      </motion.div>
+    )}</AnimatePresence>
+  );
+};
+
+/* Barre de lecture : une ligne safran, terminée par le point cyan du logo */
+const Progress = () => {
+  const { scrollYProgress } = useScroll(); const p = useSpring(scrollYProgress, { stiffness: 140, damping: 30 });
+  const left = useTransform(p, (v) => `${v * 100}%`);
+  return (<div className="fixed inset-x-0 top-0 h-[2px] z-[60] pointer-events-none" aria-hidden>
+    <motion.div className="absolute inset-y-0 start-0 end-0 bg-safran origin-left" style={{ scaleX: p }} />
+    <motion.span className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-cyan shadow-[0_0_12px_#2DD4E6]" style={{ left }} />
+  </div>);
+};
+
+/* Signature : le logo en très grand, qui se dessine quand on arrive en bas */
+const Signature = () => {
+  const ref = useRef<SVGSVGElement>(null); const inView = useInView(ref, { once: true, amount: 0.4 }); const reduce = useReducedMotion();
+  const go = inView || reduce; const k = 3.1; /* échelle du D dans la signature */
+  return (
+    <div className="wrap pt-10 pb-6">
+      <svg style={{ direction: 'ltr' }} ref={ref} viewBox="0 0 1000 214" className="w-full h-auto overflow-visible" role="img" aria-label="Digilago">
+        <defs><linearGradient id="sig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#fff" /><stop offset="1" stopColor="#fff" stopOpacity=".35" /></linearGradient></defs>
+        <g transform={`translate(${-8 * k} ${-4 * k + 8}) scale(${k})`}>
+          <motion.path d={MARK.d} fill="none" stroke="#F4B53F" strokeWidth={6.5} strokeLinejoin="round" strokeLinecap="square" initial={reduce ? false : { pathLength: 0 }} animate={go ? { pathLength: 1 } : {}} transition={{ duration: 1.2, ease: [0.65, 0, 0.35, 1] }} />
+          <motion.path d={MARK.wave} fill="none" stroke="#F4B53F" strokeWidth={3.9} strokeLinecap="round" initial={reduce ? false : { pathLength: 0 }} animate={go ? { pathLength: 1 } : {}} transition={{ duration: 0.8, delay: 0.7, ease: [0.65, 0, 0.35, 1] }} />
+          <motion.circle {...MARK.dot} fill="#2DD4E6" initial={reduce ? false : { scale: 0 }} animate={go ? { scale: 1 } : {}} transition={{ type: 'spring', stiffness: 300, damping: 10, delay: 1.3 }} style={{ transformOrigin: `${MARK.dot.cx}px ${MARK.dot.cy}px` }} />
+        </g>
+        <motion.g initial={reduce ? false : { opacity: 0, y: 40 }} animate={go ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}>
+          <text x="186" y="162" textLength="810" lengthAdjust="spacingAndGlyphs" fill="url(#sig)" fontFamily="Sora, 'Segoe UI', sans-serif" fontWeight={500} fontSize="206">dıgılago</text>
+          {/* Points des « i » : positions calculées sur les métriques de Sora 500 (voir Wordmark) */}
+          {[347.3, 537.4].map((cx, k) => (
+            <motion.g key={cx} initial={reduce ? false : { y: -120, opacity: 0 }} animate={go ? { y: 0, opacity: 1 } : {}} transition={{ type: 'spring', stiffness: 380, damping: 11, delay: 1.5 + k * 0.18 }}>
+              <motion.circle cx={cx} cy={21.5} r={14} fill="#F4B53F" style={{ filter: 'drop-shadow(0 0 10px rgba(244,181,63,.7))' }}
+                animate={reduce || !go ? undefined : { y: [0, -34, 0, 0] }} transition={{ duration: 0.9, times: [0, 0.35, 0.7, 1], repeat: Infinity, repeatDelay: 3.4, delay: 3.2 + k * 0.2, ease: 'easeInOut' }} />
+            </motion.g>
+          ))}
+        </motion.g>
+      </svg>
+    </div>
   );
 };
 
 const Footer = () => (
-  <footer className="dark border-t border-white/10">
-    <div className="wrap pt-20 pb-10 grid gap-12 lg:grid-cols-12">
-      <div className="lg:col-span-4"><Logo /><p className="mt-5 text-brume max-w-[34ch]">Société de services numériques. Nous concevons, faisons trouver et faisons tourner le numérique des entreprises marocaines.</p>
-        <div className="mt-6 space-y-2 text-[15px]"><a href={`tel:${CONTACT.tel}`} className="flex items-center gap-3 hover:text-safran"><Phone size={16} className="text-cyan" />{CONTACT.phone}</a><a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 hover:text-safran"><Mail size={16} className="text-cyan" />{CONTACT.email}</a><p className="flex items-center gap-3"><MapPin size={16} className="text-cyan" />El Jadida, Maroc</p></div></div>
-      {[['Services', [['Sites web sur-mesure', '/services'], ['Référencement et IA', '/services'], ['Applications et logiciels', '/services'], ['Hébergement et maintenance', '/services'], ['Packs par métier', '/services#packs']]], ['Réalisations', [['Nos clients', '/realisations'], ['#FaitParDigilago', '/realisations#fait'], ['Études de cas', '/realisations']]], ['Société', [['Qui sommes-nous', '/societe'], ['Digilago Labs', '/societe#labs'], ['Technologie', '/services#technologie'], ['Contact', '/contact']]]].map(([t, ls]: any) => (
-        <div key={t} className="lg:col-span-2 lg:col-start-auto"><p className="font-display font-medium">{t}</p><ul className="mt-4 space-y-3 text-[15px] text-brume">{ls.map(([l, h]: any) => <li key={l}><Link to={h} className="hover:text-white">{l}</Link></li>)}</ul></div>
-      ))}
-      <div className="lg:col-span-2"><p className="font-display font-medium">Horaires</p><p className="mt-4 text-[15px] text-brume">Lundi au samedi<br />9 h – 19 h<br />Réponse WhatsApp le jour même</p></div>
+  <footer className="dark relative overflow-hidden border-t border-white/10">
+    <div className="wrap pt-24">
+      <div className="grid lg:grid-cols-12 gap-10 items-end">
+        <div className="lg:col-span-8"><p className="kicker">{t('Un projet en tête ?')}</p><ScrollText text={t('Parlons-en autour d’un premier aperçu.')} className="mt-4 text-[clamp(2.2rem,4.6vw,4.2rem)] max-w-[18ch]" /></div>
+        <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end"><Link to={L('/contact')} className="btn btn-safran">{t('Démarrer un projet')}</Link><a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-line">WhatsApp</a></div>
+      </div>
+      <div className="mt-16 pt-10 border-t border-white/10 grid gap-10 grid-cols-2 lg:grid-cols-4 text-[15px]">
+        <p className="col-span-2 lg:col-span-1 text-brume max-w-[30ch]">{t('Société de services numériques. Nous concevons, faisons trouver et faisons tourner le numérique des entreprises marocaines.')}</p>
+        <nav aria-label={t('Pied de page')}><ul className="space-y-2.5">{[['Accueil', '/'], ...LINKS].map(([l, h]) => <li key={h}><Link to={L(h)} className="hover:text-safran transition-colors">{t(l)}</Link></li>)}</ul></nav>
+        <div className="col-span-2 sm:col-span-1 space-y-2.5"><a href={`tel:${CONTACT.tel}`} className="flex items-center gap-3 hover:text-safran"><Phone size={15} className="text-cyan" /><span dir="ltr">{CONTACT.phone}</span></a><a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 hover:text-safran"><Mail size={15} className="text-cyan" />{CONTACT.email}</a><p className="flex items-center gap-3"><MapPin size={15} className="text-cyan" />{t('El Jadida, Maroc')}</p></div>
+        <p className="text-brume">{t('Du lundi au samedi')}<br />{t('de 9 h à 19 h')}<br />{t('Réponse le jour même')}</p>
+      </div>
     </div>
-    <div className="wrap pb-10 flex flex-wrap justify-between gap-4 text-[13px] text-brume/70 border-t border-white/10 pt-6"><span>© {new Date().getFullYear()} Digilago. Tous droits réservés.</span><span>Conçu et codé à El Jadida.</span></div>
+    <Signature />
+    <div className="wrap pb-28 lg:pb-8 flex flex-wrap justify-between gap-4 text-[13px] text-brume/70"><span>© {new Date().getFullYear()} Digilago. {t('Tous droits réservés.')}</span><span className="flex items-center gap-4"><LangSwitch />{t('Conçu et codé à El Jadida.')}</span></div>
   </footer>
 );
 
+/* Barre d'actions mobile, façon application : se cache quand on descend, revient quand on remonte */
+const Dock = () => {
+  const [hide, setHide] = useState(false);
+  useEffect(() => { let last = window.scrollY; const f = () => { const y = window.scrollY; if (Math.abs(y - last) > 8) { setHide(y > last && y > 400); last = y; } }; window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f); }, []);
+  return (
+    <div className={`lg:hidden fixed inset-x-3 z-[55] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${hide ? 'translate-y-[140%]' : 'translate-y-0'}`} style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}>
+      <div className="flex items-center gap-2 p-1.5 rounded-full bg-nuit-2/90 backdrop-blur-xl ring-1 ring-white/12 shadow-[0_20px_50px_-20px_rgba(0,0,0,.9)]">
+        <Launcher small onClick={openChat} label={tv({ fr: 'Ouvrir le chat', en: 'Open chat', ar: 'حلّ الشات' })} />
+        <SnakeButton to={L('/contact')} className="flex flex-1" linkClass="!h-12 !text-[14.5px]" gap={3.5} amp={1.6} thick={4.4} lap={3.2}>{t('Première version gratuite')}</SnakeButton>
+      </div>
+    </div>
+  );
+};
+
+/* Sélecteur de langue : même page, autre langue */
+const LangSwitch = ({ className = '' }: { className?: string }) => {
+  const { pathname, hash } = useLocation(); const cur = langFromPath(pathname); const rest = stripLang(pathname);
+  return (
+    <div className={`flex items-center h-10 p-1 rounded-full ring-1 ring-white/12 bg-white/[0.04] ${className}`} role="group" aria-label="Langue / Language / اللغة">
+      {LANGS.map((x) => <Link key={x.id} to={L(rest, x.id) + hash} lang={x.id} aria-current={cur === x.id ? 'true' : undefined} title={x.label} className={`h-8 px-3 rounded-full flex items-center text-[13px] font-medium transition-colors ${cur === x.id ? 'bg-safran text-nuit' : 'text-white/70 hover:text-white'}`}>{x.short}</Link>)}
+    </div>
+  );
+};
+
+const META: Record<Lang, [string, string]> = {
+  fr: ['Digilago — Le numérique qui fait venir vos clients', 'Digilago conçoit, référence et opère les sites, applications et logiciels des entreprises marocaines. Première version offerte en 72 h.'],
+  en: ['Digilago — Digital that brings you customers', 'Digilago designs, ranks and runs websites, apps and software for Moroccan businesses. Your first version free in 72 hours.'],
+  ar: ['ديجيلاغو — الديجيتال اللي كيجيب ليك الكليان', 'ديجيلاغو كتصمّم، كتبرّز وكتسيّر المواقع والتطبيقات والبرامج ديال الشركات المغربية. النسخة الأولى فابور فـ 72 ساعة.'],
+};
+
 const Shell = () => {
   const { pathname, hash } = useLocation();
+  const lng = langFromPath(pathname); setLang(lng); const base = lng === 'fr' ? '' : '/' + lng;
+  useEffect(() => {
+    const h = document.documentElement; h.lang = lng === 'ar' ? 'ar-MA' : lng; h.dir = lng === 'ar' ? 'rtl' : 'ltr';
+    document.title = META[lng][0]; document.querySelector('meta[name="description"]')?.setAttribute('content', META[lng][1]);
+  }, [lng]);
   useEffect(() => { if (hash) { const el = document.getElementById(hash.slice(1)); if (el) { setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 80); return; } } window.scrollTo(0, 0); }, [pathname, hash]);
   return (
     <>
-      <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] btn btn-safran">Aller au contenu</a>
-      <Nav />
+      <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[70] btn btn-safran">{t('Aller au contenu')}</a>
+      <Intro />
+      <Progress />
+      <Nav key={'n' + lng} />
       <main id="contenu">
+        <motion.div key={pathname + lng} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45 }}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/realisations" element={<Realisations />} />
-          <Route path="/societe" element={<Societe />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path={base || '/'} element={<Home />} />
+          <Route path={base + '/services'} element={<Services />} />
+          <Route path={base + '/realisations'} element={<Realisations />} />
+          <Route path={base + '/societe'} element={<Societe />} />
+          <Route path={base + '/contact'} element={<Contact />} />
           {/* Anciennes adresses du site précédent */}
           <Route path="/web" element={<Navigate to="/" replace />} />
           <Route path="/web/services" element={<Navigate to="/services" replace />} />
@@ -70,9 +191,11 @@ const Shell = () => {
           <Route path="/web/contact" element={<Navigate to="/contact" replace />} />
           <Route path="*" element={<Home />} />
         </Routes>
+        </motion.div>
       </main>
-      <Footer />
-      <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="fixed right-4 bottom-4 z-[55] flex items-center gap-2 h-[54px] pl-4 pr-5 rounded-full bg-[#25D366] text-nuit font-semibold shadow-[0_18px_40px_-16px_rgba(37,211,102,0.9)] hover:-translate-y-0.5 transition-transform" style={{ marginBottom: 'env(safe-area-inset-bottom)' }} aria-label="Écrire sur WhatsApp"><MessageCircle size={20} /><span className="text-[14px] hidden sm:inline">WhatsApp</span></a>
+      <Footer key={'f' + lng} />
+      <ChatBot key={'c' + lng} />
+      <Dock key={'d' + lng} />
     </>
   );
 };

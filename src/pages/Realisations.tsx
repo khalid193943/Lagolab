@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react';
+import { t, tv, L } from '../i18n';
 import { AnimatePresence, motion } from 'motion/react';
 import { Check, X } from 'lucide-react';
 import { CASES, LIBRARY, GROUPS, Concept } from '../data';
-import { Reveal, Img, Head } from '../ui';
+import { Reveal, Img, Head, Swipe } from '../ui';
 import { FaitPar, FinalCTA, ConceptCard } from '../sections';
 import { ScrollText } from '../fx';
 import { CaseCard } from './Home';
+import { LogoWall } from '../brand';
 
 export default function Realisations() {
   const [g, setG] = useState('Tous'); const [open, setOpen] = useState<Concept | null>(null);
@@ -13,7 +15,7 @@ export default function Realisations() {
   return (
     <>
       <section className="dark relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28"><div className="wrap grid lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-6"><Reveal><p className="kicker">Réalisations</p></Reveal><ScrollText auto as="h1" text="Nos réalisations parlent pour nous." className="mt-5 text-[clamp(2.6rem,5vw,4.6rem)] leading-[1]" /><Reveal delay={0.5}><p className="mt-7 text-[19px] text-white/75 max-w-[50ch]">Des établissements réels en service, et une bibliothèque de concepts pour imaginer le vôtre.</p></Reveal></div>
+        <div className="lg:col-span-6"><Reveal><p className="kicker">{t('Réalisations')}</p></Reveal><ScrollText auto as="h1" text={t('Nos réalisations parlent pour nous.')} className="mt-5 text-[clamp(2.6rem,5vw,4.6rem)] leading-[1]" /><Reveal delay={0.5}><p className="mt-7 text-[19px] text-white/75 max-w-[50ch]">{t('Des établissements réels en service, et une bibliothèque de concepts pour imaginer le vôtre.')}</p></Reveal></div>
         <div className="lg:col-span-6 relative h-[360px] sm:h-[440px]" aria-hidden>
           {CASES.map((c, i) => (
             <motion.div key={c.name} className="absolute w-[72%] aspect-[16/10] rounded-2xl overflow-hidden ring-1 ring-white/15 shadow-[0_40px_80px_-30px_rgba(0,0,0,.9)]"
@@ -25,17 +27,20 @@ export default function Realisations() {
         </div>
       </div></section>
 
-      <section className="light py-24 lg:py-28"><div className="wrap">
-        <Head kicker="Études de cas" title="Des projets livrés, des résultats visibles." lead="Pour chaque établissement : le besoin de départ et ce que nous avons mis en place." />
-        <div className="mt-12 grid lg:grid-cols-3 gap-6">{CASES.map((c, i) => <Reveal key={c.name} delay={i * 0.06} className="h-full"><CaseCard c={c} big /></Reveal>)}</div>
+      <section className="light py-20 md:py-24 lg:py-28 overflow-hidden"><div className="wrap">
+        <Head kicker={t('Études de cas')} title={t('Des projets livrés, des résultats visibles.')} lead={t('Pour chaque établissement : le besoin de départ et ce que nous avons mis en place.')} />
+      </div>
+      <Reveal delay={0.1} className="mt-12"><LogoWall /></Reveal>
+      <div className="wrap">
+        <Swipe from="lg" cols="lg:grid-cols-3" className="mt-12" item="w-[86%] sm:w-[58%]">{CASES.map((c, i) => <Reveal key={c.name} delay={i * 0.06} className="h-full"><CaseCard c={c} big /></Reveal>)}</Swipe>
       </div></section>
 
       <FaitPar compact />
 
-      <section className="dark py-24 lg:py-28 border-t border-white/10"><div className="wrap">
-        <Head kicker="Bibliothèque" title="Une direction pour chaque métier." lead="Filtrez par secteur et ouvrez un concept pour voir la direction que pourrait prendre votre site." />
-        <div className="mt-10 flex flex-wrap gap-2">{GROUPS.map((x) => <button key={x} onClick={() => setG(x)} aria-pressed={g === x} className={`h-10 px-4 rounded-full text-[14px] transition-colors ${g === x ? 'bg-safran text-nuit font-semibold' : 'ring-1 ring-white/15 text-white/80 hover:text-white hover:ring-white/40'}`}>{x}</button>)}</div>
-        <motion.div layout className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+      <section className="dark py-20 md:py-24 lg:py-28 border-t border-white/10"><div className="wrap">
+        <Head kicker={t('Bibliothèque')} title={t('Une direction pour chaque métier.')} lead={t('Filtrez par secteur et ouvrez un concept pour voir la direction que pourrait prendre votre site.')} />
+        <div className="mt-10 flex gap-2 overflow-x-auto -mx-5 px-5 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex-wrap md:overflow-visible md:mx-0 md:px-0">{GROUPS.map((x) => <button key={x} onClick={() => setG(x)} aria-pressed={g === x} className={`h-10 px-4 shrink-0 rounded-full text-[14px] transition-colors ${g === x ? 'bg-safran text-nuit font-semibold' : 'ring-1 ring-white/15 text-white/80 hover:text-white hover:ring-white/40'}`}>{t(x)}</button>)}</div>
+        <motion.div layout className="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-6 gap-y-8 sm:gap-y-12">
           <AnimatePresence mode="popLayout">{list.map((c) => <motion.div key={c.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><ConceptCard c={c} onOpen={() => setOpen(c)} /></motion.div>)}</AnimatePresence>
         </motion.div>
       </div></section>
@@ -45,10 +50,10 @@ export default function Realisations() {
           <motion.div initial={{ y: 12 }} animate={{ y: 0 }} className="w-full max-w-6xl my-10 grid lg:grid-cols-12 gap-6 rounded-3xl bg-nuit-2 ring-1 ring-white/10 p-4 md:p-6" onClick={(e) => e.stopPropagation()}>
             <div className="lg:col-span-8 rounded-2xl overflow-hidden bg-nuit"><Img src={open.img} alt={`Site ${open.name}`} tone={open.color} className="w-full h-full max-h-[75vh] object-contain" /></div>
             <div className="lg:col-span-4 p-2 flex flex-col">
-              <div className="flex justify-between items-start gap-4"><div><p className="text-brume text-[14px]">{open.sector} · {open.city}</p><h3 className="mt-1 text-[28px]">{open.name}</h3></div><button onClick={() => setOpen(null)} className="w-11 h-11 shrink-0 rounded-full ring-1 ring-white/20 flex items-center justify-center" aria-label="Fermer"><X size={18} /></button></div>
-              <ul className="mt-6 space-y-3">{open.features.map((f) => <li key={f} className="flex gap-3"><Check size={18} className="text-cyan shrink-0 mt-1" />{f}</li>)}</ul>
-              <p className="mt-6 text-[15px] text-brume">Bouton principal du site : <span className="text-white">{open.cta}</span></p>
-              <button onClick={() => { setOpen(null); setTimeout(() => document.getElementById('demarrer')?.scrollIntoView({ behavior: 'smooth' }), 50); }} className="btn btn-safran mt-auto">Je veux un site comme celui-ci</button>
+              <div className="flex justify-between items-start gap-4"><div><p className="text-brume text-[14px]">{t(open.sector)} · {t(open.city)}</p><h3 className="mt-1 text-[28px]">{open.name}</h3></div><button onClick={() => setOpen(null)} className="w-11 h-11 shrink-0 rounded-full ring-1 ring-white/20 flex items-center justify-center" aria-label={t('Fermer')}><X size={18} /></button></div>
+              <ul className="mt-6 space-y-3">{open.features.map((f) => <li key={f} className="flex gap-3"><Check size={18} className="text-cyan shrink-0 mt-1" />{t(f)}</li>)}</ul>
+              <p className="mt-6 text-[15px] text-brume">{t('Bouton principal du site :')} <span className="text-white">{t(open.cta)}</span></p>
+              <button onClick={() => { setOpen(null); setTimeout(() => document.getElementById('demarrer')?.scrollIntoView({ behavior: 'smooth' }), 50); }} className="btn btn-safran mt-auto">{t('Je veux un site comme celui-ci')}</button>
             </div>
           </motion.div>
         </motion.div>
