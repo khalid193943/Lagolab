@@ -1,0 +1,151 @@
+  /* ---------- Tous les métiers : le studio ---------- */
+  (function(){
+    var dataEl = document.getElementById('xpData'); if (!dataEl) return;
+    var D = JSON.parse(dataEl.textContent), cur = { s: null, m: null }, win = document.querySelector('.st-win');
+    var SECS = document.querySelectorAll('.st-sec'), q = document.getElementById('xpQ'), res = document.getElementById('xpRes');
+    var norm = function(t){ return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); };
+    var ALL = []; D.s.forEach(function(s){ s.m.forEach(function(m){ ALL.push({ s: s, m: m, k: norm(m.n + ' ' + s.n) }); }); });
+    D.s.forEach(function(s){ (s.a || []).forEach(function(n){ ALL.push({ s: s, m: { n: n, u: '', x: 0, g: 'e', also: 1 }, k: norm(n + ' ' + s.n) }); }); });
+    win.addEventListener('click', function(){ win.classList.toggle('on'); });
+    function fit(img, box, speed){ if (!img || !box) return; var go = function(){ var dy = Math.max(0, img.getBoundingClientRect().height - box.clientHeight); img.style.setProperty('--dy', dy + 'px'); img.style.setProperty('--t', Math.max(6, Math.min(26, dy / (speed || 190))) + 's'); }; if (img.complete && img.naturalHeight) go(); else img.addEventListener('load', go, { once: true }); }
+    function current(){ var ex = document.querySelector('.xp-ex.on'); if (!ex) return ''; var i = ex.querySelector('img'), v = ex.querySelector('video'); return i ? i.getAttribute('src') : v ? v.getAttribute('poster') : ''; }
+    function devices(){
+      var src = current();
+      document.querySelectorAll('.dvc-img').forEach(function(d){ if (d.getAttribute('src') !== src) { d.onload = function(){ fit(d, d.parentNode, 300); }; d.src = src; } });
+    }
+    function showEx(s, m){
+      document.querySelectorAll('.xp-ex').forEach(function(ex){
+        var on = ex.dataset.e === m.e; ex.classList.toggle('on', on);
+        var v = ex.querySelector('video'); if (v) { if (on) { v.muted = true; v.play().catch(function(){}); } else v.pause(); }
+        if (on) { win.classList.remove('on'); fit(ex.querySelector('img'), ex.querySelector('.xp-vw')); }
+      });
+      document.getElementById('xpUrl').textContent = m.u + '.ma';
+      document.getElementById('xpMN').textContent = m.n;
+      document.getElementById('xpSN').textContent = s.n + (m.g === 'p' ? ', indépendant' : '');
+      var tag = document.getElementById('xpTag'); tag.textContent = m.x === 1 ? 'Idée de site pour ce métier' : m.x === 2 ? 'Idée de site pour ce secteur' : 'Idée de style, prototype du métier bientôt'; tag.classList.toggle('style', !m.x);
+      document.getElementById('xpGo').href = 'demarrer.html?metier=' + encodeURIComponent(m.n);
+      document.getElementById('xpWa').href = 'https://wa.me/212649953813?text=' + encodeURIComponent('Bonjour Digilago, je voudrais un site pour mon activité : ' + m.n + '.');
+      devices(); if (typeof brand === 'function') brand();
+    }
+    var row = document.getElementById('stRow'), rowFor = '';
+    function open(k){
+      SECS.forEach(function(sec){ var on = sec.dataset.s === k; sec.classList.toggle('open', on); sec.querySelector('.st-h').setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    }
+    function fillRow(s){
+      if (rowFor === s.k) return; rowFor = s.k;
+      row.innerHTML = s.m.map(function(m, i){ return '<button type="button" class="st-ty' + (m.x ? ' ok' : '') + '" role="option" data-u="' + m.u + '" style="animation-delay:' + (i * 45) + 'ms"><span class="st-tyi">' + (m.i || '') + '</span><b>' + m.n + '</b><small>' + (m.x === 1 ? 'Idée de site' : m.x === 2 ? 'Idée du secteur' : 'Idée de style') + '</small></button>'; }).join('');
+      row.scrollLeft = 0;
+      row.querySelectorAll('.st-ty').forEach(function(b){ b.addEventListener('click', function(){ pick(s.k, b.dataset.u, false); }); });
+      document.getElementById('stAl').innerHTML = s.al || '';
+    }
+    function pick(k, u, scroll){
+      var s = D.s.filter(function(x){ return x.k === k; })[0] || D.s[0];
+      var m = s.m.filter(function(x){ return x.u === u; })[0] || s.m[0];
+      cur.s = s; cur.m = m; open(s.k); fillRow(s);
+      row.querySelectorAll('.st-ty').forEach(function(b){ var on = b.dataset.u === m.u; b.classList.toggle('on', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); if (on) row.scrollTo({ left: Math.max(0, b.offsetLeft - row.clientWidth / 2 + b.offsetWidth / 2), behavior: 'smooth' }); });
+      showEx(s, m);
+      if (history.replaceState) history.replaceState(null, '', '#' + s.k + '/' + m.u);
+      if (scroll) { var app = document.querySelector('.st-app'); window.scrollTo({ top: app.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' }); }
+    }
+    SECS.forEach(function(sec){ sec.querySelector('.st-h').addEventListener('click', function(){ pick(sec.dataset.s, null, document.documentElement.dataset.mode === 'M'); }); });
+    /* ---------- votre marque sur l'idée ---------- */
+    var BR = { n: '', c: '#1F57C7' }; try { var saved = JSON.parse(localStorage.getItem('dg-brand') || '{}'); if (saved.c) BR = saved; } catch (e) {}
+    var bIn = document.getElementById('stbIn'), bEl = document.getElementById('stBrand');
+    function initials(t){ var w = t.trim().split(/\s+/).filter(Boolean); return w.length ? (w[0][0] + (w[1] ? w[1][0] : (w[0][1] || ''))).toUpperCase() : 'VE'; }
+    function slugify(t){ return (norm(t).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'votre-entreprise'); }
+    function brand(){
+      var name = BR.n.trim() || 'Votre entreprise';
+      bEl.style.setProperty('--bc', BR.c); document.getElementById('stYours').style.setProperty('--bc', BR.c);
+      document.getElementById('stbName').textContent = name; document.getElementById('stbLogo').textContent = initials(BR.n);
+      document.getElementById('xpUrl').textContent = BR.n.trim() ? slugify(BR.n) + '.ma' : (cur.m ? cur.m.u + '.ma' : 'votre-entreprise.ma');
+      document.querySelectorAll('.stb-sw button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.c === BR.c ? 'true' : 'false'); });
+      if (cur.m) document.getElementById('xpGo').href = 'demarrer.html?metier=' + encodeURIComponent(cur.m.n) + (BR.n.trim() ? '&nom=' + encodeURIComponent(BR.n.trim()) : '');
+      try { localStorage.setItem('dg-brand', JSON.stringify(BR)); } catch (e) {}
+    }
+    bIn.value = BR.n; bIn.addEventListener('input', function(){ BR.n = bIn.value; brand(); });
+    document.querySelectorAll('.stb-sw button').forEach(function(b){ b.addEventListener('click', function(){ BR.c = b.dataset.c; brand(); }); });
+    /* plein écran */
+    var modal = document.getElementById('stModal');
+    document.getElementById('stFull').addEventListener('click', function(){ var src = current(); if (!src) return; document.getElementById('stMImg').src = src; document.getElementById('stMT').textContent = cur.m.n; modal.hidden = false; document.documentElement.style.overflow = 'hidden'; });
+    function closeM(){ modal.hidden = true; document.documentElement.style.overflow = ''; }
+    document.getElementById('stClose').addEventListener('click', closeM);
+    modal.addEventListener('click', function(e){ if (e.target === modal) closeM(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.hidden) closeM(); if (e.key === '/' && document.activeElement !== q) { e.preventDefault(); q.focus(); } });
+    /* ---------- recherche intelligente ---------- */
+    var sq = document.getElementById('sq'), ICONS = {}; try { ICONS = JSON.parse(document.getElementById('sqIcons').textContent); } catch (e) {}
+    var SYN = { 'entreprise-et-pme': 'entreprise entreprises societe company business pme startup corporate sarl sa groupe holding شركة مقاولة', 'medecin-generaliste': 'medecin docteur doctor generaliste gp famille طبيب', 'dentiste': 'dentist dental dents طبيب اسنان', 'clinique-dentaire': 'dental clinic dentaire implant', 'pediatre': 'enfant bebe pediatrician kids اطفال', 'pharmacie': 'pharmacy parapharmacie صيدلية', 'psychologue': 'psy therapist therapie coach mental', 'veterinaire': 'vet animaux chien chat pets بيطري', 'kinesitherapeute': 'kine physio physiotherapy reeducation', 'cardiologue': 'coeur heart cardio', 'gynecologue': 'femme gyneco grossesse', 'clinique-et-centre-medical': 'hopital hospital clinic polyclinique مصحة مستشفى', 'laboratoire-danalyses': 'labo lab analyses sang مختبر', 'centre-de-radiologie': 'radio scanner irm imagerie', 'clinique-esthetique': 'esthetique botox laser', 'clinique-ophtalmologique': 'yeux eye vision', 'ophtalmologue': 'yeux eye vision ophtalmo', 'riad': 'maison hote guesthouse marrakech رياض', 'hotel': 'hotel فندق resort', 'restaurant-marocain': 'restaurant food cuisine مطعم', 'cafe': 'coffee coffeeshop مقهى', 'patisserie': 'gateaux cake حلويات', 'cabinet-davocats': 'avocat lawyer law محامي', 'notaire': 'notary موثق', 'expert-comptable': 'comptable accountant comptabilite', 'salle-de-sport': 'gym fitness musculation crossfit', 'salon-de-coiffure': 'coiffeur coiffeuse hair', 'barbier': 'barber coiffeur homme', 'agence-immobiliere': 'real estate immobilier appartement عقار', 'garage-automobile': 'mecanicien mechanic voiture auto', 'ecole-privee': 'ecole school primaire college مدرسة', 'creche': 'nursery bebe حضانة', 'maternelle': 'kindergarten prescolaire', 'auto-ecole': 'permis driving school', 'centre-de-langues': 'anglais english langue cours', 'boutique-de-vetements': 'mode fashion vetements', 'entreprise-btp': 'construction chantier batiment', 'agence-de-voyages': 'voyage travel tourisme' };
+    var IDX = ALL.map(function(h){ return { h: h, n: norm(h.m.n), w: norm(h.m.n).split(/[^a-z0-9]+/), s: norm(h.s.n), y: norm(SYN[h.m.u] || '') }; });
+    var act = -1, hits = [];
+    function lev1(a, b){ if (Math.abs(a.length - b.length) > 1) return false; var i = 0, j = 0, d = 0; while (i < a.length && j < b.length) { if (a[i] === b[j]) { i++; j++; continue; } if (++d > 1) return false; if (a.length > b.length) i++; else if (b.length > a.length) j++; else { i++; j++; } } return d + (a.length - i) + (b.length - j) <= 1; }
+    function score(x, t){
+      var s = 0;
+      if (x.n.indexOf(t) === 0) s = 100; else if (x.w.some(function(w){ return w.indexOf(t) === 0; })) s = 85; else if (x.n.indexOf(t) !== -1) s = 65;
+      else if (x.y.split(' ').some(function(w){ return w.indexOf(t) === 0; })) s = 55; else if (x.y.indexOf(t) !== -1) s = 45;
+      else if (x.s.indexOf(t) !== -1) s = 30;
+      else if (t.length >= 4 && x.w.concat(x.y.split(' ')).some(function(w){ return w.length >= 4 && lev1(w.slice(0, Math.max(t.length, 4)), t); })) s = 22;
+      return s ? s + (x.h.m.x ? 6 : 0) + (x.h.m.g === 'e' ? 2 : 0) : 0;
+    }
+    function mark(name, t){ var n = norm(name), i = n.indexOf(t); if (!t || i < 0) return name; return name.slice(0, i) + '<mark>' + name.slice(i, i + t.length) + '</mark>' + name.slice(i + t.length); }
+    var ARR = '<svg class="smq-ar" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+    function item(h, i, t){ return '<li class="smq-it' + (i === act ? ' act' : '') + '" role="option" data-i="' + i + '"><span class="smq-si">' + (ICONS[h.s.k] || '') + '</span><span class="smq-tx"><b>' + mark(h.m.n, t) + '</b><small>' + h.s.n + (h.m.g === 'p' ? ', indépendant' : '') + '</small></span><span class="smq-bd' + (h.m.x ? '' : h.m.also ? ' al' : ' st') + '">' + (h.m.x ? 'Idée de site' : h.m.also ? 'Aussi pour ce secteur' : 'Idée de style') + '</span>' + ARR + '</li>'; }
+    function foot(n){ return '<div class="smq-foot"><span><kbd>↑</kbd><kbd>↓</kbd>naviguer</span><span><kbd>Entrée</kbd>ouvrir</span><span><kbd>Échap</kbd>fermer</span><span>' + n + '</span></div>'; }
+    /* ---------- recherche : une réponse qui rassure, suggère et convertit ---------- */
+    var ans = document.getElementById('ans'), pops = document.getElementById('sqPops'), ansT = 0, lastKey = '';
+    var GEN = { 'boulangerie': 'commerce', 'boulanger': 'commerce', 'pain': 'commerce', 'savon': 'industrie', 'cosmetique': 'beaute', 'association': 'services', 'ong': 'services', 'cooperative': 'industrie', 'agriculture': 'industrie', 'ferme': 'industrie', 'traiteur': 'restauration', 'mariage': 'tourisme', 'evenement': 'tourisme', 'decoration': 'commerce', 'mode': 'commerce', 'informatique': 'services', 'agence': 'services', 'marketing': 'services', 'ecole': 'education', 'formation': 'education', 'clinique': 'sante', 'medecin': 'sante', 'hotel': 'hotellerie', 'voyage': 'tourisme', 'voiture': 'services', 'immobilier': 'immobilier', 'sport': 'sport', 'beaute': 'beaute', 'avocat': 'juridique', 'usine': 'industrie' };
+    function exSrc(e){ var f = document.querySelector('.xp-ex[data-e="' + e + '"]'); if (!f) return ''; var i = f.querySelector('img'), v = f.querySelector('video'); return i ? i.getAttribute('src') : v ? v.getAttribute('poster') : ''; }
+    function esc(t){ return String(t).replace(/[<>&"]/g, function(c){ return { '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[c]; }); }
+    function answer(raw){
+      var t = norm(raw.trim());
+      if (t.length < 2) { ans.classList.remove('show'); pops.classList.remove('hide'); setTimeout(function(){ if (!ans.classList.contains('show')) ans.hidden = true; }, 450); return; }
+      var best = IDX.map(function(x){ return { x: x, s: score(x, t) }; }).filter(function(o){ return o.s; }).sort(function(a, b){ return b.s - a.s; })[0];
+      var s, m, known = !!best, words = t.split(/\s+/);
+      if (best) { s = best.x.h.s; m = best.x.h.m.also ? s.m[0] : best.x.h.m; }
+      else {
+        var k = null; Object.keys(GEN).some(function(g){ if (words.some(function(w){ return w.indexOf(g) === 0 || g.indexOf(w) === 0 && w.length > 3; })) { k = GEN[g]; return true; } return false; });
+        s = D.s.filter(function(x){ return x.k === (k || 'services'); })[0]; m = s.m[0];
+      }
+      var key = s.k + '/' + m.u + '/' + (known ? 1 : 0) + '/' + t; if (key === lastKey) return; lastKey = key;
+      var label = known && !best.x.h.m.also ? m.n : raw.trim();
+      var others = s.m.filter(function(x){ return x.u !== m.u; }).slice(0, 6);
+      var src = exSrc(m.e), href = 'demarrer.html?metier=' + encodeURIComponent(label);
+      ans.innerHTML = '<div class="ans-l"><span class="ans-k"><i></i>' + (known ? 'Bonne nouvelle' : 'Oui, c’est possible') + '</span>'
+        + '<h3>Oui, nous créons des sites pour <em>' + esc(label.charAt(0).toLowerCase() + label.slice(1)) + '</em>.</h3>'
+        + '<p>' + (known ? 'Votre activité fait partie du secteur <b>' + s.n + '</b>. Voici une idée de site que nous adapterons à votre logo, vos couleurs et vos textes.' : 'Ce n’est pas encore dans nos exemples, et c’est très bien : nous étudions votre activité et nous construisons un site sur mesure. Voici une idée proche, dans le secteur <b>' + s.n + '</b>.') + '</p>'
+        + '<div class="ans-f"><span>Ce que votre site peut contenir</span><ul>' + s.f.map(function(f){ return '<li>' + f + '</li>'; }).join('') + '</ul></div>'
+        + (others.length ? '<div class="ans-s"><span>Nous le faisons aussi pour</span><div>' + others.map(function(o){ return '<button type="button" data-u="' + o.u + '" data-n="' + esc(o.n) + '">' + o.n + '</button>'; }).join('') + '</div></div>' : '')
+        + '<div class="ans-c"><a class="ans-go" href="' + href + '">Démarrer mon projet ' + ARR + '</a><a class="ans-ct" href="contact.html">Nous contacter</a></div></div>'
+        + '<div class="ans-r"><button type="button" class="ans-pv" aria-label="Voir cette idée en grand"><span class="ans-bar"><i></i><i></i><i></i><em>' + m.u + '.ma</em></span><span class="ans-img">' + (src ? '<img src="' + src + '" alt="">' : '') + '</span><span class="ans-tag">Idée de site : ' + esc(m.n) + '</span></button><small>Survolez pour parcourir, cliquez pour l’ouvrir en grand</small></div>';
+      ans.hidden = false; pops.classList.add('hide');
+      requestAnimationFrame(function(){ ans.classList.remove('show'); void ans.offsetWidth; ans.classList.add('show'); });
+      var im = ans.querySelector('.ans-img img'), box = ans.querySelector('.ans-img');
+      if (im) { var fitA = function(){ var dy = Math.max(0, im.getBoundingClientRect().height - box.clientHeight); im.style.setProperty('--dy', dy + 'px'); im.style.setProperty('--t', Math.max(6, Math.min(22, dy / 200)) + 's'); }; if (im.complete) fitA(); else im.addEventListener('load', fitA, { once: true }); }
+      ans.querySelector('.ans-pv').addEventListener('click', function(){ pick(s.k, m.u, true); });
+      ans.querySelectorAll('.ans-s button').forEach(function(b){ b.addEventListener('click', function(){ q.value = b.dataset.n; answer(b.dataset.n); }); });
+    }
+    q.addEventListener('input', function(){ clearTimeout(ansT); ansT = setTimeout(function(){ answer(q.value); }, 160); });
+    q.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); var b = ans.querySelector('.ans-pv'); if (b) b.click(); } else if (e.key === 'Escape') { q.value = ''; answer(''); } });
+    document.getElementById('sqGo').addEventListener('click', function(){ if (q.value.trim()) { answer(q.value); var b = ans.querySelector('.ans-pv'); if (b) b.click(); } else q.focus(); });
+    document.querySelectorAll('.smq-pop').forEach(function(b){ b.addEventListener('click', function(){ q.value = b.dataset.q; answer(b.dataset.q); }); });
+    q.addEventListener('focus', function(){ sq.classList.add('focus'); });
+    q.addEventListener('blur', function(){ sq.classList.remove('focus'); });
+    /* trois langues */
+    var L3 = {
+      fr: { k: 'Français', t: 'Bienvenue chez vous.', d: 'ltr', l: ['Accueil', 'Services', 'À propos', 'Contact'], c: 'Prendre rendez-vous', b: 'Votre marque' },
+      en: { k: 'English', t: 'Welcome home.', d: 'ltr', l: ['Home', 'Services', 'About', 'Contact'], c: 'Book now', b: 'Your brand' },
+      ar: { k: 'العربية', t: 'مرحبًا بكم.', d: 'rtl', l: ['الرئيسية', 'خدماتنا', 'من نحن', 'اتصل بنا'], c: 'احجز موعدًا', b: 'علامتك' }
+    };
+    document.querySelectorAll('.l3-sw button').forEach(function(b){ b.addEventListener('click', function(){
+      document.querySelectorAll('.l3-sw button').forEach(function(x){ x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      var L = L3[b.dataset.l], nav = document.getElementById('l3Nav'), hi = document.getElementById('l3Hi');
+      nav.classList.add('sw'); hi.classList.add('sw');
+      setTimeout(function(){
+        nav.dir = L.d; hi.dir = L.d; nav.querySelector('.l3-logo').textContent = L.b;
+        nav.querySelectorAll('.l3-links i').forEach(function(i, k){ i.textContent = L.l[k]; }); nav.querySelector('.l3-cta').textContent = L.c;
+        document.getElementById('l3HiK').textContent = L.k; document.getElementById('l3HiT').textContent = L.t;
+        nav.classList.remove('sw'); hi.classList.remove('sw');
+      }, 200);
+    }); });
+    window.addEventListener('resize', function(){ var ex = document.querySelector('.xp-ex.on'); if (ex) fit(ex.querySelector('img'), ex.querySelector('.xp-vw')); });
+    var h = decodeURIComponent((location.hash || '').slice(1)).split('/');
+    pick(h[0], h[1], !!h[0] && D.s.some(function(s){ return s.k === h[0]; }));
+  })();

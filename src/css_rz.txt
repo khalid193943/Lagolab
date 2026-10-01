@@ -1,0 +1,75 @@
+/* ================= Réalisations : des fenêtres qui flottent dans le ciel ================= */
+#trust.rz{position:relative;z-index:5;padding-bottom:calc(120 * var(--u))!important}
+.rz-cols{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:calc(26 * var(--u));width:calc(1340 * var(--u));max-width:calc(100% - 48px);margin:calc(60 * var(--u)) auto 0;align-items:start}
+.rz-col{display:flex;flex-direction:column;gap:calc(26 * var(--u));will-change:transform}
+.rz-col:first-child{margin-top:calc(90 * var(--u))}
+.rz-col:last-child{margin-top:calc(40 * var(--u))}
+.rw{position:relative;display:block;border-radius:calc(16 * var(--u));background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(159,200,255,.22),0 calc(40 * var(--u)) calc(70 * var(--u)) calc(-30 * var(--u)) rgba(5,15,45,.7);overflow:hidden;transition:transform .7s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+.rw:hover{transform:translateY(-6px);box-shadow:0 0 0 1.5px #9FC8FF,0 calc(50 * var(--u)) calc(90 * var(--u)) calc(-30 * var(--u)) rgba(5,15,45,.8)}
+.rw-bar{display:flex;align-items:center;gap:5px;height:calc(28 * var(--u));padding:0 calc(12 * var(--u));background:rgba(10,24,60,.55)}
+.rw-bar > i{width:7px;height:7px;border-radius:50%;background:rgba(221,235,255,.35)}
+.rw-url{margin-left:calc(10 * var(--u));display:flex;align-items:center;gap:calc(5 * var(--u));height:calc(18 * var(--u));padding:0 calc(10 * var(--u));border-radius:999px;background:rgba(255,255,255,.1);font-size:calc(10.5 * var(--u));color:#B9CBEA;white-space:nowrap;overflow:hidden}
+.rw-url svg{width:calc(8 * var(--u));flex:none}
+.rw-img{display:block;aspect-ratio:16/11;overflow:hidden}
+.rw.big .rw-img{aspect-ratio:16/12}
+.rw-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.rw:hover .rw-img img{transform:scale(1.05) translateY(-2%)}
+.rw-cap{position:absolute;left:calc(12 * var(--u));right:calc(12 * var(--u));bottom:calc(12 * var(--u));display:flex;flex-direction:column;gap:calc(3 * var(--u));padding:calc(14 * var(--u)) calc(16 * var(--u));border-radius:calc(12 * var(--u));background:rgba(12,28,70,.72);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 0 0 1px rgba(159,200,255,.18);color:#fff;transform:translateY(8px);opacity:.96;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.rw:hover .rw-cap{transform:none}
+.rw-cap small{font-family:"JetBrains Mono",monospace;font-size:calc(9.5 * var(--u));letter-spacing:.12em;text-transform:uppercase;color:#9FC8FF}
+.rw-cap b{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:calc(20 * var(--u));line-height:1.15}
+.rw.big .rw-cap b{font-size:calc(26 * var(--u))}
+.rw-tags{display:flex;flex-wrap:wrap;gap:calc(5 * var(--u));margin-top:calc(4 * var(--u))}
+.rw-tags i{font-style:normal;font-size:calc(10.5 * var(--u));padding:calc(3 * var(--u)) calc(8 * var(--u));border-radius:999px;background:rgba(255,255,255,.1);color:#DDEBFF}
+.rw-go{position:absolute;right:calc(14 * var(--u));top:calc(14 * var(--u));width:calc(30 * var(--u));height:calc(30 * var(--u));border-radius:50%;background:#fff;color:#0E214E;display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.rw:hover .rw-go{transform:scale(1)}
+.rw-go svg{width:calc(12 * var(--u))}
+.rw-stat{display:flex;flex-direction:column;align-items:flex-start;gap:calc(10 * var(--u));padding:calc(28 * var(--u)) calc(30 * var(--u));border-radius:calc(16 * var(--u));background:linear-gradient(135deg,rgba(95,159,249,.35),rgba(31,87,199,.25));box-shadow:0 0 0 1px rgba(159,200,255,.35);color:#fff}
+.rw-stat b{font-family:Sora,sans-serif;font-weight:600;font-size:calc(64 * var(--u));line-height:1;letter-spacing:-.05em}
+.rw-stat span{font-size:calc(15 * var(--u));line-height:1.5;color:#DDEBFF;max-width:calc(320 * var(--u))}
+.rw-stat a{margin-top:calc(6 * var(--u));display:inline-flex;align-items:center;gap:calc(8 * var(--u));height:calc(44 * var(--u));padding:0 calc(18 * var(--u));border-radius:999px;background:#fff;color:#0E214E;font-weight:500;font-size:calc(14 * var(--u))}
+.rw-stat a svg{width:calc(12 * var(--u))}
+[data-mode="M"] .rz-cols{grid-template-columns:1fr;gap:calc(16 * var(--u))}
+[data-mode="M"] .rz-col{margin-top:0!important;transform:none!important}
+[data-mode="M"] .rz-col.mid{order:-1}
+/* ================= La différence : deux parcours côte à côte ================= */
+.df2{position:relative;z-index:5}
+.df-duo{display:grid;grid-template-columns:1fr auto 1.08fr;align-items:center;gap:calc(26 * var(--u));width:calc(1180 * var(--u));max-width:calc(100% - 48px);margin:calc(60 * var(--u)) auto 0}
+.df-card{border-radius:calc(22 * var(--u));padding:calc(32 * var(--u)) calc(34 * var(--u))}
+.df-card.old{background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(159,200,255,.14)}
+.df-card.new{position:relative;background:linear-gradient(160deg,#2F6BFF 0%,#1F57C7 55%,#1A469F 100%);box-shadow:0 0 0 1px rgba(191,219,255,.45),0 calc(50 * var(--u)) calc(90 * var(--u)) calc(-30 * var(--u)) rgba(10,30,90,.8),0 0 calc(80 * var(--u)) calc(-10 * var(--u)) rgba(95,159,249,.55);transform:scale(1.03)}
+.df-card.new::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(ellipse 60% 40% at 80% 0%,rgba(255,255,255,.25),transparent 70%);pointer-events:none}
+.df-hd{display:flex;align-items:center;gap:calc(12 * var(--u));margin-bottom:calc(22 * var(--u))}
+.df-ic{width:calc(40 * var(--u));height:calc(40 * var(--u));border-radius:calc(12 * var(--u));display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);color:#8FA6CC}
+.df-ic svg{width:calc(20 * var(--u))}
+.df-ic.lg{background:#fff;color:#1F57C7}
+.df-hd b{font-family:Sora,sans-serif;font-weight:500;font-size:calc(24 * var(--u));letter-spacing:-.03em;color:#fff}
+.df-card.old .df-hd b{color:#B9CBEA}
+.df-hd em{margin-left:auto;font-style:normal;font-family:"JetBrains Mono",monospace;font-size:calc(10 * var(--u));letter-spacing:.12em;text-transform:uppercase;color:#8FA6CC}
+.df-card.new .df-hd em{color:#DDEBFF}
+.df-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.df-card li{display:flex;flex-direction:column;gap:calc(4 * var(--u));padding:calc(13 * var(--u)) 0;box-shadow:0 -1px 0 rgba(159,200,255,.1)}
+.df-card li:first-child{box-shadow:none}
+.df-card.new li{box-shadow:0 -1px 0 rgba(255,255,255,.16)}
+.df-card.new li:first-child{box-shadow:none}
+.df-card li small{font-family:"JetBrains Mono",monospace;font-size:calc(10 * var(--u));letter-spacing:.14em;text-transform:uppercase;color:#7F95B8}
+.df-card.new li small{color:#BFD8FF}
+.df-card li span{display:flex;align-items:center;gap:calc(10 * var(--u));font-size:calc(16.5 * var(--u))}
+.df-card.old li span{color:#8FA6CC;text-decoration:line-through;text-decoration-color:rgba(143,166,204,.5)}
+.df-card.new li span{color:#fff;font-family:Sora,sans-serif;font-weight:500;font-size:calc(18 * var(--u));letter-spacing:-.015em}
+.dx,.dv{flex:none;width:calc(22 * var(--u));height:calc(22 * var(--u));border-radius:50%;display:flex;align-items:center;justify-content:center}
+.dx{background:rgba(143,166,204,.15);color:#8FA6CC}
+.dv{background:#fff;color:#1F57C7}
+.dx svg,.dv svg{width:calc(11 * var(--u))}
+.df-vs{width:calc(52 * var(--u));height:calc(52 * var(--u));border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(159,200,255,.25);font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:calc(18 * var(--u));color:#DDEBFF}
+.df-cta{margin-top:calc(22 * var(--u));display:inline-flex;align-items:center;gap:calc(10 * var(--u));height:calc(50 * var(--u));padding:0 calc(22 * var(--u));border-radius:999px;background:#fff;color:#0E214E;font-weight:500;font-size:calc(14.5 * var(--u));transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.df-cta:hover{transform:translateY(-2px)}
+.df-cta svg{width:calc(12 * var(--u))}
+[data-mode="M"] .df-duo{grid-template-columns:1fr;gap:calc(14 * var(--u))}
+[data-mode="M"] .df-vs{margin:0 auto}
+[data-mode="M"] .df-card.new{transform:none}
+/* ================= Pied de page : le grand logo en tête ================= */
+.f-cta .giant{margin:0 auto calc(34 * var(--u))!important;padding:0!important}
+.f-cta .fbtn{margin-top:0!important}
+.foot{padding-top:calc(260 * var(--u))!important}
+.dayclock{display:none!important}

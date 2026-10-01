@@ -1,0 +1,15 @@
+"""Cartes des guides (carrousel de l'accueil, page Guides, « À lire aussi »)."""
+import json, os
+H=os.path.dirname(os.path.abspath(__file__))
+arts=json.load(open(os.path.join(H,'articles.json'))); FILE=json.load(open(os.path.join(H,'files.json')))
+CLOCK='<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 4.8V8l2.2 1.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>'
+NE='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 11.5l7-7M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+ICON={'prix-site-web-maroc':'<svg viewBox="0 0 48 48" aria-hidden="true" class="gd-ic"><rect x="7" y="12" width="34" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M7 19h34" stroke="currentColor" stroke-width="2.2"/><circle cx="30" cy="28" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M13 28h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+'apparaitre-google-chatgpt-maroc':'<svg viewBox="0 0 48 48" aria-hidden="true" class="gd-ic"><circle cx="21" cy="21" r="11" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M29 29l10 10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M21 15.5l1.5 3.6 3.6 1.5-3.6 1.5-1.5 3.6-1.5-3.6-3.6-1.5 3.6-1.5z" fill="currentColor"/></svg>',
+'fiche-google-business-maroc':'<svg viewBox="0 0 48 48" aria-hidden="true" class="gd-ic"><path d="M24 42s13-11.5 13-21.5a13 13 0 00-26 0C11 30.5 24 42 24 42z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="24" cy="20" r="4.6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>',
+'site-vitrine-boutique-application':'<svg viewBox="0 0 48 48" aria-hidden="true" class="gd-ic"><rect x="5" y="10" width="26" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M13 36h10M18 30v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><rect x="30" y="18" width="13" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M35 36h3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+'bon-moment-maroc':'<svg viewBox="0 0 48 48" aria-hidden="true" class="gd-ic"><circle cx="24" cy="26" r="15" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M24 17v9l6 4M19 5h10M24 5v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M36 10l3-3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>'}
+def cards(extra_cls=''):
+    return ''.join(f'<a class="gd rv{" d1" if i%2 else ""}{extra_cls}" href="{FILE[a["slug"]]}"><span class="gd-top">{ICON.get(a["slug"],"")}<span class="gd-meta">{CLOCK}{a["read"]} min de lecture</span></span><b class="gd-t">{a["title"]}</b><span class="gd-d">{a["desc"]}</span><span class="gd-go">Lire le guide{NE}</span></a>' for i,a in enumerate(arts))
+if __name__=='__main__':
+    open(os.path.join(H,'cards.html'),'w').write(cards()); print('cards.html', len(arts),'guides')

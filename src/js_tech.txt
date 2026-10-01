@@ -1,0 +1,7 @@
+  /* ---------- Sous le capot : le terminal s'écrit, les scores se remplissent ---------- */
+  (function(){
+    var els = document.querySelectorAll('.tech2 .term, .tech2 .dials'); if (!els.length) return;
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('run'); }); return; }
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('run'); io.unobserve(en.target); } }); }, { threshold: 0.35 });
+    els.forEach(function(e){ io.observe(e); });
+  })();
