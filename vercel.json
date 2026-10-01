@@ -1,1 +1,7 @@
-{ "cleanUrls": true, "trailingSlash": false, "redirects": [{ "source": "/web", "destination": "/", "permanent": true }, { "source": "/web/:p(services|realisations|contact)", "destination": "/:p", "permanent": true }, { "source": "/web/entreprises", "destination": "/societe", "permanent": true }] }
+{
+  "outputDirectory": "site",
+  "cleanUrls": false,
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" } ] }
+  ]
+}

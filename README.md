@@ -1,58 +1,115 @@
-# Digilago — site de la société (v3, redesign tech premium)
+# Digilago — site web
 
-React 19 + Vite + Tailwind v4 + Motion. Pages : Accueil (avec simulateur de visibilité et offres par métier), Services, Réalisations (#FaitParDigilago), Société, Contact.
-Images : `IMG` et `PACK_IMG` dans `src/data.ts` (20 visuels générés).
-Tout le contenu est dans `src/data.ts` (services, pôles, clients, bibliothèque, FAQ, contact, images).
+Site vitrine de Digilago : 13 pages statiques, rapides et prêtes à être publiées.
+Aucun serveur n'est nécessaire : les formulaires (« Démarrer un projet » et « Contact ») envoient la demande directement sur WhatsApp.
 
-## Mettre en ligne sans rien installer
-Le dossier `digilago-en-ligne.zip` contient le site déjà compilé.
-- **Netlify** : app.netlify.com/drop → glisser le dossier décompressé.
-- **Vercel** : `vercel deploy` dans le dossier, ou importer le code source.
-- **cPanel / hébergeur marocain (Apache)** : envoyer le contenu du dossier dans `public_html/`. Le fichier `.htaccess` est déjà inclus pour les routes.
+---
 
-## Modifier et recompiler
-- `npm install` puis `npm run dev`
-- `npm run build` → dossier `dist/` à mettre en ligne
+## Ce que contient le dépôt
 
-## Palette
-Nuit #0A1428 · Porcelaine #F2F4F7 · Cyan #2DD4E6 · Safran #F4B53F · Brume #9DA9C0 · Ardoise #56617A
-Typographies : Sora (titres), Instrument Sans (texte), JetBrains Mono (éléments de code).
+| Dossier / fichier | Rôle |
+|---|---|
+| `site/` | **Le site prêt à publier.** C'est ce dossier que l'hébergeur doit servir. |
+| `src/` | Les sources : gabarits de l'accueil (`head.html`, `body.html`, `script.html`), générateur des autres pages, styles (`css_*.txt`), textes des guides (`guides/`), et les scripts de construction. |
+| `tests/` | Les tests automatiques du site (Playwright). |
+| `.github/workflows/deploy.yml` | Teste puis publie automatiquement le site sur GitHub Pages à chaque envoi sur `main`. |
+| `netlify.toml`, `vercel.json` | Configuration prête si vous préférez Netlify ou Vercel. |
 
-## Images
-Les visuels (hero, services, équipe, fond zellige) et la bibliothèque de concepts sont hébergés sur le CDN Higgsfield (`IMG` et `LIBRARY` dans `src/data.ts`).
-Pour les héberger vous-même : téléchargez-les dans `public/images/` et remplacez les adresses par `/images/nom.png`.
-Les captures clients sont dans `src/assets/`.
+Les 13 pages : accueil, services, réalisations, à propos, contact, démarrer un projet, guides (et 4 guides), mentions légales, confidentialité, plus une page 404, un `sitemap.xml` et un `robots.txt`.
 
-## Mobile
-Sur téléphone : menu plein écran animé, barre d'actions en bas (Appeler, WhatsApp, Première version) qui se cache au défilement,
-carrousels à glisser (expertises, secteurs, références, technologies, Labs), onglets Google / Carte / IA dans le simulateur,
-frise de méthode qui se dessine, grain et halos désactivés pour économiser la batterie.
-Conseil performance : en hébergeant les images vous-même, convertissez-les en WebP (largeur 1600 px max), elles passeront de ~2 Mo à ~150 Ko.
+---
 
-## Langues
-Français à la racine (`/`), anglais sur `/en`, arabe sur `/ar` (de droite à gauche, police Readex Pro).
-Le texte source est en français dans le code ; `src/dict.ts` contient la traduction de chaque phrase : `"texte français": ["English", "العربية"]`.
-Pour modifier une traduction, changez la valeur dans `dict.ts`. Pour ajouter un texte, écrivez-le en français dans le code avec `t('…')`, puis ajoutez sa ligne dans `dict.ts`.
-Le sélecteur FR / EN / عربي (menu, menu mobile, pied de page) garde la même page en changeant de langue.
+## Mettre le site en ligne
 
-## Formulaire de contact
-Les demandes partent vers le service défini dans `src/config.ts` (`FORM_ENDPOINT`).
-1. Créez un formulaire gratuit sur formspree.io avec l'adresse e-mail qui doit recevoir les demandes.
-2. Copiez son adresse (du type `https://formspree.io/f/abcdwxyz`) dans `FORM_ENDPOINT`, puis recompilez.
-Tant que ce champ est vide, ou si l'envoi échoue, la demande s'ouvre dans WhatsApp, avec un lien e-mail de secours : aucune demande n'est perdue.
-Un champ piège invisible bloque les robots, et la case de consentement renvoie vers la politique de confidentialité.
+### Option 1 — GitHub Pages (automatique, recommandé)
 
-## Pages légales
-`/mentions-legales` et `/confidentialite` (dans les trois langues). Complétez les informations entre crochets dans `LEGAL` (`src/config.ts`) : forme juridique, capital, adresse, RC, ICE, IF, directeur de la publication, hébergeur, récépissé CNDP. Faites valider les textes par un juriste.
+1. Créez un dépôt sur GitHub et envoyez-y ce dossier :
+   ```bash
+   git init
+   git add .
+   git commit -m "Site Digilago"
+   git branch -M main
+   git remote add origin https://github.com/VOTRE-COMPTE/digilago.git
+   git push -u origin main
+   ```
+2. Sur GitHub : **Settings → Pages → Build and deployment → Source : GitHub Actions**.
+3. L'onglet **Actions** lance le workflow « Tester et publier le site » : il reconstruit le site, lance tous les tests, puis publie. L'adresse en ligne s'affiche à la fin (du type `https://VOTRE-COMPTE.github.io/digilago/`).
+4. Pour votre domaine : **Settings → Pages → Custom domain** → `digilago.ma`, puis chez votre registrar un enregistrement `CNAME` vers `VOTRE-COMPTE.github.io`.
 
-## Page 404
-Toute adresse inconnue affiche la page « 4 D 4 », marquée `noindex` pour les moteurs de recherche.
+### Option 2 — Netlify ou Vercel
 
-## SEO, GEO et performance
-- **Compiler pour la mise en ligne : `npm run build:seo`** (compile puis pré-rend 76 pages HTML dans `dist/`). Première fois : `npx playwright install chromium`.
-- Chaque page a son titre, sa description, son adresse canonique, ses liens hreflang (fr / en / ar / x-default), ses balises Open Graph et ses données structurées (Organization + ProfessionalService, WebSite, WebPage, BreadcrumbList, FAQPage, Service, Article).
-- Pages de conquête locale : `/creation-site-web` et `/creation-site-web/<ville>` (14 villes), guides : `/guides/...`.
-- `public/robots.txt` ouvre le site aux robots des IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended…), `public/llms.txt` résume Digilago pour les IA, `public/sitemap.xml` liste les 75 adresses.
-- Les pages sont servies en `.html` sans extension (voir `.htaccess`, `vercel.json` avec `cleanUrls`, Netlify natif). Les adresses inconnues renvoient une vraie erreur 404 (`404.html`).
-- Pour ajouter une ville : une entrée dans `src/cities.ts`, puis ajouter le chemin dans `scripts_routes.json`. Pour un guide : une entrée dans `ARTICLES` (`src/pages/Guides.tsx`) + son chemin.
-- Réseaux sociaux : complétez `ORG.sameAs` dans `src/seo.tsx` (LinkedIn, Instagram, Facebook, fiche Google) dès qu'ils existent.
+Importez le dépôt : le dossier à publier (`site`) est déjà configuré. Aucune commande de construction n'est nécessaire.
+
+### Option 3 — N'importe quel hébergeur
+
+Envoyez le **contenu** du dossier `site/` à la racine de votre hébergement (FTP ou gestionnaire de fichiers).
+
+---
+
+## Tester en local
+
+```bash
+pip install -r requirements.txt
+python -m playwright install chromium
+
+npm run start      # ou : make serve  → http://localhost:4173
+npm run test       # ou : make test   → 41 tests
+```
+
+Les tests vérifient, sur un vrai navigateur :
+
+- chaque page s'ouvre sans erreur, avec son titre, son `h1` et son pied de page ;
+- aucun lien interne ni aucune image n'est cassé ;
+- l'accueil se parcourt jusqu'en bas sans erreur, les quatre réponses changent au défilement, et la version téléphone s'active ;
+- sur téléphone, le menu plein écran s'ouvre et se ferme ;
+- « Démarrer un projet » va jusqu'au bout et ouvre WhatsApp avec la demande complète ;
+- le formulaire de contact ouvre WhatsApp avec le message.
+
+---
+
+## Modifier puis reconstruire
+
+1. Modifiez les sources dans `src/` (textes de l'accueil dans `body.html`, autres pages dans `gen_pages.py`, guides dans `src/guides/articles.json`).
+2. Reconstruisez :
+   ```bash
+   npm run build      # ou : make build
+   ```
+   Étapes : `build.py` (accueil) → `gen_pages.py` (autres pages) → `finalize.py` (images en WebP, CSS inutile retiré, CSS et JavaScript compressés) → `extras.py` (sitemap et robots).
+3. Vérifiez avec `npm run test`, puis envoyez sur GitHub : la publication se fait toute seule.
+
+Variables utiles : `SITE_URL` (adresse utilisée dans le sitemap, par défaut `https://digilago.ma`).
+
+---
+
+## Espace de gestion : devis, acomptes, factures
+
+Le dossier `backend/` contient **Digilago Gestion**, votre espace privé pour créer des devis en une minute, les faire accepter en ligne, facturer l'acompte puis le solde, et suivre les paiements. Voir `backend/README.md` pour le lancer et l'héberger.
+
+## Front-end et back-end
+
+- **Front-end :** HTML, CSS et JavaScript sans framework ni dépendance, pour la vitesse. Les polices viennent de Google Fonts.
+- **Back-end :** `backend/` (Node.js, SQLite intégré). Les demandes partent sur WhatsApp au **+212 6 49 95 38 13** et, si `GESTION_URL` est configurée, arrivent aussi dans l'espace de gestion.
+
+---
+
+## Ajouter l'exemple d'un métier
+
+1. Mettez la capture pleine page dans `src/landings/metiers/`, nommée comme le métier en minuscules sans accents, avec des tirets : `psychologue.webp`, `cabinet-d-avocats.webp`, `restaurant-marocain.webp`…
+2. Lancez `python src/landings/build_styles.py` puis `npm run build`.
+
+Le métier affiche alors son propre exemple, avec l'étiquette « Idée de site pour ce métier ».
+
+Pour un secteur entier, mettez une seule landing dans `src/landings/secteurs/`, nommée comme la clé du secteur : `restauration.webp`, `hotellerie.webp`, `commerce.webp`, `immobilier.webp`, `sport.webp`, `beaute.webp`, `industrie.webp`, `juridique.webp`, `tourisme.webp`, `services.webp`. Tous les types d'entreprise du secteur l'utilisent (sauf ceux qui ont leur propre landing).
+
+## À faire avant l'ouverture officielle
+
+- Compléter les zones marquées « [À compléter] » des pages Mentions légales et Confidentialité.
+- Vérifier le téléphone et l'e-mail affichés partout.
+- Relire les fourchettes de prix du guide « Combien coûte un site web au Maroc en 2026 ? ».
+- Remplacer `https://digilago.ma` dans `SITE_URL` si le domaine est différent, puis reconstruire.
+- Ajouter vos autres réalisations (captures dans `src/trust_imgs.json`).
+- Ajouter les exemples des autres domaines : images dans `src/landings/`, listes dans `build_showcase.py`, domaines dans `build_styles.py` (page « À quoi ressemblera votre site ? »), puis `python landings/build_showcase.py && python landings/build_styles.py` et `npm run build`.
+
+---
+
+Conçu et codé à El Jadida.
